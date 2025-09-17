@@ -1,12 +1,19 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Get, Post } from '@nestjs/common';
+import { CategoryCreation } from './category.creation.service';
+import { ExcelToJson } from './exceltojson.service';
+
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+    constructor(
+        private readonly categoryCreation: CategoryCreation,
+        private readonly excelToJson: ExcelToJson
+    ) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
+    @Post()
+    async coreCreation(){
+
+    }
+
+  
 }
