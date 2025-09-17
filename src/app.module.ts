@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ExcelToJson } from './exceltojson.service';
+import { CategoryCreation } from './category.creation.service';
 
 @Module({
   imports: [],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [ExcelToJson, CategoryCreation],
 })
 export class AppModule {}
