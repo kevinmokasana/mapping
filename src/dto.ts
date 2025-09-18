@@ -10,3 +10,8 @@ export class MetaData{
 export class BulkUploadCategoryJsonData{
     'Category Path':string
 }
+
+export class bulkUploadCatMappingJSONData{
+    'Core Category Path':string
+    'Channel Category Path':string
+}

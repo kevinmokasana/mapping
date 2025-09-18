@@ -4,11 +4,14 @@ import * as fs from 'fs'
 import { InjectDataSource } from '@nestjs/typeorm';
 import { DataSource, EntityManager } from 'typeorm';
 import { ChannelCategory, CoreCategory } from './tables.entity';
+import * as dotenv from 'dotenv'
+import { WRITE_DB_NAME } from './app.constants';
+dotenv.config()
 @Injectable()
 export class CategoryCreation {
 
     constructor(
-        @InjectDataSource(process.env.WRITE_DB_NAME) private dataSource:DataSource
+        @InjectDataSource(WRITE_DB_NAME) private dataSource:DataSource
     ){}
 
     // async duplicateCheckBulkUpload2(data: BulkUploadCategoryJsonData[], type:`core` | `channel`) {

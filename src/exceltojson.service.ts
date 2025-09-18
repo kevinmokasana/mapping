@@ -7,7 +7,15 @@ import * as fs from 'fs'
 export class ExcelToJson {
 
     async excelToJson(file:Express.Multer.File[]){
-        const excelFileName = file[0].filename
+        const excelFileName = file[0].originalname
+
+        console.log(excelFileName);
+
+        console.log(file[0].fieldname);
+        console.log(file[0].buffer);
+        
+        
+        
         fs.writeFileSync(excelFileName, file[0].buffer)
         let workbook = new ExcelJS.Workbook()
         await workbook.xlsx.readFile(excelFileName)

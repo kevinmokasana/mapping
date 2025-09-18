@@ -6,6 +6,7 @@ import { CategoryCreation } from './category.creation.service';
 import { DatabaseConfig, ReadDatabaseConfig } from './orm.config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as dotenv from 'dotenv'
+import { CategoryMappingService } from './category.mapping.service';
 dotenv.config()
 @Module({
   imports: [
@@ -13,6 +14,6 @@ dotenv.config()
     TypeOrmModule.forRoot({...ReadDatabaseConfig, name: process.env.READ_DB_NAME}),
   ],
   controllers: [AppController],
-  providers: [ExcelToJson, CategoryCreation],
+  providers: [ExcelToJson, CategoryCreation, CategoryMappingService],
 })
 export class AppModule {}
