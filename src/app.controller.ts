@@ -3,11 +3,13 @@ import { CategoryCreation } from './category.creation.service';
 import { ExcelToJson } from './exceltojson.service';
 import { FileFieldsInterceptor } from '@nestjs/platform-express';
 import { CategoryMappingService } from './category.mapping.service';
+import { AttributeCreation } from './attribute.creation.service';
 
 
 @Controller()
 export class AppController {
     constructor(
+        private readonly attributeCreation: AttributeCreation,
         private readonly categoryCreation: CategoryCreation,
         private readonly excelToJson: ExcelToJson,
         private readonly categoryMappingService: CategoryMappingService
@@ -43,16 +45,22 @@ export class AppController {
         await this.categoryMappingService.coreTenantCatMapping(body.tenant_id, body.org_id)
     }
 
-    @Post('attribute-creation')
+    @Post('core-attribute-creation')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'attributes', maxCount: 1 },
+        { name: 'core_attributes', maxCount: 1 },
     ]))
-    async attributeCreation(@UploadedFiles() files: { attributes: Express.Multer.File[]}){
-        await this.excelToJson.excelToJson(files['attributes'])
-        
+    async bulkAttributeCreation(@UploadedFiles() files: { 'core_attributes': Express.Multer.File[]}){
+        await this.excelToJson.excelToJson(files['core_attributes'])
+        await this.attributeCreation.bulkUploadAttribute('Core')
+
     }
 
-        
-
-  
+    @Post('channel-attribute-creation')
+    @UseInterceptors(FileFieldsInterceptor([
+        { name: 'channel_attributes', maxCount: 1 },
+    ]))
+    async bulkChannelAttributeCreation(@Body() body:{channel_id:number}, @UploadedFiles() files: { 'channel_attributes': Express.Multer.File[]}){
+        await this.excelToJson.excelToJson(files['channel_attributes'])
+        await this.attributeCreation.bulkUploadAttribute('Channel', body.channel_id)    
+    }  
 }

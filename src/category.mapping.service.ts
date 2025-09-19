@@ -1,5 +1,5 @@
 import { HttpException, Injectable } from '@nestjs/common';
-import { BulkUploadCategoryJsonData, bulkUploadCatMappingJSONData, MetaData } from './dto';
+import { BulkUploadCategoryJsonData, BulkUploadCatMappingJSONData, MetaData } from './dto';
 import * as fs from 'fs'
 import { InjectDataSource } from '@nestjs/typeorm';
 import { DataSource, EntityManager } from 'typeorm';
@@ -16,7 +16,7 @@ export class CategoryMappingService {
     async coreChannelCatMapping(channelId:number) {  
         try {
             let fileName = `CoreChannelCatMapping.json`
-            let jsonData:bulkUploadCatMappingJSONData[] = JSON.parse(fs.readFileSync(fileName).toString())
+            let jsonData:BulkUploadCatMappingJSONData[] = JSON.parse(fs.readFileSync(fileName).toString())
             let data = jsonData
             console.log(data);
             
@@ -68,7 +68,7 @@ export class CategoryMappingService {
     async coreTenantCatMapping(tenant_id: string, org_id: string) {
       try{
             let fileName = `CoreTenantCatMapping.json`
-            let jsonData:bulkUploadCatMappingJSONData[] = JSON.parse(fs.readFileSync(fileName).toString())
+            let jsonData:BulkUploadCatMappingJSONData[] = JSON.parse(fs.readFileSync(fileName).toString())
             let data = jsonData
             console.log(data);
             

@@ -501,17 +501,11 @@ export class TenantCategoryPath {
 
 }
 
-@Entity('attributes')
-export class Attribute {
+@Entity('core_attributes')
+export class CoreAttribute {
 
     @PrimaryGeneratedColumn()
     id: number;
-
-    @PrimaryColumn({name:"tenant_id"})
-    tenant_id: string;
-  
-    @PrimaryColumn({ name:"org_id" })
-    org_id: string
     
     @Column({name :"attribute_db_name", nullable: true})
     attribute_db_name: string;
@@ -540,12 +534,6 @@ export class Attribute {
     @Column()
     mandatory: boolean;
 
-    @Column({ default :true, nullable: true })
-    auto_translate: boolean;
-
-    @Column({name :"pricing", nullable: true})
-    pricing: boolean;
-
     @Column({ default :false, nullable: true })
     filter: boolean;
 
@@ -560,9 +548,6 @@ export class Attribute {
 
     @Column({ default :null, nullable: true })
     constraint: boolean;
-
-    @Column({nullable: true, name:"master_id"})
-    master_id: number;
 
     @Column({nullable: true, name:"attribute_group_id"})
     attribute_group_id: number;
@@ -602,16 +587,10 @@ export class Attribute {
 
 }
 
-@Entity("reference_masters")
-export class ReferenceMaster {
+@Entity("core_reference_masters")
+export class CoreReferenceMaster {
   @PrimaryGeneratedColumn()
   id: number;
-
-  @PrimaryColumn({name:"tenant_id"})
-  tenant_id: string;
-  
-  @PrimaryColumn({ name:"org_id" })
-  org_id: string
 
   @Column({ name :"master_entity_name" })
   master_entity_name: string;
@@ -621,12 +600,6 @@ export class ReferenceMaster {
 
   @Column({ name :"master_entity_description", nullable : true })
   master_entity_description: string;
-
-  @Column({ name :"pdm_status", default : 'yetToGenerate' })
-  pdm_status: string;
-
-  @Column({ name :"entities", nullable : true })
-  entities: number;
 
   @Column({ name:"status", default : true })
   status: boolean;
@@ -660,4 +633,302 @@ export class ReferenceMaster {
 
 }
 
+@Entity('core_reference_attributes')
+export class CoreReferenceAttributes {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column({ name: 'attribute_db_name', nullable: true })
+  attribute_db_name: string;
+
+  @Column({ name: 'attribute_name' })
+  attribute_name: string;
+
+  @Column({ name: 'short_name', nullable: true })
+  short_name: string;
+
+  @Column({ name: 'display_name' })
+  display_name: string;
+
+  @Column({ nullable: true, name: 'label_description' })
+  label_description: string;
+
+  @Column({ name: 'attribute_type' })
+  attribute_type: string;
+
+  @Column({ default: 100 })
+  length: number;
+
+  @Column({ default: false })
+  mandatory: boolean;
+
+  @Column({ default: false })
+  unique: boolean;
+
+  @Column({ default: false, nullable: true })
+  filter: boolean;
+
+  @Column({ default: true })
+  editable: boolean;
+
+  @Column({ default: true })
+  visibility: boolean;
+
+  @Column({ default: true })
+  searchable: boolean;
+
+  @Column({ nullable: true, name: 'reference_master_id' })
+  reference_master_id: number;
+
+  @Column({ default: true })
+  status: boolean;
+
+  @Column({ name: 'created_by' })
+  created_by: string;
+
+  @Column({ name: 'updated_by' })
+  updated_by: string;
+
+  @CreateDateColumn({
+    type: 'timestamp',
+    default: () => 'CURRENT_TIMESTAMP(6)',
+    name: 'created_at',
+  })
+  public created_at: Date;
+
+  @UpdateDateColumn({
+    type: 'timestamp',
+    name: 'updated_at',
+    default: () => 'CURRENT_TIMESTAMP(6)',
+    onUpdate: 'CURRENT_TIMESTAMP(6)',
+  })
+  public updated_at: Date;
+
+  @DeleteDateColumn({ type: 'timestamptz', nullable: true })
+  deleted_at: Date;
+
+  @Column({ name: 'deleted_by', nullable: true })
+  deleted_by: string;
+
+}
+
+@Entity('channel_attributes')
+export class ChannelAttribute {
+
+    @PrimaryGeneratedColumn()
+    id: number;
+    
+    @Column({name :"attribute_db_name", nullable: true})
+    attribute_db_name: string;
+
+    @Column({name :"attribute_name"})
+    attribute_name: string;
+
+    @Column({name:"short_name", nullable: true})
+    short_name: string;
+
+    @Column({name:"display_name"})
+    display_name: string;
+
+    @Column({nullable: true, name: "label_description"})
+    label_description: string;
+
+    @Column({name :"attribute_type"})
+    attribute_type: string;
+
+    @Column({name :"attribute_data_type"})
+    attribute_data_type: string;
+
+    @Column({ default :100 })
+    length: number;
+
+    @Column()
+    mandatory: boolean;
+
+    @Column({ default :false, nullable: true })
+    filter: boolean;
+
+    @Column({default: true})
+    editable: boolean;
+
+    @Column({default: true})
+    visibility: boolean;
+
+    @Column({default: true})
+    searchable: boolean;
+
+    @Column({ default :null, nullable: true })
+    constraint: boolean;
+
+    @Column({nullable: true, name:"attribute_group_id"})
+    attribute_group_id: number;
+
+    @Column({nullable: true, name:"reference_master_id"})
+    reference_master_id: number;
+
+    @Column({nullable: true, name:"reference_attribute_id"})
+    reference_attribute_id: number;
+
+    @Column({nullable: true, name:"quantifier_master_id"})
+    quantifier_master_id: number;
+
+    @Column({nullable: true, name:"quantifier_attribute_id"})
+    quantifier_attribute_id: number;
+
+    @Column()
+    status: boolean;
+
+    @Column({ name:"created_by",nullable: true })
+    created_by: string;
+
+    @Column({name:"updated_by",nullable: true})
+    updated_by: string;
+
+    @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)" })
+    public created_at: Date;
+  
+    @UpdateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)", onUpdate: "CURRENT_TIMESTAMP(6)" })
+    public updated_at: Date;
+
+    @DeleteDateColumn({ type: "timestamptz",  nullable:true})
+    deleted_at: Date
+
+    @Column({name:"deleted_by",  nullable:true})
+    deleted_by: string;
+
+    @Column({ name: 'channel_id' })
+    channel_id: number;
+
+}
+
+@Entity("channel_reference_masters")
+export class ChannelReferenceMaster {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column({ name :"master_entity_name" })
+  master_entity_name: string;
+
+  @Column({ name :"master_entity_type" , default : 'reference_master' })
+  master_entity_type: string;
+
+  @Column({ name :"master_entity_description", nullable : true })
+  master_entity_description: string;
+
+  @Column({ name:"status", default : true })
+  status: boolean;
+
+  @Column({name:"created_by"})
+  created_by: string;
+
+  @Column({name:"updated_by"})
+  updated_by: string;
+
+  @CreateDateColumn({
+    type: "timestamp",
+    default: () => "CURRENT_TIMESTAMP(6)",
+    name:"created_at"
+  })
+  public created_at: Date;
+
+  @UpdateDateColumn({
+    type: "timestamp",
+    default: () => "CURRENT_TIMESTAMP(6)",
+    onUpdate: "CURRENT_TIMESTAMP(6)",
+    name:"updated_at"
+  })
+  public updated_at: Date;
+
+  @DeleteDateColumn({ type: "timestamptz",  nullable:true})
+  deleted_at: Date
+
+  @Column({name:"deleted_by",  nullable:true})
+  deleted_by: string;
+
+  @Column({ name: 'channel_id' })
+  channel_id: number;
+
+}
+
+@Entity('channel_reference_attributes')
+export class ChannelReferenceAttributes {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column({ name: 'attribute_db_name', nullable: true })
+  attribute_db_name: string;
+
+  @Column({ name: 'attribute_name' })
+  attribute_name: string;
+
+  @Column({ name: 'short_name', nullable: true })
+  short_name: string;
+
+  @Column({ name: 'display_name' })
+  display_name: string;
+
+  @Column({ nullable: true, name: 'label_description' })
+  label_description: string;
+
+  @Column({ name: 'attribute_type' })
+  attribute_type: string;
+
+  @Column({ default: 100 })
+  length: number;
+
+  @Column({ default: false })
+  mandatory: boolean;
+
+  @Column({ default: false })
+  unique: boolean;
+
+  @Column({ default: false, nullable: true })
+  filter: boolean;
+
+  @Column({ default: true })
+  editable: boolean;
+
+  @Column({ default: true })
+  visibility: boolean;
+
+  @Column({ default: true })
+  searchable: boolean;
+
+  @Column({ nullable: true, name: 'reference_master_id' })
+  reference_master_id: number;
+
+  @Column({ default: true })
+  status: boolean;
+
+  @Column({ name: 'created_by' })
+  created_by: string;
+
+  @Column({ name: 'updated_by' })
+  updated_by: string;
+
+  @CreateDateColumn({
+    type: 'timestamp',
+    default: () => 'CURRENT_TIMESTAMP(6)',
+    name: 'created_at',
+  })
+  public created_at: Date;
+
+  @UpdateDateColumn({
+    type: 'timestamp',
+    name: 'updated_at',
+    default: () => 'CURRENT_TIMESTAMP(6)',
+    onUpdate: 'CURRENT_TIMESTAMP(6)',
+  })
+  public updated_at: Date;
+
+  @DeleteDateColumn({ type: 'timestamptz', nullable: true })
+  deleted_at: Date;
+
+  @Column({ name: 'deleted_by', nullable: true })
+  deleted_by: string;
+
+  @Column({ name: 'channel_id' })
+  channel_id: number;
+
+}
 
