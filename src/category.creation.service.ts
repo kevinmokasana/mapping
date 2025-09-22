@@ -142,7 +142,7 @@ export class CategoryCreation {
             }, {
                 is_leaf:false
             })
-
+        return entity
     }
 
     async getSiblings(categoryId:number, type:`core` | `channel`, entityManager:EntityManager, channelId?:number){

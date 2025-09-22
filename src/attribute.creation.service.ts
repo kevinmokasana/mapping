@@ -28,7 +28,7 @@ export class AttributeCreation {
             for (const row of data) {
                 try {
                   // 🔍 Step 0: Check if attribute already exists
-                  const existingAttr = await entityManager.getRepository(CoreAttribute).findOne({
+                  const existingAttr = await entityManager.getRepository(Attribute).findOne({
                     where: { attribute_name: row.attribute_name, ...(type === 'Core' ? {} : { channel_id: channelId }) },
                   });
           
@@ -39,18 +39,18 @@ export class AttributeCreation {
                     });
                     continue; // skip to next row
                   }
-          
+                  
                   let referenceMasterId: number = null;
                   let referenceAttributeId: number = null;
           
                   if (row.constraint) {
                     // Step 1: Find or create Reference Master
-                    let master = await entityManager.getRepository(CoreReferenceMaster).findOne({
+                    let master = await entityManager.getRepository(ReferenceMaster).findOne({
                       where: { master_entity_name: row.reference_master_name, ...(type === 'Core' ? {} : { channel_id: channelId }) },
                     });
           
                     if (!master) {
-                      master = await entityManager.getRepository(CoreReferenceMaster).save({
+                      master = await entityManager.getRepository(ReferenceMaster).save({
                         master_entity_name: row.reference_master_name,
                         master_entity_type: 'reference_master',
                         status: true,
@@ -62,7 +62,7 @@ export class AttributeCreation {
                     referenceMasterId = master.id;
           
                     // Step 2: Find or create Reference Attribute
-                    let refAttr = await entityManager.getRepository(CoreReferenceAttributes).findOne({
+                    let refAttr = await entityManager.getRepository(ReferenceAttributes).findOne({
                       where: {
                         attribute_name: row.reference_attribute_name,
                         reference_master_id: referenceMasterId,
@@ -71,7 +71,7 @@ export class AttributeCreation {
                     });
           
                     if (!refAttr) {
-                      refAttr = await entityManager.getRepository(CoreReferenceAttributes).save({
+                      refAttr = await entityManager.getRepository(ReferenceAttributes).save({
                         attribute_db_name: row.reference_attribute_name,
                         attribute_name: row.reference_attribute_name,
                         short_name: row.reference_attribute_name,
@@ -95,7 +95,7 @@ export class AttributeCreation {
                   }
           
                   // Step 3: Insert Attribute
-                  await entityManager.getRepository(CoreAttribute).save({
+                  await entityManager.getRepository(ReferenceAttributes).save({
                     attribute_db_name: row.attribute_db_name,
                     attribute_name: row.attribute_name,
                     short_name: row.attribute_name,

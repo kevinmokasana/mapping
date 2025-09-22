@@ -11,6 +11,12 @@ export class BulkUploadCategoryJsonData{
     'Category Path':string
 }
 
+export class BulkUploadCategoryAttributeMappingJSONData{
+    'Category Path':string
+    'Attribute Name':string
+    'Mandatory':boolean
+}
+
 export class BulkUploadCatMappingJSONData{
     'Core Category Path':string
     'Channel Category Path':string
