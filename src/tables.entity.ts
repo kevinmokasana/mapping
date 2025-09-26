@@ -1,4 +1,4 @@
-    import {
+import {
     Entity,
     PrimaryGeneratedColumn,
     Column,
@@ -7,7 +7,7 @@
     UpdateDateColumn,
     DeleteDateColumn,
     OneToMany,
-    } from 'typeorm';
+} from 'typeorm';
 
     // @Entity('attributes')
     // export class Attribute {
@@ -472,15 +472,33 @@ export class CoreTenantCategoryMapping {
 
 @Entity('core_channel_category_mappings')
 export class CoreChannelCategoryMapping {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryColumn()
+    channel_id:number
     
-    @Column()
-    channel_category_id: number;
+    @PrimaryColumn()
+    channel_category_id: number
     
-    @Column()
-    core_category_id: number;
-}
+    @PrimaryColumn()
+    core_category_id: number
+} 
+
+@Entity('core_channel_attribute_mappings')
+export class CoreChannelAttributeMappings {
+    @PrimaryColumn()
+    core_attribute_id:number
+    
+    @PrimaryColumn()
+    channel_attribute_id: number
+    
+    @PrimaryColumn()
+    core_category_id: number
+
+    @PrimaryColumn()
+    channel_category_id:number
+
+    @PrimaryColumn()
+    channel_id:number
+} 
 
 @Entity('tenant_category_paths')
 export class TenantCategoryPath {

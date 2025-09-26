@@ -22,6 +22,13 @@ export class BulkUploadCatMappingJSONData{
     'Channel Category Path':string
 }
 
+export class BulkUploadAttributeMappingJSONData{
+    'Core Attribute Name':string
+    'Channel Attribute Name':string
+    'Core Category Path':string
+    'Channel Category Path':string
+}
+
 export class BulkUploadAttributeJSONData{
     'attribute_db_name':string
     'attribute_name':string
