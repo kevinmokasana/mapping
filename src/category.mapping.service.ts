@@ -70,7 +70,7 @@ export class CategoryMappingService {
             let fileName = `CoreTenantCatMapping.json`
             let jsonData:BulkUploadCatMappingJSONData[] = JSON.parse(fs.readFileSync(fileName).toString())
             let data = jsonData
-            console.log(data);
+            // console.log(data);
             
             const failedRows: any[] = [];
             await this.dataSource.transaction(async (entityManager) => {

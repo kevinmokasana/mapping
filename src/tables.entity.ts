@@ -500,6 +500,26 @@ export class CoreChannelAttributeMappings {
     channel_id:number
 } 
 
+@Entity('core_tenant_attribute_mappings')
+export class CoreTenantAttributeMappings {
+    @PrimaryColumn()
+    core_attribute_id:number
+    
+    @PrimaryColumn()
+    tenant_attribute_id: number
+    
+    @PrimaryColumn()
+    core_category_id: number
+
+    @PrimaryColumn()
+    tenant_category_id:number
+
+    @PrimaryColumn()
+    tenant_id:string
+
+    @PrimaryColumn()
+    org_id:string
+} 
 @Entity('tenant_category_paths')
 export class TenantCategoryPath {
     @PrimaryGeneratedColumn()
@@ -519,6 +539,105 @@ export class TenantCategoryPath {
 
 }
 
+@Entity('attributes')
+export class Attribute {
+
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @PrimaryColumn({name:"tenant_id"})
+    tenant_id: string;
+  
+    @PrimaryColumn({ name:"org_id" })
+    org_id: string
+    
+    @Column({name :"attribute_db_name", nullable: true})
+    attribute_db_name: string;
+
+    @Column({name :"attribute_name"})
+    attribute_name: string;
+
+    @Column({name:"short_name", nullable: true})
+    short_name: string;
+
+    @Column({name:"display_name"})
+    display_name: string;
+
+    @Column({nullable: true, name: "label_description"})
+    label_description: string;
+
+    @Column({name :"attribute_type"})
+    attribute_type: string;
+
+    @Column({name :"attribute_data_type"})
+    attribute_data_type: string;
+
+    @Column({ default :100 })
+    length: number;
+
+    @Column()
+    mandatory: boolean;
+
+    @Column({ default :true, nullable: true })
+    auto_translate: boolean;
+
+    @Column({name :"pricing", nullable: true})
+    pricing: boolean;
+
+    @Column({ default :false, nullable: true })
+    filter: boolean;
+
+    @Column({default: true})
+    editable: boolean;
+
+    @Column({default: true})
+    visibility: boolean;
+
+    @Column({default: true})
+    searchable: boolean;
+
+    @Column({ default :null, nullable: true })
+    constraint: boolean;
+
+    @Column({nullable: true, name:"master_id"})
+    master_id: number;
+
+    @Column({nullable: true, name:"attribute_group_id"})
+    attribute_group_id: number;
+
+    @Column({nullable: true, name:"reference_master_id"})
+    reference_master_id: number;
+
+    @Column({nullable: true, name:"reference_attribute_id"})
+    reference_attribute_id: number;
+
+    @Column({nullable: true, name:"quantifier_master_id"})
+    quantifier_master_id: number;
+
+    @Column({nullable: true, name:"quantifier_attribute_id"})
+    quantifier_attribute_id: number;
+
+    @Column()
+    status: boolean;
+
+    @Column({ name:"created_by",nullable: true })
+    created_by: string;
+
+    @Column({name:"updated_by",nullable: true})
+    updated_by: string;
+
+    @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)" })
+    public created_at: Date;
+  
+    @UpdateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)", onUpdate: "CURRENT_TIMESTAMP(6)" })
+    public updated_at: Date;
+
+    @DeleteDateColumn({ type: "timestamptz",  nullable:true})
+    deleted_at: Date
+
+    @Column({name:"deleted_by",  nullable:true})
+    deleted_by: string;
+}
 @Entity('core_attributes')
 export class CoreAttribute {
 
@@ -976,5 +1095,76 @@ export class ChannelCategoryAssignment{
 
     @PrimaryColumn()
     channel_id:number
+}
+
+@Entity()
+export class TenantCategoryAssignment{
+    @PrimaryColumn()
+    category_id:number
+
+    @PrimaryColumn()
+    attribute_id:number
+
+    @Column()
+    mandatory:boolean
+
+    @Column()
+    tenant_id:string
+
+    @Column()
+    org_id:string
+}
+
+@Entity()
+export class CoreChannelReferenceDataMapping {
+
+    @PrimaryColumn()
+    core_rmdm_id: number;
+
+    @PrimaryColumn()
+    channel_rmdm_id: number;
+
+    @PrimaryColumn()
+    core_attribute_id:number
+    
+    @PrimaryColumn()
+    channel_attribute_id: number
+    
+    @PrimaryColumn()
+    core_category_id: number
+
+    @PrimaryColumn()
+    channel_category_id:number
+
+    @PrimaryColumn()
+    channel_id:number
+}
+
+@Entity()
+export class CoreTenantReferenceDataMapping {
+
+    @PrimaryColumn()
+    core_rmdm_id: number;
+
+    @PrimaryColumn()
+    tenant_rmdm_id: number;
+
+    @PrimaryColumn()
+    core_attribute_id:number
+    
+    @PrimaryColumn()
+    tenant_attribute_id: number
+    
+    @PrimaryColumn()
+    core_category_id: number
+
+    @PrimaryColumn()
+    tenant_category_id:number
+
+    @Column()
+    tenant_id:string
+
+    @Column()
+    org_id:string
 }
 
