@@ -121,6 +121,43 @@ export class CategoryCreation {
 				console.log(e)
 				throw new HttpException(e.message, 201)
 			}
+            const tableName = type===`core` ? `core_categories` : `channel_categories`
+            const selectColumn = type===`core` ? `` : `, channel_id`
+            const selectColumn2 = type===`core` ? `` : `, o.channel_id`
+            const joinColumn = type===`core` ? `` : ` and n.channel_id = o.channel_id`
+
+            const paths:{id:number, path:string}[] = await entityManager.query(`
+                WITH RECURSIVE NODES (id, path, id_path, is_leaf) as (
+                    select id, category_name, CAST(id AS varchar), is_leaf ${selectColumn}
+                    from ${tableName}
+                    where parent_id isnull
+                    UNION ALL
+                    select o.id, concat(path,'/',o.category_name),concat(id_path,'/',CAST(o.id AS varchar)), o.is_leaf ${selectColumn2}
+                    from ${tableName} o
+                    join nodes n on n.id = o.parent_id ${joinColumn})
+                    select id, path as category_path, id_path from nodes
+                    where is_leaf=true     
+            `)
+            if(type==='core'){
+                await entityManager.query(`UPDATE core_categories SET category_path = null`)
+                for(let path of paths){
+                    await entityManager.getRepository(CoreCategory).update({
+                        id:path.id
+                    }, {
+                        category_path:path.path
+                    })
+                }
+            }else{
+                await entityManager.query(`UPDATE channel_categories SET category_path = null where channel_id = ${channelId}`)
+                for(let path of paths){
+                    await entityManager.getRepository(ChannelCategory).update({
+                        id:path.id,
+                        channel_id:channelId
+                    }, {
+                        category_path:path.path
+                    })
+                }
+            }
 		});
 		return {}//this.responseObject(SUCCESS, 201, 'Added Successfully', [])
 	}
