@@ -20,7 +20,8 @@ export class AppController {
         { name: 'core', maxCount: 1 },
     ]))
     async coreCreation(@UploadedFiles() files: { products: Express.Multer.File[]}){
-        
+        await this.excelToJson.excelToJson(files['CoreCategory'])
+        await this.categoryCreation.bulkUploadCategory('core')
     }
 
     @Post('core-channel-cat-mapping')
