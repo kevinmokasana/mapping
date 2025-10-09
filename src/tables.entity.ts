@@ -454,19 +454,16 @@ export class ChannelCategory {
 
 @Entity('core_tenant_category_mappings')
 export class CoreTenantCategoryMapping {
-    @PrimaryGeneratedColumn()
-    id: number;
-    
-    @Column()
+    @PrimaryColumn()
     tenant_category_id: number;
 
-    @Column()
+    @PrimaryColumn()
     core_category_id: number;
 
-    @Column()
+    @PrimaryColumn()
     tenant_id: string;
 
-    @Column()
+    @PrimaryColumn()
     org_id: string;    
 }
 
@@ -532,10 +529,7 @@ export class TenantCategoryPath {
     org_id: string;
 
     @Column()
-    category_path: string;
-
-    @Column()
-    id_path: number[]
+    path: string;
 
 }
 

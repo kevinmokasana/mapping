@@ -20,7 +20,9 @@ export class AppController {
         { name: 'core', maxCount: 1 },
     ]))
     async coreCreation(@UploadedFiles() files: { products: Express.Multer.File[]}){
-        await this.excelToJson.excelToJson(files['CoreCategory'])
+        console.log(files);
+        
+        await this.excelToJson.excelToJson(files['core'])
         await this.categoryCreation.bulkUploadCategory('core')
     }
 
@@ -32,6 +34,8 @@ export class AppController {
         console.log(files);
         
         await this.excelToJson.excelToJson(files['core_channel_cat_map'])
+        console.log(body.channel_id);
+        
         await this.categoryMappingService.coreChannelCatMapping(body.channel_id)
     }
 

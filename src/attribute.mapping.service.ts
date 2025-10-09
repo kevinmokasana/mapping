@@ -137,11 +137,11 @@ export class AttributeMappingService {
 
         const channelCategories = await this.dataSource.getRepository(TenantCategoryPath).find({
             where:{
-                category_path:In(data.map(x=>x['Tenant Category Path'])),
+                path:In(data.map(x=>x['Tenant Category Path'])),
                 tenant_id:tenant_id,
                 org_id:org_id
             },
-            select:['category_path', 'id']
+            select:['path', 'id']
         })
 
         let entityManager = this.dataSource.createEntityManager()
@@ -151,7 +151,7 @@ export class AttributeMappingService {
             const coreAttribute = coreAttributes.find(x=>x.attribute_name===row['Core Attribute Name'])
             const tenantAttribute = tenantAttributes.find(x=>x.attribute_name===row['Tenant Attribute Name'])//row['Channel Attribute Name']
             const coreCategory = coreCategories.find(x=>x.category_path===row['Core Category Path'])
-            const tenantCategory = channelCategories.find(x=>x.category_path===row['Tenant Category Path'])
+            const tenantCategory = channelCategories.find(x=>x.path===row['Tenant Category Path'])
 
             let errors = []
             if(coreAttribute===undefined)
@@ -190,7 +190,7 @@ export class AttributeMappingService {
                 }
             })
             if(tenantAssignment===undefined || tenantAssignment===null)
-                errors.push(`Tenant Assignment ${tenantCategory.category_path} <--> ${tenantAttribute.attribute_name} does not exist`)
+                errors.push(`Tenant Assignment ${tenantCategory.path} <--> ${tenantAttribute.attribute_name} does not exist`)
 
             await entityManager.getRepository(CoreTenantAttributeMappings).save({
                 core_attribute_id:coreAttribute.id,

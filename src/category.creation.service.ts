@@ -135,12 +135,13 @@ export class CategoryCreation {
                     select o.id, concat(path,'/',o.category_name),concat(id_path,'/',CAST(o.id AS varchar)), o.is_leaf ${selectColumn2}
                     from ${tableName} o
                     join nodes n on n.id = o.parent_id ${joinColumn})
-                    select id, path as category_path, id_path from nodes
+                    select id, path, id_path from nodes
                     where is_leaf=true     
             `)
             if(type==='core'){
                 await entityManager.query(`UPDATE core_categories SET category_path = null`)
                 for(let path of paths){
+					console.log(path)
                     await entityManager.getRepository(CoreCategory).update({
                         id:path.id
                     }, {

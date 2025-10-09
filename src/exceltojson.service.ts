@@ -23,7 +23,7 @@ export class ExcelToJson {
         for(let sheet of workbook.worksheets){
             const headerRowNumber = 1
             const json = await this.sheetToJson({ sheet, headerRowNumber})
-            const jsonFile = sheet.name
+            const jsonFile = sheet.name+'.json'
             fs.writeFileSync(jsonFile, JSON.stringify(json, null,2))
         }
         fs.unlinkSync(excelFileName)
