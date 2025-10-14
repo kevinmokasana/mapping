@@ -65,6 +65,12 @@ export class CategoryCreation {
 		let jsonData:BulkUploadCategoryJsonData[] = JSON.parse(fs.readFileSync(fileName).toString())
 		let category2DArray = {}
 		let data = jsonData
+		console.log('-------------');
+		
+		console.log(data);
+		console.log('-------------');
+		
+		
 		let pathArray = data.map(x => x['Category Path'])
 		await this.dataSource.manager.transaction(async (entityManager) => {
 			try {

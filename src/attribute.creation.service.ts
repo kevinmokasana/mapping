@@ -95,28 +95,28 @@ export class AttributeCreation {
                   }
           
                   // Step 3: Insert Attribute
-                  await entityManager.getRepository(ReferenceAttributes).save({
-                    attribute_db_name: row.attribute_db_name,
-                    attribute_name: row.attribute_name,
-                    short_name: row.attribute_name,
-                    display_name: row.attribute_name,
-                    label_description: row.label_description ?? null,
-                    attribute_type: row.attribute_type,
-                    attribute_data_type: row.attribute_data_type,
-                    length: row.length,
-                    mandatory: row.mandatory,
-                    filter: row.filter,
-                    editable: row.editable,
-                    visibility: row.visibility,
-                    searchable: row.searchable,
-                    constraint: row.constraint,
-                    reference_master_id: referenceMasterId,
-                    reference_attribute_id: referenceAttributeId,
-                    status: row.status,
-                    created_by: 'Admin',
-                    updated_by: 'Admin',
-                    ...(type === 'Core' ? {} : { channel_id: channelId })
-                  });
+                  // await entityManager.getRepository(ReferenceAttributes).save({
+                  //   attribute_db_name: row.attribute_db_name,
+                  //   attribute_name: row.attribute_name,
+                  //   short_name: row.attribute_name,
+                  //   display_name: row.attribute_name,
+                  //   label_description: row.label_description ?? null,
+                  //   attribute_type: row.attribute_type,
+                  //   attribute_data_type: row.attribute_data_type,
+                  //   length: row.length,
+                  //   mandatory: row.mandatory,
+                  //   filter: row.filter,
+                  //   editable: row.editable,
+                  //   visibility: row.visibility,
+                  //   searchable: row.searchable,
+                  //   constraint: row.constraint,
+                  //   reference_master_id: referenceMasterId,
+                  //   reference_attribute_id: referenceAttributeId,
+                  //   status: row.status,
+                  //   created_by: 'Admin',
+                  //   updated_by: 'Admin',
+                  //   ...(type === 'Core' ? {} : { channel_id: channelId })
+                  // });
                 } catch (err) {
                   failedRows.push({ ...row, error: err.message });
                 }

@@ -44,7 +44,7 @@ export class AttributeMappingService {
 
         const channelCategories = await this.dataSource.getRepository(ChannelCategory).find({
             where:{
-                category_path:In(data.map(x=>x['Core Category Path'])),
+                category_path:In(data.map(x=>x['Channel Category Path'])),
                 channel_id:channelId
             },
             select:['category_path', 'id']
@@ -76,24 +76,24 @@ export class AttributeMappingService {
             }
 
             //Chacking for Assignments
-            const coreAssignment = await entityManager.getRepository(CoreCategoryAssignment).findOne({
-                where:{
-                    category_id:coreCategory.id,
-                    attribute_id:coreAttribute.id
-                }
-            })
-            if(coreAssignment===undefined || coreAssignment===null)
-                errors.push(`Core Assignment ${coreCategory.category_path} <--> ${coreAttribute.attribute_name} does not exist`)
+            // const coreAssignment = await entityManager.getRepository(CoreCategoryAssignment).findOne({
+            //     where:{
+            //         category_id:coreCategory.id,
+            //         attribute_id:coreAttribute.id
+            //     }
+            // })
+            // if(coreAssignment===undefined || coreAssignment===null)
+            //     errors.push(`Core Assignment ${coreCategory.category_path} <--> ${coreAttribute.attribute_name} does not exist`)
 
-            const channelAssignment = await entityManager.getRepository(ChannelCategoryAssignment).findOne({
-                where:{
-                    category_id:coreCategory.id,
-                    attribute_id:coreAttribute.id,
-                    channel_id:channelId
-                }
-            })
-            if(channelAssignment===undefined || channelAssignment===null)
-                errors.push(`Core Assignment ${channelCategory.category_path} <--> ${channelAttribute.attribute_name} does not exist`)
+            // const channelAssignment = await entityManager.getRepository(ChannelCategoryAssignment).findOne({
+            //     where:{
+            //         category_id:coreCategory.id,
+            //         attribute_id:coreAttribute.id,
+            //         channel_id:channelId
+            //     }
+            // })
+            // if(channelAssignment===undefined || channelAssignment===null)
+            //     errors.push(`Core Assignment ${channelCategory.category_path} <--> ${channelAttribute.attribute_name} does not exist`)
 
             await entityManager.getRepository(CoreChannelAttributeMappings).save({
                 core_attribute_id:coreAttribute.id,
@@ -103,6 +103,10 @@ export class AttributeMappingService {
                 channel_id:channelId
             })
         }
+        // console.log(failedRows);
+        fs.writeFileSync('core_channe_attribute_mapping_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
+        console.log("JSON file created successfully!");
+        
     }
 
     async coreTenantAttributeMapping(tenant_id:string, org_id:string){
@@ -172,25 +176,25 @@ export class AttributeMappingService {
             }
 
             //Chacking for Assignments
-            const coreAssignment = await entityManager.getRepository(CoreCategoryAssignment).findOne({
-                where:{
-                    category_id:coreCategory.id,
-                    attribute_id:coreAttribute.id
-                }
-            })
-            if(coreAssignment===undefined || coreAssignment===null)
-                errors.push(`Core Assignment ${coreCategory.category_path} <--> ${coreAttribute.attribute_name} does not exist`)
+            // const coreAssignment = await entityManager.getRepository(CoreCategoryAssignment).findOne({
+            //     where:{
+            //         category_id:coreCategory.id,
+            //         attribute_id:coreAttribute.id
+            //     }
+            // })
+            // if(coreAssignment===undefined || coreAssignment===null)
+            //     errors.push(`Core Assignment ${coreCategory.category_path} <--> ${coreAttribute.attribute_name} does not exist`)
 
-            const tenantAssignment = await entityManager.getRepository(TenantCategoryAssignment).findOne({
-                where:{
-                    category_id:coreCategory.id,
-                    attribute_id:coreAttribute.id,
-                    tenant_id:tenant_id,
-                    org_id:org_id
-                }
-            })
-            if(tenantAssignment===undefined || tenantAssignment===null)
-                errors.push(`Tenant Assignment ${tenantCategory.path} <--> ${tenantAttribute.attribute_name} does not exist`)
+            // const tenantAssignment = await entityManager.getRepository(TenantCategoryAssignment).findOne({
+            //     where:{
+            //         category_id:coreCategory.id,
+            //         attribute_id:coreAttribute.id,
+            //         tenant_id:tenant_id,
+            //         org_id:org_id
+            //     }
+            // })
+            // if(tenantAssignment===undefined || tenantAssignment===null)
+            //     errors.push(`Tenant Assignment ${tenantCategory.path} <--> ${tenantAttribute.attribute_name} does not exist`)
 
             await entityManager.getRepository(CoreTenantAttributeMappings).save({
                 core_attribute_id:coreAttribute.id,

@@ -1162,3 +1162,7 @@ export class CoreTenantReferenceDataMapping {
     org_id:string
 }
 
+@Entity()
+export class CoreRefereneData {
+    
+}
