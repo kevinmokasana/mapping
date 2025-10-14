@@ -14,7 +14,7 @@ export const DatabaseConfig: TypeOrmModuleOptions = {
     port: parseInt(DB_PORT),
     host: DB_HOST,
     database: WRITE_DB_NAME,
-    synchronize: true,
+    synchronize: false,
     entities:[CoreReferenceValues],
     logging:false
 }
