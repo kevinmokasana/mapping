@@ -4,6 +4,7 @@ import { ExcelToJson } from './exceltojson.service';
 import { FileFieldsInterceptor } from '@nestjs/platform-express';
 import { CategoryMappingService } from './category.mapping.service';
 import { AttributeCreation } from './attribute.creation.service';
+import { AttributeMappingService } from './attribute.mapping.service';
 
 
 @Controller()
@@ -12,7 +13,8 @@ export class AppController {
         private readonly attributeCreation: AttributeCreation,
         private readonly categoryCreation: CategoryCreation,
         private readonly excelToJson: ExcelToJson,
-        private readonly categoryMappingService: CategoryMappingService
+        private readonly categoryMappingService: CategoryMappingService,
+        private readonly attributeMappingService: AttributeMappingService
     ) {}
 
     @Post('core-creation')
@@ -33,6 +35,8 @@ export class AppController {
         console.log(files);
         
         await this.excelToJson.excelToJson(files['core_channel_cat_map'])
+        console.log(body.channel_id);
+        
         await this.categoryMappingService.coreChannelCatMapping(body.channel_id)
     }
 
@@ -68,5 +72,14 @@ export class AppController {
         }catch(e){
             console.log(e)
         }
+    }  
+
+    @Post('core-channel-attribute-mapping')
+    @UseInterceptors(FileFieldsInterceptor([
+        { name: 'core_channel_attribute_mapping', maxCount: 1 },
+    ]))
+    async bulkCoreChannelAttributeMapping(@Body() body:{channel_id:number}, @UploadedFiles() files: { 'core_channel_attribute_mapping': Express.Multer.File[]}){
+        await this.excelToJson.excelToJson(files['core_channel_attribute_mapping'])
+        await this.attributeMappingService.coreChannleAttributeMapping(body.channel_id)    
     }  
 }

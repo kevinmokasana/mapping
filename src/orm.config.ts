@@ -5,7 +5,7 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 import { DB_USER, DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, WRITE_DB_NAME, READ_DB_NAME } from './app.constants'
-import { ChannelAttribute, ChannelReferenceValues, CoreAttribute, CoreCategory, CoreReferenceValues } from './tables.entity'
+import { ChannelAttribute, ChannelCategory, CoreAttribute, CoreCategory, CoreChannelAttributeMappings, CoreChannelCategoryMapping, CoreTenantCategoryMapping, TenantCategoryPath } from './tables.entity'
 // console.log(process.env.DB_PASSWORD)
 export const DatabaseConfig: TypeOrmModuleOptions = {
     type:  "postgres",
@@ -15,7 +15,7 @@ export const DatabaseConfig: TypeOrmModuleOptions = {
     host: DB_HOST,
     database: WRITE_DB_NAME,
     synchronize: false,
-    entities:[CoreReferenceValues],
+    entities:[],
     logging:false
 }
 

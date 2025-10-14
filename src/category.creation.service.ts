@@ -65,6 +65,12 @@ export class CategoryCreation {
 		let jsonData:BulkUploadCategoryJsonData[] = JSON.parse(fs.readFileSync(fileName).toString())
 		let category2DArray = {}
 		let data = jsonData
+		console.log('-------------');
+		
+		console.log(data);
+		console.log('-------------');
+		
+		
 		let pathArray = data.map(x => x['Category Path'])
 		await this.dataSource.manager.transaction(async (entityManager) => {
 			try {
@@ -141,6 +147,7 @@ export class CategoryCreation {
             if(type==='core'){
                 await entityManager.query(`UPDATE core_categories SET category_path = null`)
                 for(let path of paths){
+					console.log(path)
                     await entityManager.getRepository(CoreCategory).update({
                         id:path.id
                     }, {
