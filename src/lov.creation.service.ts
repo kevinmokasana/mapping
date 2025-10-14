@@ -8,7 +8,7 @@ import * as dotenv from 'dotenv'
 import { WRITE_DB_NAME } from './app.constants';
 dotenv.config()
 @Injectable()
-export class AttributeCreation {
+export class LovCreation {
 
     constructor(
         @InjectDataSource(WRITE_DB_NAME) private dataSource:DataSource
@@ -17,7 +17,7 @@ export class AttributeCreation {
 
    async bulkUploadAttribute(type:`Core`|`Channel`, channelId?:number){
     try{
-        let fileName = type===`Core`?`CoreAttribute.json`:`ChannelAttribute.json`
+        let fileName = type===`Core` ? `CoreAttribute.json` : `ChannelAttribute.json`
         let jsonData:BulkUploadAttributeJSONData[] = JSON.parse(fs.readFileSync(fileName).toString())
         let data = jsonData
         const failedRows: any[] = [];
@@ -26,8 +26,7 @@ export class AttributeCreation {
         let ReferenceAttributes = type===`Core` ? CoreReferenceAttributes : ChannelReferenceAttributes
         await this.dataSource.transaction(async (entityManager) => {
             for (const row of data) {
-                console.log(row)
-                // try {
+                try {
                   // 🔍 Step 0: Check if attribute already exists
                   const existingAttr = await entityManager.getRepository(Attribute).findOne({
                     where: { attribute_name: row.attribute_name, ...(type === 'Core' ? {} : { channel_id: channelId }) },
@@ -94,22 +93,33 @@ export class AttributeCreation {
                 //     }
                 //     referenceAttributeId = refAttr.id;
                 //   }
-                  console.log(row.attribute_name)
+          
                   // Step 3: Insert Attribute
-                  await entityManager.getRepository(Attribute).save({
+                  await entityManager.getRepository(ReferenceAttributes).save({
+                    attribute_db_name: row.attribute_name,
                     attribute_name: row.attribute_name,
+                    short_name: row.attribute_name,
                     display_name: row.attribute_name,
-                    short_name: row.short_name ?? null,
+                    label_description: row.label_description ?? null,
                     attribute_type: row.attribute_type,
                     attribute_data_type: row.attribute_data_type,
                     length: row.length,
                     mandatory: row.mandatory,
+                    filter: row.filter,
+                    editable: row.editable,
+                    visibility: row.visibility,
+                    searchable: row.searchable,
                     constraint: row.constraint,
-                    status: true,
+                    reference_master_id: referenceMasterId,
+                    reference_attribute_id: referenceAttributeId,
+                    status: row.status,
                     created_by: 'Admin',
                     updated_by: 'Admin',
                     ...(type === 'Core' ? {} : { channel_id: channelId })
                   });
+                } catch (err) {
+                  failedRows.push({ ...row, error: err.message });
+                }
               }
           
               if (failedRows.length > 0) {

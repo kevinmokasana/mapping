@@ -19,8 +19,9 @@ export class AppController {
     @UseInterceptors(FileFieldsInterceptor([
         { name: 'core', maxCount: 1 },
     ]))
-    async coreCreation(@UploadedFiles() files: { products: Express.Multer.File[]}){
-        await this.excelToJson.excelToJson(files['CoreCategory'])
+    async coreCreation(@UploadedFiles() files: { core: Express.Multer.File[]}){
+        // console.log(files)
+        await this.excelToJson.excelToJson(files.core)
         await this.categoryCreation.bulkUploadCategory('core')
     }
 
@@ -53,7 +54,6 @@ export class AppController {
     async bulkAttributeCreation(@UploadedFiles() files: { 'core_attributes': Express.Multer.File[]}){
         await this.excelToJson.excelToJson(files['core_attributes'])
         await this.attributeCreation.bulkUploadAttribute('Core')
-
     }
 
     @Post('channel-attribute-creation')
@@ -61,7 +61,12 @@ export class AppController {
         { name: 'channel_attributes', maxCount: 1 },
     ]))
     async bulkChannelAttributeCreation(@Body() body:{channel_id:number}, @UploadedFiles() files: { 'channel_attributes': Express.Multer.File[]}){
-        await this.excelToJson.excelToJson(files['channel_attributes'])
-        await this.attributeCreation.bulkUploadAttribute('Channel', body.channel_id)    
+        console.log(`here`)
+        try{
+            await this.excelToJson.excelToJson(files['channel_attributes'])
+            await this.attributeCreation.bulkUploadAttribute('Channel', body.channel_id)    
+        }catch(e){
+            console.log(e)
+        }
     }  
 }

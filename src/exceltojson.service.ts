@@ -7,12 +7,8 @@ import * as fs from 'fs'
 export class ExcelToJson {
 
     async excelToJson(file:Express.Multer.File[]){
+        // console.log(file)
         const excelFileName = file[0].originalname
-
-        console.log(excelFileName);
-
-        console.log(file[0].fieldname);
-        console.log(file[0].buffer);
         
         
         
@@ -23,7 +19,7 @@ export class ExcelToJson {
         for(let sheet of workbook.worksheets){
             const headerRowNumber = 1
             const json = await this.sheetToJson({ sheet, headerRowNumber})
-            const jsonFile = sheet.name
+            const jsonFile = sheet.name + `.json`
             fs.writeFileSync(jsonFile, JSON.stringify(json, null,2))
         }
         fs.unlinkSync(excelFileName)
@@ -67,8 +63,8 @@ export class ExcelToJson {
             data = groupBy(data, "key");
             for (let key of Object.keys(data)) {
                 data[key] = data[key].map((k) => k.value)[0]
-                if(data[key]!=null && data[key].toLowerCase()==='true') data[key] = true
-                if(data[key]!=null && data[key].toLowerCase()==='false') data[key] = false
+                // if(data[key]!=null && data[key].toLowerCase()==='true') data[key] = true
+                // if(data[key]!=null && data[key].toLowerCase()==='false') data[key] = false
             }
             data['RowNo'] = ++i;
             return data;
