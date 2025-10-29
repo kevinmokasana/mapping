@@ -67,8 +67,10 @@ export class ExcelToJson {
             data = groupBy(data, "key");
             for (let key of Object.keys(data)) {
                 data[key] = data[key].map((k) => k.value)[0]
-                if(data[key]!=null && data[key].toLowerCase()==='true') data[key] = true
-                if(data[key]!=null && data[key].toLowerCase()==='false') data[key] = false
+                // console.log(data[key]);
+                
+                if(data[key]!=null && data[key].toString().toLowerCase()==='true') data[key] = true
+                if(data[key]!=null && data[key].toString().toLowerCase()==='false') data[key] = false
             }
             data['RowNo'] = ++i;
             return data;

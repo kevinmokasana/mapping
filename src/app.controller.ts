@@ -79,4 +79,13 @@ export class AppController {
         await this.excelToJson.excelToJson(files['core_channel_attribute_mapping'])
         await this.attributeMappingService.coreChannleAttributeMapping(body.channel_id)    
     }  
+
+    @Post('core-tenant-attribute-mapping')
+    @UseInterceptors(FileFieldsInterceptor([
+        { name: 'core_tenant_attribute_mapping', maxCount: 1 },
+    ]))
+    async coreTenantAttributeMapping(@Body() body:{tenant_id:string, org_id: string}, @UploadedFiles() files: { 'core_tenant_attribute_mapping': Express.Multer.File[]}){
+        await this.excelToJson.excelToJson(files['core_tenant_attribute_mapping'])
+        await this.attributeMappingService.coreTenantAttributeMapping(body.tenant_id, body.org_id)    
+    }  
 }

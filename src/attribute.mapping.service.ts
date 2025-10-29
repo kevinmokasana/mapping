@@ -51,7 +51,11 @@ export class AttributeMappingService {
         })
 
         let entityManager = this.dataSource.createEntityManager()
+        let  i =0 
         for(let row of data){
+            console.log(i);
+            i++;
+            
             const coreAttribute = coreAttributes.find(x=>x.attribute_name===row['Core Attribute Name'])
             const channelAttribute = channelAttributes.find(x=>x.attribute_name===row['Channel Attribute Name'])//row['Channel Attribute Name']
             const coreCategory = coreCategories.find(x=>x.category_path===row['Core Category Path'])
@@ -95,13 +99,13 @@ export class AttributeMappingService {
             // if(channelAssignment===undefined || channelAssignment===null)
             //     errors.push(`Core Assignment ${channelCategory.category_path} <--> ${channelAttribute.attribute_name} does not exist`)
 
-            await entityManager.getRepository(CoreChannelAttributeMappings).save({
+            await entityManager.createQueryBuilder().insert().into(CoreChannelAttributeMappings).values({
                 core_attribute_id:coreAttribute.id,
                 channel_attribute_id: channelAttribute.id,
                 core_category_id: coreCategory.id,
                 channel_category_id:channelCategory.id,
                 channel_id:channelId
-            })
+            }).orIgnore().execute()
         }
         // console.log(failedRows);
         fs.writeFileSync('core_channe_attribute_mapping_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
@@ -110,7 +114,7 @@ export class AttributeMappingService {
     }
 
     async coreTenantAttributeMapping(tenant_id:string, org_id:string){
-        let fileName = `CoreChannelAttributeMapping.json`
+        let fileName = `CoreTenantAttributeMapping.json`
         let data:BulkUploadAttributeMappingJSONData[] = JSON.parse(fs.readFileSync(fileName).toString())
         // let data = jsonData
         
@@ -149,8 +153,10 @@ export class AttributeMappingService {
         })
 
         let entityManager = this.dataSource.createEntityManager()
-
+        let  i =0
         for(let row of data){
+            console.log(i);
+            i++;
             
             const coreAttribute = coreAttributes.find(x=>x.attribute_name===row['Core Attribute Name'])
             const tenantAttribute = tenantAttributes.find(x=>x.attribute_name===row['Tenant Attribute Name'])//row['Channel Attribute Name']
@@ -196,16 +202,25 @@ export class AttributeMappingService {
             // if(tenantAssignment===undefined || tenantAssignment===null)
             //     errors.push(`Tenant Assignment ${tenantCategory.path} <--> ${tenantAttribute.attribute_name} does not exist`)
 
-            await entityManager.getRepository(CoreTenantAttributeMappings).save({
+            await entityManager
+            .createQueryBuilder()
+            .insert()
+            .into(CoreTenantAttributeMappings)
+            .values({
                 core_attribute_id:coreAttribute.id,
-                channel_attribute_id: tenantAttribute.id,
+                tenant_attribute_id: tenantAttribute.id,
                 core_category_id: coreCategory.id,
-                channel_category_id:tenantCategory.id,
+                tenant_category_id:tenantCategory.id,
                 tenant_id:tenant_id,
                 org_id:org_id
             })
+            .orIgnore()
+            .execute()
 
         }
+        
+        fs.writeFileSync('core_tenant_attribute_mapping_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
+        console.log("JSON file created successfully!");
 
 
     }

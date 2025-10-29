@@ -900,12 +900,6 @@ export class ChannelAttribute {
     @Column({nullable: true, name:"reference_attribute_id"})
     reference_attribute_id: number;
 
-    @Column({nullable: true, name:"quantifier_master_id"})
-    quantifier_master_id: number;
-
-    @Column({nullable: true, name:"quantifier_attribute_id"})
-    quantifier_attribute_id: number;
-
     @Column()
     status: boolean;
 

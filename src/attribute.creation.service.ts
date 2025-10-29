@@ -17,7 +17,7 @@ export class AttributeCreation {
 
    async bulkUploadAttribute(type:`Core`|`Channel`, channelId?:number){
     try{
-        let fileName = `CoreAttribute.json`
+        let fileName = type===`Core`?`CoreAttribute.json`:`ChannelAttribute.json`
         let jsonData:BulkUploadAttributeJSONData[] = JSON.parse(fs.readFileSync(fileName).toString())
         let data = jsonData
         const failedRows: any[] = [];
@@ -95,37 +95,39 @@ export class AttributeCreation {
                   }
           
                   // Step 3: Insert Attribute
-                  // await entityManager.getRepository(ReferenceAttributes).save({
-                  //   attribute_db_name: row.attribute_db_name,
-                  //   attribute_name: row.attribute_name,
-                  //   short_name: row.attribute_name,
-                  //   display_name: row.attribute_name,
-                  //   label_description: row.label_description ?? null,
-                  //   attribute_type: row.attribute_type,
-                  //   attribute_data_type: row.attribute_data_type,
-                  //   length: row.length,
-                  //   mandatory: row.mandatory,
-                  //   filter: row.filter,
-                  //   editable: row.editable,
-                  //   visibility: row.visibility,
-                  //   searchable: row.searchable,
-                  //   constraint: row.constraint,
-                  //   reference_master_id: referenceMasterId,
-                  //   reference_attribute_id: referenceAttributeId,
-                  //   status: row.status,
-                  //   created_by: 'Admin',
-                  //   updated_by: 'Admin',
-                  //   ...(type === 'Core' ? {} : { channel_id: channelId })
-                  // });
+                  await entityManager.getRepository(Attribute).save({
+                    attribute_db_name: row.attribute_db_name,
+                    attribute_name: row.attribute_name,
+                    short_name: row.attribute_name,
+                    display_name: row.attribute_name,
+                    label_description: row.label_description ?? null,
+                    attribute_type: row.attribute_type,
+                    attribute_data_type: row.attribute_data_type,
+                    length: row.length,
+                    mandatory: row.mandatory,
+                    filter: row.filter,
+                    editable: row.editable,
+                    visibility: row.visibility,
+                    searchable: row.searchable,
+                    constraint: row.constraint,
+                    reference_master_id: referenceMasterId,
+                    reference_attribute_id: referenceAttributeId,
+                    status: true,
+                    created_by: 'Admin',
+                    updated_by: 'Admin',
+                    ...(type === 'Core' ? {} : { channel_id: channelId })
+                  });
                 } catch (err) {
                   failedRows.push({ ...row, error: err.message });
                 }
               }
           
               if (failedRows.length > 0) {
+                fs.writeFileSync('attribute_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
+                console.log("JSON file created successfully!");
                 return { message: 'Some rows failed', failed: failedRows };
               }
-          
+              
               return { message: 'All attributes processed successfully' };
         })
     } catch (err) {
