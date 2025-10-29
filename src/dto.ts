@@ -31,10 +31,10 @@ export class BulkUploadAttributeMappingJSONData{
 }
 
 export class BulkUploadAttributeJSONData{
-    'attribute_db_name':string
     'attribute_name':string
     'attribute_type':string
     'attribute_data_type':string
+    'short_name':string
     'length':number
     'mandatory':boolean
     'unique':boolean
@@ -47,5 +47,11 @@ export class BulkUploadAttributeJSONData{
     'reference_master_name':string
     'reference_attribute_name':string
     'status':boolean
+}
+
+export class BulkUploadLovJSONData{
+    'Category Path':string
+    'Attribute Name':string
+    'Reference Value':string
 }
 

@@ -644,9 +644,6 @@ export class CoreAttribute {
     @Column({name :"attribute_name"})
     attribute_name: string;
 
-    @Column({name:"short_name", nullable: true})
-    short_name: string;
-
     @Column({name:"display_name"})
     display_name: string;
 
@@ -665,35 +662,8 @@ export class CoreAttribute {
     @Column()
     mandatory: boolean;
 
-    @Column({ default :false, nullable: true })
-    filter: boolean;
-
-    @Column({default: true})
-    editable: boolean;
-
-    @Column({default: true})
-    visibility: boolean;
-
-    @Column({default: true})
-    searchable: boolean;
-
     @Column({ default :null, nullable: true })
     constraint: boolean;
-
-    @Column({nullable: true, name:"attribute_group_id"})
-    attribute_group_id: number;
-
-    @Column({nullable: true, name:"reference_master_id"})
-    reference_master_id: number;
-
-    @Column({nullable: true, name:"reference_attribute_id"})
-    reference_attribute_id: number;
-
-    @Column({nullable: true, name:"quantifier_master_id"})
-    quantifier_master_id: number;
-
-    @Column({nullable: true, name:"quantifier_attribute_id"})
-    quantifier_attribute_id: number;
 
     @Column()
     status: boolean;
@@ -716,6 +686,55 @@ export class CoreAttribute {
     @Column({name:"deleted_by",  nullable:true})
     deleted_by: string;
 
+}
+
+@Entity()
+export class ChannelReferenceValues {
+    @PrimaryGeneratedColumn()
+    rmdm_id:number
+
+    @Column()
+    value:string
+
+    @Column()
+    attribute_id:number
+
+    @Column()
+    category_id:number
+}
+
+@Entity()
+export class CoreReferenceValues {
+
+    @PrimaryGeneratedColumn()
+    rmdm_id: number;
+
+    @Column()
+    value:string
+
+    @Column()
+    attribute_id:number
+
+    @Column({default:true})
+    status: boolean;
+
+    @Column({ name:"created_by",nullable: true })
+    created_by: string;
+
+    @Column({name:"updated_by",nullable: true})
+    updated_by: string;
+
+    @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)" })
+    public created_at: Date;
+
+    @UpdateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)", onUpdate: "CURRENT_TIMESTAMP(6)" })
+    public updated_at: Date;
+
+    @DeleteDateColumn({ type: "timestamptz",  nullable:true})
+    deleted_at: Date
+
+    @Column({name:"deleted_by",  nullable:true})
+    deleted_by: string;
 }
 
 @Entity("core_reference_masters")

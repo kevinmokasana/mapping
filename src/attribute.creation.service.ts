@@ -26,6 +26,7 @@ export class AttributeCreation {
         let ReferenceAttributes = type===`Core` ? CoreReferenceAttributes : ChannelReferenceAttributes
         await this.dataSource.transaction(async (entityManager) => {
             for (const row of data) {
+                console.log(row)
                 try {
                   // 🔍 Step 0: Check if attribute already exists
                   const existingAttr = await entityManager.getRepository(Attribute).findOne({
@@ -93,10 +94,10 @@ export class AttributeCreation {
                     }
                     referenceAttributeId = refAttr.id;
                   }
-          
+                  console.log(row.attribute_name)
                   // Step 3: Insert Attribute
                   await entityManager.getRepository(Attribute).save({
-                    attribute_db_name: row.attribute_db_name,
+                    attribute_db_name: row.attribute_name,
                     attribute_name: row.attribute_name,
                     short_name: row.attribute_name,
                     display_name: row.attribute_name,
@@ -120,8 +121,9 @@ export class AttributeCreation {
                 } catch (err) {
                   failedRows.push({ ...row, error: err.message });
                 }
-              }
-          
+                }
+              });
+    
               if (failedRows.length > 0) {
                 fs.writeFileSync('attribute_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
                 console.log("JSON file created successfully!");
@@ -129,7 +131,7 @@ export class AttributeCreation {
               }
               
               return { message: 'All attributes processed successfully' };
-        })
+      
     } catch (err) {
         console.log(err.message);
         throw new HttpException(`Something went wrong in bulk upload attribute service`, 500);
