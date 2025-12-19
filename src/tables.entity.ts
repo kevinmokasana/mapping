@@ -688,22 +688,7 @@ export class CoreAttribute {
 
 }
 
-@Entity()
-export class ChannelReferenceValues {
-    @PrimaryGeneratedColumn()
-    rmdm_id:number
-
-    @Column()
-    value:string
-
-    @Column()
-    attribute_id:number
-
-    @Column()
-    category_id:number
-}
-
-@Entity()
+@Entity('core_reference_values')
 export class CoreReferenceValues {
 
     @PrimaryGeneratedColumn()
@@ -737,7 +722,7 @@ export class CoreReferenceValues {
     deleted_by: string;
 }
 
-@Entity("core_reference_masters")
+@Entity('core_reference_masters')
 export class CoreReferenceMaster {
     @PrimaryGeneratedColumn()
     id: number;
@@ -1122,7 +1107,7 @@ export class TenantCategoryAssignment{
     org_id:string
 }
 
-@Entity()
+@Entity('core_channel_reference_data_mapping')
 export class CoreChannelReferenceDataMapping {
 
     @PrimaryColumn()
@@ -1136,9 +1121,6 @@ export class CoreChannelReferenceDataMapping {
     
     @PrimaryColumn()
     channel_attribute_id: number
-    
-    @PrimaryColumn()
-    core_category_id: number
 
     @PrimaryColumn()
     channel_category_id:number
@@ -1147,7 +1129,7 @@ export class CoreChannelReferenceDataMapping {
     channel_id:number
 }
 
-@Entity()
+@Entity('core_tenant_reference_data_mapping')
 export class CoreTenantReferenceDataMapping {
 
     @PrimaryColumn()
@@ -1161,9 +1143,6 @@ export class CoreTenantReferenceDataMapping {
     
     @PrimaryColumn()
     tenant_attribute_id: number
-    
-    @PrimaryColumn()
-    core_category_id: number
 
     @PrimaryColumn()
     tenant_category_id:number
@@ -1175,7 +1154,106 @@ export class CoreTenantReferenceDataMapping {
     org_id:string
 }
 
-@Entity()
-export class CoreRefereneData {
+@Entity('channel_reference_values')
+export class ChannelRefereneData {
+    @PrimaryGeneratedColumn()
+    rmdm_id:number
+
+    @Column()
+    value:string
     
+    @Column()
+    attribute_id:number
+
+    @Column()
+    category_id:number
+
+    @Column()
+    channel_id:number
 }
+
+@Entity('core_reference_values')
+export class CoreRefereneData {
+    @PrimaryGeneratedColumn()
+    rmdm_id:number
+
+    @Column()
+    value:string
+    
+    @Column()
+    attribute_id:number
+
+    @Column({default:true})
+    status: boolean
+
+    @Column({ name:"created_by",nullable: true })
+    created_by: string;
+
+    @Column({name:"updated_by",nullable: true})
+    updated_by: string;
+
+    @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)" })
+    public created_at: Date;
+
+    @UpdateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)", onUpdate: "CURRENT_TIMESTAMP(6)" })
+    public updated_at: Date;
+
+    @DeleteDateColumn({ type: "timestamptz",  nullable:true})
+    deleted_at: Date
+
+    @Column({name:"deleted_by",  nullable:true})
+    deleted_by: string;
+}
+
+@Entity('reference_master_data')
+export class ReferenceMasterData {
+    @PrimaryColumn()
+    rmdm_id: number;
+    
+    @PrimaryColumn()
+    rm_id: number;
+
+    @PrimaryColumn()
+    ra_id: number;
+
+    @Column({ nullable: true })
+    value: string;
+
+    @PrimaryColumn({ name: 'tenant_id' })
+    tenant_id: string;
+    
+    @PrimaryColumn({ name: 'org_id' })
+    org_id: string; 
+
+    @Column({ default: true })
+    status: boolean;
+
+    @Column({ nullable: true })
+    listing_status: string;
+
+    @Column({ nullable: true })
+    error_message: string;
+
+    @Column({ name: 'created_by', nullable: true })
+    created_by: string;
+
+    @Column({ name: 'updated_by', nullable: true })
+    updated_by: string;
+
+    @CreateDateColumn({
+        type: 'timestamp',
+        default: () => 'CURRENT_TIMESTAMP(6)',
+        name: 'created_at',
+    })
+    public created_at: Date;
+
+    @Column({ name: 'updated_at', nullable: true })
+    public updated_at: Date;
+
+    @DeleteDateColumn({ type: 'timestamptz', nullable: true })
+    deleted_at: Date;
+
+    @Column({ name: 'deleted_by', nullable: true })
+    deleted_by: string;
+}
+

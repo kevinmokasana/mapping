@@ -34,66 +34,66 @@ export class AttributeCreation {
                   });
           
                   if (existingAttr) {
-                    failedRows.push({
-                      ...row,
-                      error: `Attribute "${row.attribute_name}" already exists`,
-                    });
+                    // failedRows.push({
+                    //   ...row,
+                    //   error: `Attribute "${row.attribute_name}" already exists`,
+                    // });
                     continue; // skip to next row
                   }
                   
                   let referenceMasterId: number = null;
                   let referenceAttributeId: number = null;
           
-                  if (row.constraint) {
-                    // Step 1: Find or create Reference Master
-                    let master = await entityManager.getRepository(ReferenceMaster).findOne({
-                      where: { master_entity_name: row.reference_master_name, ...(type === 'Core' ? {} : { channel_id: channelId }) },
-                    });
+                  // if (row.constraint) {
+                  //   // Step 1: Find or create Reference Master
+                  //   let master = await entityManager.getRepository(ReferenceMaster).findOne({
+                  //     where: { master_entity_name: row.reference_master_name, ...(type === 'Core' ? {} : { channel_id: channelId }) },
+                  //   });
           
-                    if (!master) {
-                      master = await entityManager.getRepository(ReferenceMaster).save({
-                        master_entity_name: row.reference_master_name,
-                        master_entity_type: 'reference_master',
-                        status: true,
-                        created_by: 'Admin',
-                        updated_by: 'Admin',
-                        ...(type === 'Core' ? {} : { channel_id: channelId })
-                      });
-                    }
-                    referenceMasterId = master.id;
+                  //   if (!master) {
+                  //     master = await entityManager.getRepository(ReferenceMaster).save({
+                  //       master_entity_name: row.reference_master_name,
+                  //       master_entity_type: 'reference_master',
+                  //       status: true,
+                  //       created_by: 'Admin',
+                  //       updated_by: 'Admin',
+                  //       ...(type === 'Core' ? {} : { channel_id: channelId })
+                  //     });
+                  //   }
+                  //   referenceMasterId = master.id;
           
-                    // Step 2: Find or create Reference Attribute
-                    let refAttr = await entityManager.getRepository(ReferenceAttributes).findOne({
-                      where: {
-                        attribute_name: row.reference_attribute_name,
-                        reference_master_id: referenceMasterId,
-                        ...(type === 'Core' ? {} : { channel_id: channelId })
-                      },
-                    });
+                  //   // Step 2: Find or create Reference Attribute
+                  //   let refAttr = await entityManager.getRepository(ReferenceAttributes).findOne({
+                  //     where: {
+                  //       attribute_name: row.reference_attribute_name,
+                  //       reference_master_id: referenceMasterId,
+                  //       ...(type === 'Core' ? {} : { channel_id: channelId })
+                  //     },
+                  //   });
           
-                    if (!refAttr) {
-                      refAttr = await entityManager.getRepository(ReferenceAttributes).save({
-                        attribute_db_name: row.reference_attribute_name,
-                        attribute_name: row.reference_attribute_name,
-                        short_name: row.reference_attribute_name,
-                        display_name: row.reference_attribute_name,
-                        attribute_type: row.attribute_type,
-                        length: row.length,
-                        mandatory: row.mandatory,
-                        unique: row.unique,
-                        filter: row.filter,
-                        editable: row.editable,
-                        visibility: row.visibility,
-                        searchable: row.searchable,
-                        reference_master_id: referenceMasterId,
-                        status: true,
-                        created_by: 'Admin',
-                        updated_by: 'Admin',
-                        ...(type === 'Core' ? {} : { channel_id: channelId })
-                      });
-                    }
-                    referenceAttributeId = refAttr.id;
-                  }
+                  //   if (!refAttr) {
+                  //     refAttr = await entityManager.getRepository(ReferenceAttributes).save({
+                  //       attribute_db_name: row.reference_attribute_name,
+                  //       attribute_name: row.reference_attribute_name,
+                  //       short_name: row.reference_attribute_name,
+                  //       display_name: row.reference_attribute_name,
+                  //       attribute_type: row.attribute_type,
+                  //       length: row.length,
+                  //       mandatory: row.mandatory,
+                  //       unique: row.unique,
+                  //       filter: row.filter,
+                  //       editable: row.editable,
+                  //       visibility: row.visibility,
+                  //       searchable: row.searchable,
+                  //       reference_master_id: referenceMasterId,
+                  //       status: true,
+                  //       created_by: 'Admin',
+                  //       updated_by: 'Admin',
+                  //       ...(type === 'Core' ? {} : { channel_id: channelId })
+                  //     });
+                  //   }
+                  //   referenceAttributeId = refAttr.id;
+                  // }
                   console.log(row.attribute_name)
                   // Step 3: Insert Attribute
                   await entityManager.getRepository(Attribute).save({

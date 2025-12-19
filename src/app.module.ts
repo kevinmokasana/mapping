@@ -9,6 +9,8 @@ import * as dotenv from 'dotenv'
 import { CategoryMappingService } from './category.mapping.service';
 import { AttributeCreation } from './attribute.creation.service';
 import { AttributeMappingService } from './attribute.mapping.service';
+import { LovCreation } from './lov.creation.service';
+import { LovMappingService } from './lov.mapping.service';
 dotenv.config()
 @Module({
   imports: [
@@ -16,6 +18,6 @@ dotenv.config()
     TypeOrmModule.forRoot({...ReadDatabaseConfig, name: process.env.READ_DB_NAME}),
   ],
   controllers: [AppController],
-  providers: [ExcelToJson, CategoryCreation, CategoryMappingService, AttributeCreation, AttributeMappingService],
+  providers: [ExcelToJson, CategoryCreation, CategoryMappingService, AttributeCreation, AttributeMappingService, LovCreation, LovMappingService],
 })
 export class AppModule {}

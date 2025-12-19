@@ -103,6 +103,9 @@ export class CategoryCreation {
 							x.parent_id = ids[ids.length - 1]
 							x.depth = j
 							x['lang_code'] = 'en'
+							if(type!='core'){
+								x['channel_id'] = channelId
+							}
 							if (j === category2DArrayWithSubArraysRemoved[i].length - 1) x.is_leaf = true
 							else x.is_leaf = false
 							let siblings: CoreCategory[] | ChannelCategory[]
@@ -114,6 +117,8 @@ export class CategoryCreation {
 							if (x.parent_id != null)
                                 await this.updateIsLeafToFalse(x.parent_id, type, entityManager, channelId)
 							const categoryExists = siblings.find(x => x.category_name === category2DArrayWithSubArraysRemoved[i][j].trim())
+							console.log(categoryExists);
+							
 							const saved = (categoryExists === undefined) ? await this.saveCategory(x, entityManager) : categoryExists
 							if (saved['status'] === 'error')
 								throw new HttpException(saved['message'], 201)
