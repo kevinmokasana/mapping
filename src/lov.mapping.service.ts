@@ -206,7 +206,7 @@ export class LovMappingService {
             .values({
                 core_rmdm_id:core_rmdm_id.rmdm_id,
                 channel_rmdm_id:channel_rmdm_id.rmdm_id,
-                core_attribute_id:channelAttribute.id,
+                core_attribute_id:coreAttribute.id,
                 channel_attribute_id:channelAttribute.id,
                 channel_category_id:channelCategory.id,
                 channel_id:channelId
