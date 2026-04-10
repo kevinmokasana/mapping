@@ -10,6 +10,9 @@ import { LovMappingService } from './lov.mapping.service';
 import { Response } from 'express';
 // import { channel } from 'diagnostics_channel';
 
+import { channel } from 'diagnostics_channel';
+import { NewMappingService } from './new.mapping.service'
+import { LOVExtractor } from './lov.extractor';
 
 @Controller()
 export class AppController {
@@ -21,7 +24,9 @@ export class AppController {
         private readonly attributeMappingService: AttributeMappingService,
         private readonly lovCreation: LovCreation,
         private readonly lovMappingService: LovMappingService,
-    ) { }
+        private readonly newMappingService:NewMappingService,
+        private readonly lovExtractor:LOVExtractor
+    ) {}
 
     @Post('core-creation')
     @UseInterceptors(FileFieldsInterceptor([
@@ -160,25 +165,33 @@ export class AppController {
     async gettenant(@Body() body: {}) {
         return await this.categoryCreation.getTenants()
     }
-
-    @Get('temp')
-    async temp(@Body() body: {}) {
-        for(let i=0; i<10; i++){
-            console.log(i,'-----------------------------------');
-            //write into text file
-            //wait for 1 sec
-            await new Promise(resolve => setTimeout(resolve, 1000));
-        }
-        return {}
-    }   
     
-    @Get('temp1')
-    async temp1(@Body() body: {}) {
-        for(let i=0; i<10; i++){
-            console.log(i,'-----');
-            //wait for 
-        }
+    @Post('new-mappings')
+    @UseInterceptors(FileFieldsInterceptor([
+        { name: 'files', maxCount: 20 },
+        { name: 'catmap', maxCount: 1 },
+        { name: 'lovmap', maxCount:1}
+    ]))
+    async newMappings(@Body() body, @UploadedFiles() files: { 'files': Express.Multer.File[]}, @UploadedFiles() catmap: { 'catmap': Express.Multer.File[]}
+        ,@UploadedFiles() lovmap: { 'lovmap': Express.Multer.File[]}
+    ){
+        await this.newMappingService.generateMappings(files.files, body.tenant_id, body.org_id, body.marketplace, catmap.catmap, lovmap.lovmap)
+    } 
 
-        return {}
+    @Post('ai-lov')
+    async aiLOV(@Body() body){
+        // await this.newMappingService.fillAbsoluteCommonLovMappings()
+        await this.newMappingService.transferAiLovMappingsToMainLovMappings()
+    } 
+       
+
+    @Post('lov-extract')
+    @UseInterceptors(FileFieldsInterceptor([
+        { name: 'files', maxCount: 20 }
+    ]))
+    async extractLOV(@Body() body, @UploadedFiles() files: { 'files': Express.Multer.File[]}
+    ){
+        await this.lovExtractor.extractLOV(files.files, body.marketplace)
     }  
 }
+

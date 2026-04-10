@@ -110,6 +110,9 @@ export class ExcelToJson {
 
 
 
+        let json
+        
+        
         fs.writeFileSync(excelFileName, file[0].buffer)
         let workbook = new ExcelJS.Workbook()
         await workbook.xlsx.readFile(excelFileName)
@@ -121,6 +124,7 @@ export class ExcelToJson {
             fs.writeFileSync(jsonFile, JSON.stringify(json, null, 2))
         }
         fs.unlinkSync(excelFileName)
+        return json
     }
 
     async sheetToJson({ sheet, headerRowNumber = 1 }) {
