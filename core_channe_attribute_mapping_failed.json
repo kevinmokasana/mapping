@@ -1,0 +1,686 @@
+[
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Backpack",
+    "Channel Category Path": "BACKPACK",
+    "RowNo": 12,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Backpack",
+    "Channel Category Path": "BACKPACK",
+    "RowNo": 13,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Backpack",
+    "Channel Category Path": "BACKPACK",
+    "RowNo": 14,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Backpack",
+    "Channel Category Path": "BACKPACK",
+    "RowNo": 15,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Women/Bra",
+    "Channel Category Path": "BRA",
+    "RowNo": 223,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Women/Bra",
+    "Channel Category Path": "BRA",
+    "RowNo": 224,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Women/Bra",
+    "Channel Category Path": "BRA",
+    "RowNo": 225,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Women/Bra",
+    "Channel Category Path": "BRA",
+    "RowNo": 226,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Men/Jackets and Coats",
+    "Channel Category Path": "COAT",
+    "RowNo": 425,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Women/Jackets and Coats",
+    "Channel Category Path": "COAT",
+    "RowNo": 426,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Men/Jackets and Coats",
+    "Channel Category Path": "COAT",
+    "RowNo": 427,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Women/Jackets and Coats",
+    "Channel Category Path": "COAT",
+    "RowNo": 428,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Men/Jackets and Coats",
+    "Channel Category Path": "COAT",
+    "RowNo": 429,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Women/Jackets and Coats",
+    "Channel Category Path": "COAT",
+    "RowNo": 430,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Men/Jackets and Coats",
+    "Channel Category Path": "COAT",
+    "RowNo": 431,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Women/Jackets and Coats",
+    "Channel Category Path": "COAT",
+    "RowNo": 432,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Hat",
+    "Channel Category Path": "HAT",
+    "RowNo": 823,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Hat",
+    "Channel Category Path": "HAT",
+    "RowNo": 824,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Hat",
+    "Channel Category Path": "HAT",
+    "RowNo": 825,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Hat",
+    "Channel Category Path": "HAT",
+    "RowNo": 826,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Hat",
+    "Channel Category Path": "HAT",
+    "RowNo": 827,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Hat",
+    "Channel Category Path": "HAT",
+    "RowNo": 828,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Hat",
+    "Channel Category Path": "HAT",
+    "RowNo": 829,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Hat",
+    "Channel Category Path": "HAT",
+    "RowNo": 830,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Women/Pants",
+    "Channel Category Path": "PANTS",
+    "RowNo": 1193,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Men/Pants",
+    "Channel Category Path": "PANTS",
+    "RowNo": 1194,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Women/Pants",
+    "Channel Category Path": "PANTS",
+    "RowNo": 1195,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Men/Pants",
+    "Channel Category Path": "PANTS",
+    "RowNo": 1196,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Women/Pants",
+    "Channel Category Path": "PANTS",
+    "RowNo": 1197,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Men/Pants",
+    "Channel Category Path": "PANTS",
+    "RowNo": 1198,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Women/Pants",
+    "Channel Category Path": "PANTS",
+    "RowNo": 1199,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Men/Pants",
+    "Channel Category Path": "PANTS",
+    "RowNo": 1200,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Channel Category Path": "SHIRT",
+    "RowNo": 1575,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Women/Shirt",
+    "Channel Category Path": "SHIRT",
+    "RowNo": 1576,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Channel Category Path": "SHIRT",
+    "RowNo": 1577,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Women/Shirt",
+    "Channel Category Path": "SHIRT",
+    "RowNo": 1578,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Channel Category Path": "SHIRT",
+    "RowNo": 1579,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Women/Shirt",
+    "Channel Category Path": "SHIRT",
+    "RowNo": 1580,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Channel Category Path": "SHIRT",
+    "RowNo": 1581,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Women/Shirt",
+    "Channel Category Path": "SHIRT",
+    "RowNo": 1582,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Men/Shorts",
+    "Channel Category Path": "SHORTS",
+    "RowNo": 1969,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Women/Shorts",
+    "Channel Category Path": "SHORTS",
+    "RowNo": 1970,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Men/Shorts",
+    "Channel Category Path": "SHORTS",
+    "RowNo": 1971,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Women/Shorts",
+    "Channel Category Path": "SHORTS",
+    "RowNo": 1972,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Men/Shorts",
+    "Channel Category Path": "SHORTS",
+    "RowNo": 1973,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Women/Shorts",
+    "Channel Category Path": "SHORTS",
+    "RowNo": 1974,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Men/Shorts",
+    "Channel Category Path": "SHORTS",
+    "RowNo": 1975,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Women/Shorts",
+    "Channel Category Path": "SHORTS",
+    "RowNo": 1976,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Women/Skirt",
+    "Channel Category Path": "SKIRT",
+    "RowNo": 2351,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Women/Skirt",
+    "Channel Category Path": "SKIRT",
+    "RowNo": 2352,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Women/Skirt",
+    "Channel Category Path": "SKIRT",
+    "RowNo": 2353,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Women/Skirt",
+    "Channel Category Path": "SKIRT",
+    "RowNo": 2354,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Channel Category Path": "SOCKS",
+    "RowNo": 2556,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Channel Category Path": "SOCKS",
+    "RowNo": 2557,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Channel Category Path": "SOCKS",
+    "RowNo": 2558,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Channel Category Path": "SOCKS",
+    "RowNo": 2559,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Channel Category Path": "SOCKS",
+    "RowNo": 2560,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Channel Category Path": "SOCKS",
+    "RowNo": 2561,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Channel Category Path": "SOCKS",
+    "RowNo": 2562,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Channel Category Path": "SOCKS",
+    "RowNo": 2563,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Channel Category Path": "SOCKS",
+    "RowNo": 2564,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Channel Category Path": "SOCKS",
+    "RowNo": 2565,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Channel Category Path": "SOCKS",
+    "RowNo": 2566,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Channel Category Path": "SOCKS",
+    "RowNo": 2567,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Men/Sweatshirts and Hoodies",
+    "Channel Category Path": "SWEATSHIRT",
+    "RowNo": 3071,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Women/Sweatshirts and Hoodies",
+    "Channel Category Path": "SWEATSHIRT",
+    "RowNo": 3072,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Men/Sweatshirts and Hoodies",
+    "Channel Category Path": "SWEATSHIRT",
+    "RowNo": 3073,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Women/Sweatshirts and Hoodies",
+    "Channel Category Path": "SWEATSHIRT",
+    "RowNo": 3074,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Men/Sweatshirts and Hoodies",
+    "Channel Category Path": "SWEATSHIRT",
+    "RowNo": 3075,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Women/Sweatshirts and Hoodies",
+    "Channel Category Path": "SWEATSHIRT",
+    "RowNo": 3076,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Men/Sweatshirts and Hoodies",
+    "Channel Category Path": "SWEATSHIRT",
+    "RowNo": 3077,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Women/Sweatshirts and Hoodies",
+    "Channel Category Path": "SWEATSHIRT",
+    "RowNo": 3078,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 2",
+    "Channel Attribute Name": "recommended_browse_nodes#2.value",
+    "Core Category Path": "Apparel/Men/Tracksuit",
+    "Channel Category Path": "TRACK_SUIT",
+    "RowNo": 3401,
+    "error": "Channel Attribute recommended_browse_nodes#2.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 3",
+    "Channel Attribute Name": "recommended_browse_nodes#3.value",
+    "Core Category Path": "Apparel/Men/Tracksuit",
+    "Channel Category Path": "TRACK_SUIT",
+    "RowNo": 3402,
+    "error": "Channel Attribute recommended_browse_nodes#3.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 4",
+    "Channel Attribute Name": "recommended_browse_nodes#4.value",
+    "Core Category Path": "Apparel/Men/Tracksuit",
+    "Channel Category Path": "TRACK_SUIT",
+    "RowNo": 3403,
+    "error": "Channel Attribute recommended_browse_nodes#4.value does not exist"
+  },
+  {
+    "Channel": "Amazon",
+    "Core Attribute Name": "Recommended Browse Nodes 5",
+    "Channel Attribute Name": "recommended_browse_nodes#5.value",
+    "Core Category Path": "Apparel/Men/Tracksuit",
+    "Channel Category Path": "TRACK_SUIT",
+    "RowNo": 3404,
+    "error": "Channel Attribute recommended_browse_nodes#5.value does not exist"
+  }
+]

@@ -1,0 +1,343 @@
+We have developed a PIM System wherein Tenant creates their product catalouge in PIM as a single source of truth.
+We can create
+1.) Categories
+2.) Attributes
+3.) LOVs (List of Values) or Reference Values or Reference Master Data
+4.) Products
+
+Attributes are assigned to Categories
+Attributes can be of following data types
+1. varchar
+2. float
+3. int
+
+Attributes can be mainly of 2 types
+1. textBox
+2. dropdown
+Attributes of dropdown type will have the LOVs attached to it
+
+Tenant can push the catalouge created in PIM to various channels (like Amazon, Flipkart. Myntra etc) integrated wit PIM
+So to convert the data from PIM to Channel we have created a Mapping System wherein the Tenant can map
+1.) Categories
+2.) Attributes
+3.) LOVs 
+of PIM to that of Channels
+
+To Achieve this we have created all the 
+Categories
+Attributes
+LOVs of Channels in PIM in Channel Tables
+
+To prevent repetitive work we have also created "Core" which contains all common 
+Channels, Attributes, LOVs of Multiple Channel as an intermediary Entity for Mapping
+
+What we do is
+Step 1: Map Tenant's Categories, Attributes, LOVs to Core's Categories, Attributes, LOVs (Tenant Wise)
+Step 2: Map Core's Categories, Attributes, LOVs to Channel's Categories, Attributes, LOVs (Channel Wise)
+
+
+Tenant is Uniquely Identified by composite of tenant_id, org_id
+Channel is Uniquely Identified by channel_id
+
+Core Tables
+CREATE TABLE IF NOT EXISTS public.core_categories
+(
+    id integer NOT NULL DEFAULT nextval('core_categories_id_seq'::regclass),
+    category_name character varying COLLATE pg_catalog."default" NOT NULL,
+    parent_id integer,
+    depth integer,
+    is_leaf boolean,
+    category_path character varying COLLATE pg_catalog."default",
+    CONSTRAINT core_categories_pkey PRIMARY KEY (id),
+    CONSTRAINT core_categories_parent_id_fkey FOREIGN KEY (parent_id)
+        REFERENCES public.core_categories (id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+)
+
+CREATE TABLE IF NOT EXISTS public.core_attributes
+(
+    id integer NOT NULL DEFAULT nextval('core_attributes_id_seq'::regclass),
+    attribute_name text COLLATE pg_catalog."default" NOT NULL,
+    attribute_type text COLLATE pg_catalog."default" NOT NULL,
+    attribute_data_type text COLLATE pg_catalog."default" NOT NULL,
+    length integer NOT NULL DEFAULT 100,
+    mandatory boolean NOT NULL,
+    "constraint" boolean,
+    status boolean NOT NULL,
+    CONSTRAINT core_attributes_pkey PRIMARY KEY (id)
+)
+
+CREATE TABLE IF NOT EXISTS public.core_category_attribute_assignment
+(
+    id integer NOT NULL DEFAULT nextval('core_category_assignment_id_seq'::regclass),
+    category_id integer NOT NULL,
+    attribute_id integer NOT NULL,
+    mandatory boolean DEFAULT true,
+    status boolean DEFAULT true,
+    CONSTRAINT core_category_assignment_pkey PRIMARY KEY (id),
+    CONSTRAINT fk_attribute FOREIGN KEY (attribute_id)
+        REFERENCES public.core_attributes (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fk_category FOREIGN KEY (category_id)
+        REFERENCES public.core_categories (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+CREATE TABLE IF NOT EXISTS public.core_reference_values
+(
+    rmdm_id integer NOT NULL DEFAULT nextval('core_reference_values_rmdm_id_seq'::regclass),
+    value character varying COLLATE pg_catalog."default" NOT NULL,
+    attribute_id integer NOT NULL,
+    status boolean NOT NULL DEFAULT true,
+    created_by character varying COLLATE pg_catalog."default",
+    updated_by character varying COLLATE pg_catalog."default",
+    created_at timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp(6) with time zone,
+    updated_at timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp(6) with time zone,
+    deleted_at timestamp with time zone,
+    deleted_by character varying COLLATE pg_catalog."default",
+    CONSTRAINT "PK_7305318bda5cc826b029062a6eb" PRIMARY KEY (rmdm_id)
+)
+
+Channel Tables
+CREATE TABLE IF NOT EXISTS public.channel_categories
+(
+    id integer NOT NULL DEFAULT nextval('channel_categories_id_seq'::regclass),
+    category_name text COLLATE pg_catalog."default" NOT NULL,
+    parent_id integer,
+    depth integer NOT NULL,
+    is_leaf boolean NOT NULL,
+    category_path text COLLATE pg_catalog."default",
+    channel_id integer NOT NULL,
+    CONSTRAINT channel_categories_pkey PRIMARY KEY (id),
+    CONSTRAINT "unique" UNIQUE (id, channel_id),
+    CONSTRAINT channel_categories_parent_id_fkey FOREIGN KEY (parent_id)
+        REFERENCES public.channel_categories (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE CASCADE
+)
+
+CREATE TABLE IF NOT EXISTS public.channel_attributes
+(
+    id integer NOT NULL DEFAULT nextval('channel_attributes_id_seq'::regclass),
+    attribute_name text COLLATE pg_catalog."default" NOT NULL,
+    attribute_type text COLLATE pg_catalog."default" NOT NULL,
+    attribute_data_type text COLLATE pg_catalog."default" NOT NULL,
+    length integer NOT NULL DEFAULT 100,
+    mandatory boolean NOT NULL,
+    "constraint" boolean,
+    status boolean NOT NULL,
+    channel_id integer,
+    CONSTRAINT channel_attributes_pkey PRIMARY KEY (id),
+    CONSTRAINT channel_attributes_attribute_data_type_fkey FOREIGN KEY (attribute_data_type)
+        REFERENCES public.data_types (data_type) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT channel_attributes_attribute_type_fkey FOREIGN KEY (attribute_type)
+        REFERENCES public.types (type) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+CREATE TABLE IF NOT EXISTS public.channel_category_attribute_assignment
+(
+    category_id integer NOT NULL,
+    attribute_id integer NOT NULL,
+    "grouping" boolean,
+    length integer,
+    mandatory boolean DEFAULT true,
+    channel_id integer NOT NULL,
+    CONSTRAINT channel_category_assignment_pkey PRIMARY KEY (category_id, attribute_id, channel_id),
+    CONSTRAINT fk_attribute FOREIGN KEY (attribute_id)
+        REFERENCES public.channel_attributes (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fk_category FOREIGN KEY (category_id)
+        REFERENCES public.channel_categories (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+CREATE TABLE IF NOT EXISTS public.channel_reference_values
+(
+    rmdm_id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    value character varying COLLATE pg_catalog."default" NOT NULL,
+    attribute_id integer NOT NULL,
+    category_id integer NOT NULL,
+    channel_id integer,
+    CONSTRAINT "PK_27743a216f5678eb49e45af3a5f" PRIMARY KEY (rmdm_id)
+)
+
+Tenant Tables
+CREATE TABLE IF NOT EXISTS public.tenant_category_paths
+(
+    id integer NOT NULL,
+    tenant_id character varying COLLATE pg_catalog."default" NOT NULL,
+    org_id character varying COLLATE pg_catalog."default" NOT NULL,
+    path character varying COLLATE pg_catalog."default" NOT NULL,
+    id_path integer[] NOT NULL,
+    CONSTRAINT "PK_e8bf5cb6e55551a7ed829ae810e" PRIMARY KEY (id, tenant_id, org_id)
+)
+
+CREATE TABLE IF NOT EXISTS public.attributes
+(
+    id integer NOT NULL DEFAULT nextval('attributes_id_seq'::regclass),
+    tenant_id character varying COLLATE pg_catalog."default" NOT NULL,
+    org_id character varying COLLATE pg_catalog."default" NOT NULL,
+    attribute_name character varying COLLATE pg_catalog."default" NOT NULL,
+    attribute_type character varying COLLATE pg_catalog."default" NOT NULL,
+    attribute_data_type character varying COLLATE pg_catalog."default" NOT NULL,
+    length integer NOT NULL DEFAULT 100,
+    mandatory boolean NOT NULL,
+    "constraint" boolean,
+    reference_master_id integer,
+    reference_attribute_id integer,
+    status boolean NOT NULL,
+    CONSTRAINT "PK_2e3d6b3a417f355e4eeee8d464e" PRIMARY KEY (id, tenant_id, org_id),
+    CONSTRAINT "FK_06d826bf5f8f4c3cf18bedda4d9" FOREIGN KEY (reference_master_id, reference_attribute_id, tenant_id, org_id)
+        REFERENCES public.reference_master_data (rm_id, ra_id, tenant_id, org_id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+)
+
+CREATE TABLE IF NOT EXISTS public.category_assignment
+(
+    category_id integer NOT NULL,
+    attribute_id integer NOT NULL,
+    tenant_id character varying COLLATE pg_catalog."default" NOT NULL,
+    org_id character varying COLLATE pg_catalog."default" NOT NULL,
+    length integer,
+    mandatory boolean NOT NULL DEFAULT true,
+    id integer NOT NULL DEFAULT nextval('category_assignment_id_seq'::regclass),
+)
+
+CREATE TABLE IF NOT EXISTS public.reference_master_data
+(
+    rmdm_id integer NOT NULL,
+    rm_id integer NOT NULL,
+    ra_id integer NOT NULL,
+    value character varying COLLATE pg_catalog."default",
+    tenant_id character varying COLLATE pg_catalog."default" NOT NULL,
+    org_id character varying COLLATE pg_catalog."default" NOT NULL,
+    status boolean NOT NULL DEFAULT true,
+    CONSTRAINT "PK_e415a7ddca762832ed7a57e7558" PRIMARY KEY (rmdm_id, rm_id, ra_id, tenant_id, org_id)
+)
+
+Category Mappings
+CREATE TABLE IF NOT EXISTS public.core_tenant_category_mappings
+(
+    tenant_category_id integer NOT NULL,
+    core_category_id integer NOT NULL,
+    tenant_id character varying COLLATE pg_catalog."default" NOT NULL,
+    org_id character varying COLLATE pg_catalog."default" NOT NULL
+)
+
+CREATE TABLE IF NOT EXISTS public.core_channel_category_mappings
+(
+    core_category_id integer NOT NULL,
+    channel_category_id integer NOT NULL,
+    channel_id integer NOT NULL,
+    CONSTRAINT core_channel_category_mappings_pkey PRIMARY KEY (core_category_id, channel_category_id, channel_id),
+    CONSTRAINT fk_channel_categories FOREIGN KEY (channel_category_id, channel_id)
+        REFERENCES public.channel_categories (id, channel_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fk_core_categories FOREIGN KEY (core_category_id)
+        REFERENCES public.core_categories (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+Attribute Mappings
+CREATE TABLE IF NOT EXISTS public.core_tenant_attribute_mappings
+(
+    tenant_attribute_id integer NOT NULL,
+    core_attribute_id integer NOT NULL,
+    tenant_category_id integer NOT NULL,
+    core_category_id integer NOT NULL,
+    tenant_id character varying COLLATE pg_catalog."default" NOT NULL,
+    org_id character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT core_tenant_attribute_mappings_pkey PRIMARY KEY (tenant_attribute_id, core_attribute_id, tenant_category_id, core_category_id, tenant_id, org_id)
+)
+
+CREATE TABLE IF NOT EXISTS public.core_channel_attribute_mappings
+(
+    core_attribute_id integer NOT NULL,
+    channel_attribute_id integer NOT NULL,
+    core_category_id integer NOT NULL,
+    channel_category_id integer NOT NULL,
+    channel_id integer NOT NULL,
+    CONSTRAINT core_channel_attribute_mappings_pkey PRIMARY KEY (channel_id, channel_category_id, core_category_id, channel_attribute_id, core_attribute_id)
+)
+
+LOV/Reference Data Mappings
+CREATE TABLE IF NOT EXISTS public.core_tenant_reference_data_mapping
+(
+    core_rmdm_id integer NOT NULL,
+    tenant_rmdm_id integer NOT NULL,
+    core_attribute_id integer NOT NULL,
+    tenant_attribute_id integer NOT NULL,
+    tenant_category_id integer NOT NULL,
+    tenant_id character varying COLLATE pg_catalog."default" NOT NULL,
+    org_id character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT primary_key PRIMARY KEY (core_rmdm_id, tenant_rmdm_id, core_attribute_id, tenant_attribute_id, tenant_category_id, tenant_id, org_id)
+)
+
+CREATE TABLE IF NOT EXISTS public.core_channel_reference_data_mapping
+(
+    core_rmdm_id integer NOT NULL,
+    channel_rmdm_id integer NOT NULL,
+    core_attribute_id integer NOT NULL,
+    channel_attribute_id integer NOT NULL,
+    channel_category_id integer NOT NULL,
+    channel_id integer NOT NULL,
+    CONSTRAINT "PK_946355717032c1ae46b88eeacca" PRIMARY KEY (core_rmdm_id, channel_rmdm_id, core_attribute_id, channel_attribute_id, channel_category_id, channel_id)
+)
+
+Mapping Safeguards
+Tenant -> Core, Many to One Mapping should not be possible in any Case of Categories, Attributes or LOV Mappings for a particular tenant, but vice versa can be possible
+Core -> Channel, Many to One Mapping should not be possible in any Case of Categories, Attributes or LOV Mappings for a particular channel, but vice versa can be possible
+
+Based on this information create a Fullstack Application with
+Frontend in ReactJS  
+Backend in NodeJS
+TypeORM as ORM
+Postgres as Database
+
+Also please use raw_queries as long as possible.
+There is no need to check for security like SQL injection, Authentication, Authorization as it is for my personal use
+
+Category Mapping Page
+1.) We can see Tenant -> Core -> Channel Category Mappings in Single page.
+2.) Tenant Category is Primary Column
+2.) We can edit the Category mappings
+3.) We can have filters on Tenant (Single) and Channel (Single)
+
+Attribute Mapping Page
+1.) We can see Channel -> Core -> Tenant Attribute Mappings in Single page.
+2.) Channel Attributes is Primary column
+3.) We can edit the Attribute mappings
+4.) We can have filters on Tenant (Single), Channel (Single), Channel Category (Single), Tenant Category (Multi Select)
+In Filters of Attribute Mapping
+User should first select Channel Category, then in tenant category filters, only those tenant categories should come that are mapped to the selected channel category
+Now for multiple Categories of a single tenant we can have same attributes and even same mappings for Channel -> Core -> Tenant
+So when multiple categories are selected, we should be able to see mappings in Groups
+1.) Common mappings i.e. Mappings that are common for Channel and Tenant Categories
+2.) Mappings that are not common should be shown in groups of Channel Category - Tenant Categories
+When we edit Common mappings, it should be reflected for all categories  
+
+LOV Mapping Page
+1.) We can see Tenant -> Core -> Channel LOV Mappings in Single page.
+2.) Tenant LOVs are the primary column
+3.) We can edit the LOV mappings
+4.) We can have filters on Tenant (Single), Channel (Single), Channel Category (Single), Tenant Categories (Multiple), Channel Attribute (Single), Tenant Attribute (Multiple)
+In the Filters of LOV Mapping
+
+User First Selects Tenant, Channel, Channel Category
+Then in Tenant category filter, only those Tenant categories should come that are mapped to the selected channel category
+User Then Selects Channel Attribute
+After that in Tenant Attribute Filter, only those Tenant Attributes that are mapped to the selected Channel Attribute for those Tenant <-> Channel Category Mapping
+Now for a single Channel LOV, Attribute, Category Combination, multiple Tenant LOV, Attribute, Category can be mapped
+So according to Filters Selected, we should be able to see mappings in Groups

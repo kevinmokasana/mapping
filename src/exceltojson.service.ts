@@ -9,7 +9,7 @@ export class ExcelToJson {
     async excelToJson(file:Express.Multer.File[]){
         // console.log(file)
         const excelFileName = file[0].originalname
-        
+        let json
         
         
         fs.writeFileSync(excelFileName, file[0].buffer)
@@ -18,11 +18,12 @@ export class ExcelToJson {
 
         for(let sheet of workbook.worksheets){
             const headerRowNumber = 1
-            const json = await this.sheetToJson({ sheet, headerRowNumber})
+            json = await this.sheetToJson({ sheet, headerRowNumber})
             const jsonFile = sheet.name + `.json`
             fs.writeFileSync(jsonFile, JSON.stringify(json, null,2))
         }
         fs.unlinkSync(excelFileName)
+        return json
     }
 
     async sheetToJson({ sheet, headerRowNumber = 1 }) {

@@ -6,6 +6,7 @@ import { DataSource, EntityManager, In } from 'typeorm';
 import { Attribute, ChannelAttribute, ChannelCategory, ChannelReferenceAttributes, ChannelReferenceMaster, ChannelRefereneData, CoreAttribute, CoreCategory, CoreChannelReferenceDataMapping, CoreReferenceAttributes, CoreReferenceMaster, CoreRefereneData, CoreTenantReferenceDataMapping, ReferenceMasterData, TenantCategoryPath } from './tables.entity';
 import * as dotenv from 'dotenv'
 import { WRITE_DB_NAME } from './app.constants';
+import { ExcelToJson } from './exceltojson.service';
 // import { DataSource, EntityManager, In } from 'typeorm'
 
 dotenv.config()
@@ -13,7 +14,8 @@ dotenv.config()
 export class LovMappingService {
 
     constructor(
-        @InjectDataSource(WRITE_DB_NAME) private dataSource:DataSource
+        @InjectDataSource(WRITE_DB_NAME) private dataSource:DataSource,
+        private readonly excelToJson:ExcelToJson
     ){}
 
     async coreTenantLovMapping(tenantId:string, orgId:string){
@@ -49,8 +51,11 @@ export class LovMappingService {
         })
 
         let entityManager = this.dataSource.createEntityManager()
-
+        let i = 0
         for(let row of data){
+            i++
+            if(i<10000) continue
+            console.log(i)
             const tenantCategory = tenantCategories.find(x=>x.path===row['Tenant Category Path'])
             const coreAttribute = coreAttributes.find(x=>x.attribute_name===row['Core Attribute Name'])
             const tenantAttribute = TenantAttributes.find(x=>x.attribute_name===row['Tenant Attribute Name'])//row['Channel Attribute Name']

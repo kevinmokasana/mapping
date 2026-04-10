@@ -1,0 +1,4009 @@
+[
+  {
+    "Seller SKU ID": "Listing Status",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Other Display Features",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 2
+  },
+  {
+    "Seller SKU ID": "MRP (INR)",
+    "Text - limited to 64 characters (including spaces)": "Single - Positive_integer",
+    "Display Name*": "IS Digitally Delivered",
+    "Type": "Single - Boolean",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 3
+  },
+  {
+    "Seller SKU ID": "Your selling price (INR)",
+    "Text - limited to 64 characters (including spaces)": "Single - Positive_integer",
+    "Display Name*": "Operating System",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 4
+  },
+  {
+    "Seller SKU ID": "Fullfilment by",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Memory Card Type",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 5
+  },
+  {
+    "Seller SKU ID": "Procurement type",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Touchscreen",
+    "Type": "Single - Boolean\nUsed For: Refiner, Compare",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 6
+  },
+  {
+    "Seller SKU ID": "Procurement SLA (DAY)",
+    "Text - limited to 64 characters (including spaces)": "Single - Number",
+    "Display Name*": "Recommended NVIDIA Graphics",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 7
+  },
+  {
+    "Seller SKU ID": "Stock",
+    "Text - limited to 64 characters (including spaces)": "Single - Non_negative_integer",
+    "Display Name*": "Gamepad Supported",
+    "Type": "Single - Boolean\nUsed For: Compare",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 8
+  },
+  {
+    "Seller SKU ID": "Shipping provider",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Controller Ports",
+    "Type": "Single - Number",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 9
+  },
+  {
+    "Seller SKU ID": "Local handling fee (INR)",
+    "Text - limited to 64 characters (including spaces)": "Single - Non_negative_integer",
+    "Display Name*": "Publisher",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 10
+  },
+  {
+    "Seller SKU ID": "Zonal handling fee (INR)",
+    "Text - limited to 64 characters (including spaces)": "Single - Non_negative_integer",
+    "Display Name*": "Resolution",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 11
+  },
+  {
+    "Seller SKU ID": "National handling fee (INR)",
+    "Text - limited to 64 characters (including spaces)": "Single - Non_negative_integer",
+    "Display Name*": "Height (mm)",
+    "Type": "Single - Decimal",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Decimal",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 12
+  },
+  {
+    "Seller SKU ID": "Length (CM)",
+    "Text - limited to 64 characters (including spaces)": "Single - Decimal",
+    "Display Name*": "Direct X Version",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 13
+  },
+  {
+    "Seller SKU ID": "Breadth (CM)",
+    "Text - limited to 64 characters (including spaces)": "Single - Decimal",
+    "Display Name*": "ESRB Content Descriptors",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 14
+  },
+  {
+    "Seller SKU ID": "Height (CM)",
+    "Text - limited to 64 characters (including spaces)": "Single - Decimal",
+    "Display Name*": "Genre",
+    "Type": "MULTI - TEXT\nClick Here to get Allowed Values\nUsed For: Refiner, Compare",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Constraint*": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 15
+  },
+  {
+    "Seller SKU ID": "Weight (KG)",
+    "Text - limited to 64 characters (including spaces)": "Single - Decimal",
+    "Display Name*": "Online Platform",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 16
+  },
+  {
+    "Seller SKU ID": "HSN",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "National handling fee (INR)",
+    "Type": "Single - Non_negative_integer",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 17
+  },
+  {
+    "Seller SKU ID": "Luxury Cess",
+    "Text - limited to 64 characters (including spaces)": "Single - Decimal",
+    "Display Name*": "USB Type",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 18
+  },
+  {
+    "Seller SKU ID": "Country Of Origin",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "WLAN",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 19
+  },
+  {
+    "Seller SKU ID": "Manufacturer Details",
+    "Text - limited to 64 characters (including spaces)": "Single - Long_text",
+    "Display Name*": "Your selling price (INR)",
+    "Type": "Single - Positive_integer",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 20
+  },
+  {
+    "Seller SKU ID": "Packer Details",
+    "Text - limited to 64 characters (including spaces)": "Single - Long_text",
+    "Display Name*": "Number of Players",
+    "Type": "Single - Number\nUsed For: Compare",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 21
+  },
+  {
+    "Seller SKU ID": "Importer Details",
+    "Text - limited to 64 characters (including spaces)": "Single - Long_text",
+    "Display Name*": "PEGI Content Descriptors",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 22
+  },
+  {
+    "Seller SKU ID": "Tax Code",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Battery Type",
+    "Type": "Single - Text\nUsed For: Compare",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 23
+  },
+  {
+    "Seller SKU ID": "Minimum Order Quantity (MinOQ)",
+    "Text - limited to 64 characters (including spaces)": "Single - Positive_integer",
+    "Display Name*": "Hard Disk",
+    "Type": "Single - Decimal\nUsed For: Compare",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Decimal",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 24
+  },
+  {
+    "Seller SKU ID": "Brand",
+    "Text - limited to 64 characters (including spaces)": "Single - Text\nUsed For: ID, Title, Refiner",
+    "Display Name*": "Front Camera",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 25
+  },
+  {
+    "Seller SKU ID": "Model Number",
+    "Text - limited to 64 characters (including spaces)": "Single - Text\nUsed For: ID, Title",
+    "Display Name*": "Supported Audio",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 26
+  },
+  {
+    "Seller SKU ID": "Brand Color",
+    "Text - limited to 64 characters (including spaces)": "Multi - Text\nUsed For: ID, Variant, Title",
+    "Display Name*": "Capacity",
+    "Type": "Single - Text\nUsed For: Refiner",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 27
+  },
+  {
+    "Seller SKU ID": "Storage (GB)",
+    "Text - limited to 64 characters (including spaces)": "Single - Text\nUsed For: ID, Title",
+    "Display Name*": "Dual Screen",
+    "Type": "Single - Boolean\nUsed For: Compare",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 28
+  },
+  {
+    "Seller SKU ID": "Motion Controller Included",
+    "Text - limited to 64 characters (including spaces)": "Single - Text\nUsed For: ID, Title",
+    "Display Name*": "Other Audio Features",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 29
+  },
+  {
+    "Seller SKU ID": "Games Included",
+    "Text - limited to 64 characters (including spaces)": "Multi - Text\nUsed For: ID, Title",
+    "Display Name*": "Brand Color",
+    "Type": "Multi - Text\nUsed For: ID, Variant, Title",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 30
+  },
+  {
+    "Seller SKU ID": "Additional Content",
+    "Text - limited to 64 characters (including spaces)": "Multi - Text\nUsed For: ID, Title",
+    "Display Name*": "Number of Games",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 31
+  },
+  {
+    "Seller SKU ID": "Console Type",
+    "Text - limited to 64 characters (including spaces)": "MULTI - TEXT\nClick Here to get Allowed Values\nUsed For: Refiner",
+    "Display Name*": "Hard Disk (GB)",
+    "Type": "Single - Number",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 32
+  },
+  {
+    "Seller SKU ID": "Console For Refiner",
+    "Text - limited to 64 characters (including spaces)": "MULTI - TEXT\nClick Here to get Allowed Values\nUsed For: Refiner",
+    "Display Name*": "Memory Card",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 33
+  },
+  {
+    "Seller SKU ID": "Warranty Summary",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Depth - Measuring Unit",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 34
+  },
+  {
+    "Seller SKU ID": "Warranty Service Type",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Speaker Type",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 35
+  },
+  {
+    "Seller SKU ID": "Covered in Warranty",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Language Supported",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 36
+  },
+  {
+    "Seller SKU ID": "Not Covered in Warranty",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Supported Video Output",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 37
+  },
+  {
+    "Seller SKU ID": "Items Included",
+    "Text - limited to 64 characters (including spaces)": "Multi - Text",
+    "Display Name*": "Key Spec 4",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 38
+  },
+  {
+    "Seller SKU ID": "Edition",
+    "Text - limited to 64 characters (including spaces)": "SINGLE - TEXT\nClick Here to get Allowed Values",
+    "Display Name*": "RAM",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 39
+  },
+  {
+    "Seller SKU ID": "Main Image URL",
+    "Text - limited to 64 characters (including spaces)": "URL",
+    "Display Name*": "Internal Memory",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 40
+  },
+  {
+    "Seller SKU ID": "Other Image URL 1",
+    "Text - limited to 64 characters (including spaces)": "URL",
+    "Display Name*": "Fullfilment by",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 41
+  },
+  {
+    "Seller SKU ID": "Other Image URL 2",
+    "Text - limited to 64 characters (including spaces)": "URL",
+    "Display Name*": "Developer",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 42
+  },
+  {
+    "Seller SKU ID": "Other Image URL 3",
+    "Text - limited to 64 characters (including spaces)": "URL",
+    "Display Name*": "Games Included",
+    "Type": "Multi - Text\nUsed For: ID, Title",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 43
+  },
+  {
+    "Seller SKU ID": "Other Image URL 4",
+    "Text - limited to 64 characters (including spaces)": "URL",
+    "Display Name*": "Power Consumption - Measuring Unit",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 44
+  },
+  {
+    "Seller SKU ID": "EAN/UPC",
+    "Text - limited to 64 characters (including spaces)": "Multi - Numeric_string",
+    "Display Name*": "Disk Drive",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 45
+  },
+  {
+    "Seller SKU ID": "EAN/UPC - Measuring Unit",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "ESRB",
+    "Type": "Multi - Text\nUsed For: Refiner, Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 46
+  },
+  {
+    "Seller SKU ID": "Description",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Sound Card Version",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 47
+  },
+  {
+    "Seller SKU ID": "Search Keywords",
+    "Text - limited to 64 characters (including spaces)": "Multi - Text",
+    "Display Name*": "Luxury Cess",
+    "Type": "Single - Decimal",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Decimal",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 48
+  },
+  {
+    "Seller SKU ID": "Key Spec",
+    "Text - limited to 64 characters (including spaces)": "Multi - Text",
+    "Display Name*": "Online Game Store",
+    "Type": "Single - Boolean",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 49
+  },
+  {
+    "Seller SKU ID": "Key Features",
+    "Text - limited to 64 characters (including spaces)": "Multi - Text",
+    "Display Name*": "AV Digital Output",
+    "Type": "Single - Boolean",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 50
+  },
+  {
+    "Seller SKU ID": "Video URL",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Motion Controller Included",
+    "Type": "Single - Text\nUsed For: ID, Title",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 51
+  },
+  {
+    "Seller SKU ID": "Processor",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Model ID",
+    "Type": "Single - Text\nUsed For: ID",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 52
+  },
+  {
+    "Seller SKU ID": "Hard Disk (GB)",
+    "Text - limited to 64 characters (including spaces)": "Single - Number",
+    "Display Name*": "Browse Internet",
+    "Type": "Single - Boolean\nUsed For: Compare",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 53
+  },
+  {
+    "Seller SKU ID": "Memory Card",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Multiplayer",
+    "Type": "Single - Boolean\nUsed For: Compare",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 54
+  },
+  {
+    "Seller SKU ID": "RAM",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Number of Discs",
+    "Type": "Single - Number",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 55
+  },
+  {
+    "Seller SKU ID": "Disk Drive",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Supported Motion Sensor Device",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 56
+  },
+  {
+    "Seller SKU ID": "Video Encoding",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "AV Multi Output",
+    "Type": "Single - Boolean",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 57
+  },
+  {
+    "Seller SKU ID": "Screen Size",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Video Encoding",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 58
+  },
+  {
+    "Seller SKU ID": "Resolution",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Screen Type",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 59
+  },
+  {
+    "Seller SKU ID": "Battery",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Unsupported Hardware",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 60
+  },
+  {
+    "Seller SKU ID": "Sound",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Game Modes",
+    "Type": "Multi - Text\nUsed For: Refiner, Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 61
+  },
+  {
+    "Seller SKU ID": "Controllers",
+    "Text - limited to 64 characters (including spaces)": "Multi - Text",
+    "Display Name*": "Recommended AMD Processor",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 62
+  },
+  {
+    "Seller SKU ID": "Graphics",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Processor",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 63
+  },
+  {
+    "Seller SKU ID": "USB",
+    "Text - limited to 64 characters (including spaces)": "Single - Number",
+    "Display Name*": "Bluetooth",
+    "Type": "Single - Boolean",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 64
+  },
+  {
+    "Seller SKU ID": "HDMI",
+    "Text - limited to 64 characters (including spaces)": "Single - Number",
+    "Display Name*": "Memory",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 65
+  },
+  {
+    "Seller SKU ID": "Ethernet",
+    "Text - limited to 64 characters (including spaces)": "Single - Boolean",
+    "Display Name*": "Recommended Intel Processor",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 66
+  },
+  {
+    "Seller SKU ID": "WLAN",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Width - Measuring Unit",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 67
+  },
+  {
+    "Seller SKU ID": "Bluetooth",
+    "Text - limited to 64 characters (including spaces)": "Single - Boolean",
+    "Display Name*": "Graphics",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 68
+  },
+  {
+    "Seller SKU ID": "AV Digital Output",
+    "Text - limited to 64 characters (including spaces)": "Single - Boolean",
+    "Display Name*": "Number of Buttons",
+    "Type": "Single - Number",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 69
+  },
+  {
+    "Seller SKU ID": "AV Multi Output",
+    "Text - limited to 64 characters (including spaces)": "Single - Boolean",
+    "Display Name*": "Height (CM)",
+    "Type": "Single - Decimal",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Decimal",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 70
+  },
+  {
+    "Seller SKU ID": "Controller Ports",
+    "Text - limited to 64 characters (including spaces)": "Single - Number",
+    "Display Name*": "ATI Graphics",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 71
+  },
+  {
+    "Seller SKU ID": "Weight",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "HSN",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 72
+  },
+  {
+    "Seller SKU ID": "Other Features",
+    "Text - limited to 64 characters (including spaces)": "Multi - Text",
+    "Display Name*": "Wi-Fi",
+    "Type": "Single - Boolean\nUsed For: Compare",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 73
+  },
+  {
+    "Seller SKU ID": "Domestic Warranty",
+    "Text - limited to 64 characters (including spaces)": "Single - Number",
+    "Display Name*": "Media Type",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 74
+  },
+  {
+    "Seller SKU ID": "Domestic Warranty - Measuring Unit",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Recommended RAM - Measuring Unit",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 75
+  },
+  {
+    "Seller SKU ID": "International Warranty",
+    "Text - limited to 64 characters (including spaces)": "Single - Number",
+    "Display Name*": "Rear Camera",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 76
+  },
+  {
+    "Seller SKU ID": "International Warranty - Measuring Unit",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "NVIDIA Graphic",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 77
+  },
+  {
+    "Seller SKU ID": "Additional Controller Included",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Capacity - Measuring Unit",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 78
+  },
+  {
+    "Seller SKU ID": "Net Quantity",
+    "Text - limited to 64 characters (including spaces)": "Single - Text",
+    "Display Name*": "Joystick Supported",
+    "Type": "Single - Boolean",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 79
+  },
+  {
+    "Display Name*": "Technician Visit Details",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 80
+  },
+  {
+    "Display Name*": "Power Requirement",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 81
+  },
+  {
+    "Display Name*": "Console For Refiner",
+    "Type": "MULTI - TEXT\nClick Here to get Allowed Values\nUsed For: Refiner",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 82
+  },
+  {
+    "Display Name*": "Depth (mm)",
+    "Type": "Single - Decimal",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Decimal",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 83
+  },
+  {
+    "Display Name*": "Disc Format",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 84
+  },
+  {
+    "Display Name*": "HDMI",
+    "Type": "Single - Number",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 85
+  },
+  {
+    "Display Name*": "Internet Connection for",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 86
+  },
+  {
+    "Display Name*": "Other Minimum PC Requirements",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 87
+  },
+  {
+    "Display Name*": "Other Ratings",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 88
+  },
+  {
+    "Display Name*": "Height - Measuring Unit",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 89
+  },
+  {
+    "Display Name*": "RAM - Measuring Unit",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 90
+  },
+  {
+    "Display Name*": "Edition",
+    "Type": "SINGLE - TEXT\nClick Here to get Allowed Values",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 91
+  },
+  {
+    "Display Name*": "AMD Processor",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 92
+  },
+  {
+    "Display Name*": "Expandable Memory",
+    "Type": "Single - Boolean\nUsed For: Compare",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 93
+  },
+  {
+    "Display Name*": "Other Controller Features",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 94
+  },
+  {
+    "Display Name*": "EAN/UPC",
+    "Type": "Multi - Numeric_string",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 95
+  },
+  {
+    "Display Name*": "Built In Microphone",
+    "Type": "Single - Boolean",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 96
+  },
+  {
+    "Display Name*": "Headphone Jack Present",
+    "Type": "Single - Boolean",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 97
+  },
+  {
+    "Display Name*": "Other Specifications",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 98
+  },
+  {
+    "Display Name*": "Backward Compatibility",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 99
+  },
+  {
+    "Display Name*": "Screen Resolution",
+    "Type": "Single - Text\nUsed For: Compare",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 100
+  },
+  {
+    "Display Name*": "Ethernet",
+    "Type": "Single - Boolean",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 101
+  },
+  {
+    "Display Name*": "Depth",
+    "Type": "Single - Decimal\nUsed For: Compare",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Decimal",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 102
+  },
+  {
+    "Display Name*": "Key Spec 1",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 103
+  },
+  {
+    "Display Name*": "Recommended RAM",
+    "Type": "Single - Number",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 104
+  },
+  {
+    "Display Name*": "Metacritic",
+    "Type": "Single - Number",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 105
+  },
+  {
+    "Display Name*": "Battery Life",
+    "Type": "Single - Text\nUsed For: Compare",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 106
+  },
+  {
+    "Display Name*": "Other Game Details",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 107
+  },
+  {
+    "Display Name*": "PEGI",
+    "Type": "Single - Text\nUsed For: Refiner, Compare",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 108
+  },
+  {
+    "Display Name*": "Controllers",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 109
+  },
+  {
+    "Display Name*": "USB",
+    "Type": "Single - Number",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 110
+  },
+  {
+    "Display Name*": "Manufacturer Details",
+    "Type": "Single - Long_text",
+    "Attribute Type*": "Textarea",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 111
+  },
+  {
+    "Display Name*": "Intel Processor",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 112
+  },
+  {
+    "Display Name*": "Remote Play",
+    "Type": "Single - Boolean",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 113
+  },
+  {
+    "Display Name*": "Procurement SLA (DAY)",
+    "Type": "Single - Number",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 114
+  },
+  {
+    "Display Name*": "3D Compatible",
+    "Type": "Single - Boolean",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 115
+  },
+  {
+    "Display Name*": "Key Spec 2",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 116
+  },
+  {
+    "Display Name*": "Other Battery Features",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 117
+  },
+  {
+    "Display Name*": "Other Memory Features",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 118
+  },
+  {
+    "Display Name*": "Number of Online Players",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 119
+  },
+  {
+    "Display Name*": "Cable Length (m)",
+    "Type": "Single - Decimal",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Decimal",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 120
+  },
+  {
+    "Display Name*": "Additional Controller Included",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 121
+  },
+  {
+    "Display Name*": "Recommended ATI Graphics",
+    "Type": "Multi - Text\nUsed For: Compare",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 122
+  },
+  {
+    "Display Name*": "Procurement type",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 123
+  },
+  {
+    "Display Name*": "Weight - Measuring Unit",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 124
+  },
+  {
+    "Display Name*": "IGN Rating",
+    "Type": "Single - Decimal",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Decimal",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 125
+  },
+  {
+    "Display Name*": "Sound",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 126
+  },
+  {
+    "Display Name*": "Width (mm)",
+    "Type": "Single - Decimal",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Decimal",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 127
+  },
+  {
+    "Display Name*": "Other Audio & Video Features",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 128
+  },
+  {
+    "Display Name*": "Other Dimensions",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 129
+  },
+  {
+    "Display Name*": "Breadth (CM)",
+    "Type": "Single - Decimal",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Decimal",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 130
+  },
+  {
+    "Display Name*": "Packer Details",
+    "Type": "Single - Long_text",
+    "Attribute Type*": "Textarea",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 131
+  },
+  {
+    "Display Name*": "Battery Life - Measuring Unit",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 132
+  },
+  {
+    "Display Name*": "Console Type",
+    "Type": "MULTI - TEXT\nClick Here to get Allowed Values\nUsed For: Refiner",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 133
+  },
+  {
+    "Display Name*": "Other Recommended PC Requirements",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 134
+  },
+  {
+    "Display Name*": "Motion Sensor Support",
+    "Type": "Single - Boolean",
+    "Attribute Type*": "Dropdown",
+    "Attribute Data Type*": "Text",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 135
+  },
+  {
+    "Display Name*": "Number Of Speakers",
+    "Type": "Single - Number",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Numbers",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 136
+  },
+  {
+    "Display Name*": "Group ID",
+    "Type": "Single - Text",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Text",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 137
+  },
+  {
+    "Display Name*": "Key Spec 3",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 138
+  },
+  {
+    "Display Name*": "Power Consumption",
+    "Type": "Single - Decimal",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Decimal",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 139
+  },
+  {
+    "Display Name*": "Additional Content",
+    "Type": "Multi - Text\nUsed For: ID, Title",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 140
+  },
+  {
+    "Display Name*": "Key Spec 3",
+    "Type": "Multi - Text",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 141
+  },
+  {
+    "Display Name*": "Power Consumption",
+    "Type": "Single - Decimal",
+    "Attribute Type*": "Textbox",
+    "Attribute Data Type*": "Decimal",
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 142
+  },
+  {
+    "Display Name*": "Additional Content",
+    "Type": "Multi - Text\nUsed For: ID, Title",
+    "Attribute Type*": "multiTextBox",
+    "Attribute Data Type*": "varchar[]",
+    "Mandatory": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 143
+  },
+  {
+    "Display Name*": "VR Compatibility",
+    "Type": "MULTI - TEXT\nClick Here to get Allowed Values",
+    "Constraint*": 1,
+    "Mandatory": {
+      "formula": "FALSE()"
+    },
+    "Filter": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Visibility": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "Searchable": {
+      "formula": "TRUE()",
+      "result": true
+    },
+    "RowNo": 144
+  },
+  {
+    "Display Name*": "Console For Refiner",
+    "RowNo": 145
+  },
+  {
+    "Display Name*": "Edition",
+    "RowNo": 146
+  },
+  {
+    "Display Name*": "Console Type",
+    "RowNo": 147
+  },
+  {
+    "Display Name*": "Additional Controller Included",
+    "RowNo": 148
+  },
+  {
+    "Display Name*": "Product Name",
+    "RowNo": 149
+  },
+  {
+    "Display Name*": "Seller SKU ID",
+    "RowNo": 150
+  },
+  {
+    "Display Name*": "MSRP/MRP",
+    "RowNo": 151
+  },
+  {
+    "Display Name*": "Product Name",
+    "RowNo": 152
+  },
+  {
+    "Display Name*": "Code",
+    "RowNo": 153
+  },
+  {
+    "Display Name*": "MSRP/MRP",
+    "RowNo": 154
+  },
+  {
+    "Display Name*": "Other Display Features",
+    "RowNo": 155
+  },
+  {
+    "Display Name*": "Operating System",
+    "RowNo": 156
+  },
+  {
+    "Display Name*": "Memory Card Type",
+    "RowNo": 157
+  },
+  {
+    "Display Name*": "Recommended NVIDIA Graphics",
+    "RowNo": 158
+  },
+  {
+    "Display Name*": "Controller Ports",
+    "RowNo": 159
+  },
+  {
+    "Display Name*": "Publisher",
+    "RowNo": 160
+  },
+  {
+    "Display Name*": "Resolution",
+    "RowNo": 161
+  },
+  {
+    "Display Name*": "Height (mm)",
+    "RowNo": 162
+  },
+  {
+    "Display Name*": "Direct X Version",
+    "RowNo": 163
+  },
+  {
+    "Display Name*": "International Warranty",
+    "RowNo": 164
+  },
+  {
+    "Display Name*": "ESRB Content Descriptors",
+    "RowNo": 165
+  },
+  {
+    "Display Name*": "Online Platform",
+    "RowNo": 166
+  },
+  {
+    "Display Name*": "National handling fee (INR)",
+    "RowNo": 167
+  },
+  {
+    "Display Name*": "USB Type",
+    "RowNo": 168
+  },
+  {
+    "Display Name*": "WLAN",
+    "RowNo": 169
+  },
+  {
+    "Display Name*": "Number of Players",
+    "RowNo": 170
+  },
+  {
+    "Display Name*": "PEGI Content Descriptors",
+    "RowNo": 171
+  },
+  {
+    "Display Name*": "Battery Type",
+    "RowNo": 172
+  },
+  {
+    "Display Name*": "Hard Disk",
+    "RowNo": 173
+  },
+  {
+    "Display Name*": "Front Camera",
+    "RowNo": 174
+  },
+  {
+    "Display Name*": "Supported Audio",
+    "RowNo": 175
+  },
+  {
+    "Display Name*": "Capacity",
+    "RowNo": 176
+  },
+  {
+    "Display Name*": "Other Audio Features",
+    "RowNo": 177
+  },
+  {
+    "Display Name*": "Brand Color",
+    "RowNo": 178
+  },
+  {
+    "Display Name*": "Number of Games",
+    "RowNo": 179
+  },
+  {
+    "Display Name*": "Hard Disk (GB)",
+    "RowNo": 180
+  },
+  {
+    "Display Name*": "Memory Card",
+    "RowNo": 181
+  },
+  {
+    "Display Name*": "Depth - Measuring Unit",
+    "RowNo": 182
+  },
+  {
+    "Display Name*": "Speaker Type",
+    "RowNo": 183
+  },
+  {
+    "Display Name*": "Language Supported",
+    "RowNo": 184
+  },
+  {
+    "Display Name*": "Supported Video Output",
+    "RowNo": 185
+  },
+  {
+    "Display Name*": "Key Spec 4",
+    "RowNo": 186
+  },
+  {
+    "Display Name*": "RAM",
+    "RowNo": 187
+  },
+  {
+    "Display Name*": "Internal Memory",
+    "RowNo": 188
+  },
+  {
+    "Display Name*": "Fullfilment by",
+    "RowNo": 189
+  },
+  {
+    "Display Name*": "Developer",
+    "RowNo": 190
+  },
+  {
+    "Display Name*": "Games Included",
+    "RowNo": 191
+  },
+  {
+    "Display Name*": "Power Consumption - Measuring Unit",
+    "RowNo": 192
+  },
+  {
+    "Display Name*": "Disk Drive",
+    "RowNo": 193
+  },
+  {
+    "Display Name*": "ESRB",
+    "RowNo": 194
+  },
+  {
+    "Display Name*": "Sound Card Version",
+    "RowNo": 195
+  },
+  {
+    "Display Name*": "Luxury Cess",
+    "RowNo": 196
+  },
+  {
+    "Display Name*": "Motion Controller Included",
+    "RowNo": 197
+  },
+  {
+    "Display Name*": "Model ID",
+    "RowNo": 198
+  },
+  {
+    "Display Name*": "Number of Discs",
+    "RowNo": 199
+  },
+  {
+    "Display Name*": "Supported Motion Sensor Device",
+    "RowNo": 200
+  },
+  {
+    "Display Name*": "Video Encoding",
+    "RowNo": 201
+  },
+  {
+    "Display Name*": "Screen Type",
+    "RowNo": 202
+  },
+  {
+    "Display Name*": "Unsupported Hardware",
+    "RowNo": 203
+  },
+  {
+    "Display Name*": "Game Modes",
+    "RowNo": 204
+  },
+  {
+    "Display Name*": "Recommended AMD Processor",
+    "RowNo": 205
+  },
+  {
+    "Display Name*": "Processor",
+    "RowNo": 206
+  },
+  {
+    "Display Name*": "Memory",
+    "RowNo": 207
+  },
+  {
+    "Display Name*": "Recommended Intel Processor",
+    "RowNo": 208
+  },
+  {
+    "Display Name*": "Width - Measuring Unit",
+    "RowNo": 209
+  },
+  {
+    "Display Name*": "Graphics",
+    "RowNo": 210
+  },
+  {
+    "Display Name*": "Number of Buttons",
+    "RowNo": 211
+  },
+  {
+    "Display Name*": "Height (CM)",
+    "RowNo": 212
+  },
+  {
+    "Display Name*": "ATI Graphics",
+    "RowNo": 213
+  },
+  {
+    "Display Name*": "HSN",
+    "RowNo": 214
+  },
+  {
+    "Display Name*": "Media Type",
+    "RowNo": 215
+  },
+  {
+    "Display Name*": "Recommended RAM - Measuring Unit",
+    "RowNo": 216
+  },
+  {
+    "Display Name*": "Rear Camera",
+    "RowNo": 217
+  },
+  {
+    "Display Name*": "NVIDIA Graphic",
+    "RowNo": 218
+  },
+  {
+    "Display Name*": "Capacity - Measuring Unit",
+    "RowNo": 219
+  },
+  {
+    "Display Name*": "Length(cm)",
+    "RowNo": 220
+  },
+  {
+    "Display Name*": "Technician Visit Details",
+    "RowNo": 221
+  },
+  {
+    "Display Name*": "Power Requirement",
+    "RowNo": 222
+  },
+  {
+    "Display Name*": "Depth (mm)",
+    "RowNo": 223
+  },
+  {
+    "Display Name*": "Disc Format",
+    "RowNo": 224
+  },
+  {
+    "Display Name*": "HDMI",
+    "RowNo": 225
+  },
+  {
+    "Display Name*": "Internet Connection for",
+    "RowNo": 226
+  },
+  {
+    "Display Name*": "Other Minimum PC Requirements",
+    "RowNo": 227
+  },
+  {
+    "Display Name*": "Other Ratings",
+    "RowNo": 228
+  },
+  {
+    "Display Name*": "Height - Measuring Unit",
+    "RowNo": 229
+  },
+  {
+    "Display Name*": "RAM - Measuring Unit",
+    "RowNo": 230
+  },
+  {
+    "Display Name*": "AMD Processor",
+    "RowNo": 231
+  },
+  {
+    "Display Name*": "Other Controller Features",
+    "RowNo": 232
+  },
+  {
+    "Display Name*": "Other Specifications",
+    "RowNo": 233
+  },
+  {
+    "Display Name*": "Backward Compatibility",
+    "RowNo": 234
+  },
+  {
+    "Display Name*": "Screen Resolution",
+    "RowNo": 235
+  },
+  {
+    "Display Name*": "Depth",
+    "RowNo": 236
+  },
+  {
+    "Display Name*": "Key Spec 1",
+    "RowNo": 237
+  },
+  {
+    "Display Name*": "Recommended RAM",
+    "RowNo": 238
+  },
+  {
+    "Display Name*": "Metacritic",
+    "RowNo": 239
+  },
+  {
+    "Display Name*": "Battery Life",
+    "RowNo": 240
+  },
+  {
+    "Display Name*": "Other Game Details",
+    "RowNo": 241
+  },
+  {
+    "Display Name*": "PEGI",
+    "RowNo": 242
+  },
+  {
+    "Display Name*": "Controllers",
+    "RowNo": 243
+  },
+  {
+    "Display Name*": "USB",
+    "RowNo": 244
+  },
+  {
+    "Display Name*": "Manufacturer Details",
+    "RowNo": 245
+  },
+  {
+    "Display Name*": "Key Spec 2",
+    "RowNo": 246
+  },
+  {
+    "Display Name*": "Other Battery Features",
+    "RowNo": 247
+  },
+  {
+    "Display Name*": "Other Memory Features",
+    "RowNo": 248
+  },
+  {
+    "Display Name*": "Number of Online Players",
+    "RowNo": 249
+  },
+  {
+    "Display Name*": "Cable Length (m)",
+    "RowNo": 250
+  },
+  {
+    "Display Name*": "Recommended ATI Graphics",
+    "RowNo": 251
+  },
+  {
+    "Display Name*": "Procurement type",
+    "RowNo": 252
+  },
+  {
+    "Display Name*": "Weight - Measuring Unit",
+    "RowNo": 253
+  },
+  {
+    "Display Name*": "IGN Rating",
+    "RowNo": 254
+  },
+  {
+    "Display Name*": "Sound",
+    "RowNo": 255
+  },
+  {
+    "Display Name*": "Width (mm)",
+    "RowNo": 256
+  },
+  {
+    "Display Name*": "Other Audio & Video Features",
+    "RowNo": 257
+  },
+  {
+    "Display Name*": "Other Dimensions",
+    "RowNo": 258
+  },
+  {
+    "Display Name*": "Breadth (CM)",
+    "RowNo": 259
+  },
+  {
+    "Display Name*": "Packer Details",
+    "RowNo": 260
+  },
+  {
+    "Display Name*": "Battery Life - Measuring Unit",
+    "RowNo": 261
+  },
+  {
+    "Display Name*": "Other Recommended PC Requirements",
+    "RowNo": 262
+  },
+  {
+    "Display Name*": "Number Of Speakers",
+    "RowNo": 263
+  },
+  {
+    "Display Name*": "Group ID",
+    "RowNo": 264
+  },
+  {
+    "Display Name*": "Key Spec 3",
+    "RowNo": 265
+  },
+  {
+    "Display Name*": "Power Consumption",
+    "RowNo": 266
+  },
+  {
+    "Display Name*": "Additional Content",
+    "RowNo": 267
+  },
+  {
+    "Display Name*": "Description",
+    "RowNo": 268
+  },
+  {
+    "Display Name*": "Material",
+    "RowNo": 269
+  },
+  {
+    "Display Name*": "Battery",
+    "RowNo": 270
+  },
+  {
+    "Display Name*": "Brand",
+    "RowNo": 271
+  },
+  {
+    "Display Name*": "Buttons",
+    "RowNo": 272
+  },
+  {
+    "Display Name*": "Weight",
+    "RowNo": 273
+  },
+  {
+    "Display Name*": "Weight (g)",
+    "RowNo": 274
+  },
+  {
+    "Display Name*": "Height",
+    "RowNo": 275
+  },
+  {
+    "Display Name*": "Colour",
+    "RowNo": 276
+  },
+  {
+    "Display Name*": "Title Name",
+    "RowNo": 277
+  },
+  {
+    "Display Name*": "Items Included",
+    "RowNo": 278
+  },
+  {
+    "Display Name*": "OS Supported",
+    "RowNo": 279
+  },
+  {
+    "Display Name*": "Search Keywords",
+    "RowNo": 280
+  },
+  {
+    "Display Name*": "Key Features",
+    "RowNo": 281
+  },
+  {
+    "Display Name*": "Other Features",
+    "RowNo": 282
+  },
+  {
+    "Display Name*": "Compatible Windows Games",
+    "RowNo": 283
+  },
+  {
+    "Display Name*": "Compatible Android Games",
+    "RowNo": 284
+  },
+  {
+    "Display Name*": "Compatible iOS Games",
+    "RowNo": 285
+  },
+  {
+    "Display Name*": "Buttons",
+    "RowNo": 286
+  },
+  {
+    "Display Name*": "Model Name",
+    "RowNo": 287
+  },
+  {
+    "Display Name*": "Model Number",
+    "RowNo": 288
+  },
+  {
+    "Display Name*": "Operating Range",
+    "RowNo": 289
+  },
+  {
+    "Display Name*": "Warranty Summary",
+    "RowNo": 290
+  },
+  {
+    "Display Name*": "Warranty Service Type",
+    "RowNo": 291
+  },
+  {
+    "Display Name*": "Covered in Warranty",
+    "RowNo": 292
+  },
+  {
+    "Display Name*": "Not Covered in Warranty",
+    "RowNo": 293
+  },
+  {
+    "Display Name*": "Operating Frequency",
+    "RowNo": 294
+  },
+  {
+    "Display Name*": "Battery",
+    "RowNo": 295
+  },
+  {
+    "Display Name*": "Domestic Warranty",
+    "RowNo": 296
+  },
+  {
+    "Display Name*": "Screen Size",
+    "RowNo": 297
+  },
+  {
+    "Display Name*": "Screen Size Measuring Unit",
+    "RowNo": 298
+  },
+  {
+    "Display Name*": "Storage Size",
+    "RowNo": 299
+  },
+  {
+    "Display Name*": "Other Connectivity Features",
+    "RowNo": 300
+  },
+  {
+    "Display Name*": "Other Online Features",
+    "RowNo": 301
+  },
+  {
+    "Display Name*": "Width (CM)",
+    "RowNo": 302
+  }
+]

@@ -65,10 +65,6 @@ export class CategoryCreation {
 		let jsonData:BulkUploadCategoryJsonData[] = JSON.parse(fs.readFileSync(fileName).toString())
 		let category2DArray = {}
 		let data = jsonData
-		console.log('-------------');
-		
-		console.log(data);
-		console.log('-------------');
 		
 		
 		let pathArray = data.map(x => x['Category Path'])
@@ -117,7 +113,6 @@ export class CategoryCreation {
 							if (x.parent_id != null)
                                 await this.updateIsLeafToFalse(x.parent_id, type, entityManager, channelId)
 							const categoryExists = siblings.find(x => x.category_name === category2DArrayWithSubArraysRemoved[i][j].trim())
-							console.log(categoryExists);
 							
 							const saved = (categoryExists === undefined) ? await this.saveCategory(x, entityManager) : categoryExists
 							if (saved['status'] === 'error')
@@ -152,7 +147,6 @@ export class CategoryCreation {
             if(type==='core'){
                 await entityManager.query(`UPDATE core_categories SET category_path = null`)
                 for(let path of paths){
-					console.log(path)
                     await entityManager.getRepository(CoreCategory).update({
                         id:path.id
                     }, {
@@ -216,7 +210,6 @@ export class CategoryCreation {
 		try {
 			let removedSubArrays = {}
 			let k = 0
-			// console.log(array)
 			for (let i = 0; i < Object.keys(array).length - 1; i++) {
 				const isSubArray = array[i].every(val => array[i + 1].includes(val))
 				if (!isSubArray) {

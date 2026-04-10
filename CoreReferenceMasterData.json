@@ -1,0 +1,72 @@
+[
+  {
+    "Core Attribute Name": "Color Map",
+    "Core Reference Data": "Dark Blue",
+    "RowNo": 2
+  },
+  {
+    "Core Attribute Name": "Color Map",
+    "Core Reference Data": "Navy",
+    "RowNo": 3
+  },
+  {
+    "Core Attribute Name": "Color Map",
+    "Core Reference Data": "Dark Blue",
+    "RowNo": 4
+  },
+  {
+    "Core Attribute Name": "Color Map",
+    "Core Reference Data": "Burgundy",
+    "RowNo": 5
+  },
+  {
+    "Core Attribute Name": "Secondary Color",
+    "Core Reference Data": "Tan",
+    "RowNo": 6
+  },
+  {
+    "Core Attribute Name": "Secondary Color",
+    "Core Reference Data": "Burgundy",
+    "RowNo": 7
+  },
+  {
+    "Core Attribute Name": "Secondary Color",
+    "Core Reference Data": "Beige",
+    "RowNo": 8
+  },
+  {
+    "Core Attribute Name": "Secondary Color",
+    "Core Reference Data": "Maroon",
+    "RowNo": 9
+  },
+  {
+    "Core Attribute Name": "Secondary Color",
+    "Core Reference Data": "Olive",
+    "RowNo": 10
+  },
+  {
+    "Core Attribute Name": "Footwear Size",
+    "Core Reference Data": "1",
+    "RowNo": 11
+  },
+  {
+    "Core Attribute Name": "Footwear Size",
+    "Core Reference Data": "3.5",
+    "RowNo": 12
+  },
+  {
+    "Core Attribute Name": "Size US",
+    "Core Reference Data": "5.5",
+    "RowNo": 13
+  },
+  {
+    "Core Attribute Name": "Sole Material",
+    "Core Reference Data": "PU",
+    "RowNo": 14
+  },
+  {
+    "Core Attribute Name": "Sole Material",
+    "Core Reference Data": "TPU",
+    "RowNo": 15
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "size_us": "size_euro",
+    "null": null,
+    "Size": "Euro Size",
+    "RowNo": 2
+  },
+  {
+    "size_us": "sport",
+    "null": null,
+    "Size": "Type for Sports",
+    "RowNo": 3
+  },
+  {
+    "size_us": "sport",
+    "null": null,
+    "Size": "Shoe Type",
+    "RowNo": 4
+  },
+  {
+    "size_us": "usage",
+    "null": null,
+    "Size": "Occasion",
+    "RowNo": 5
+  },
+  {
+    "size_us": "usage",
+    "null": null,
+    "Size": "Trend",
+    "RowNo": 6
+  },
+  {
+    "size_us": "usage",
+    "null": null,
+    "Size": "Suitable For",
+    "RowNo": 7
+  },
+  {
+    "size_us": "colorway_dropdown",
+    "null": null,
+    "Size": "Secondary Color",
+    "RowNo": 8
+  }
+]

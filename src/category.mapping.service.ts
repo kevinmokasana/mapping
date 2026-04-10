@@ -52,14 +52,22 @@ export class CategoryMappingService {
                       });
                       continue;
                     }
-              
+                    try{
+                        entityManager.query(`
+                            INSERT INTO "core_channel_category_mappings"("channel_id", "channel_category_id", "core_category_id") VALUES ($1, $2, $3)  
+                            on conflict do nothing  
+                        `, [channelId, channelCategory.id, coreCategory.id])
+                        // let data = await entityManager.getRepository(CoreChannelCategoryMapping).save({
+                        //   core_category_id: coreCategory.id,
+                        //   channel_category_id: channelCategory.id,
+                        //   channel_id: channelId
+                        // });
+                        // console.log(data);
+
+                    }catch(e){
+                        console.log(e)
+                    }
                     // 4. Insert into mapping
-                    let data = await entityManager.getRepository(CoreChannelCategoryMapping).save({
-                      core_category_id: coreCategory.id,
-                      channel_category_id: channelCategory.id,
-                      channel_id: channelId
-                    });
-                    console.log(data);
                     
                 }
 

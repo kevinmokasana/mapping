@@ -8,7 +8,8 @@ import { AttributeMappingService } from './attribute.mapping.service';
 import { LovCreation } from './lov.creation.service';
 import { LovMappingService } from './lov.mapping.service';
 import { channel } from 'diagnostics_channel';
-
+import { NewMappingService } from './new.mapping.service'
+import { LOVExtractor } from './lov.extractor';
 
 @Controller()
 export class AppController {
@@ -20,6 +21,8 @@ export class AppController {
         private readonly attributeMappingService: AttributeMappingService,
         private readonly lovCreation: LovCreation,
         private readonly lovMappingService: LovMappingService,
+        private readonly newMappingService:NewMappingService,
+        private readonly lovExtractor:LOVExtractor
     ) {}
 
     @Post('core-creation')
@@ -49,10 +52,10 @@ export class AppController {
         { name: 'core_channel_cat_map', maxCount: 1 },
     ]))
     async coreChannelCatMapping(@Body() body:{channel_id:number}, @UploadedFiles() files: { 'core_channel_cat_map': Express.Multer.File[]}){
-        console.log(files);
+        // console.log(files);
         
         await this.excelToJson.excelToJson(files['core_channel_cat_map'])
-        console.log(body.channel_id);
+        // console.log(body.channel_id);
         
         await this.categoryMappingService.coreChannelCatMapping(body.channel_id)
     }
@@ -62,7 +65,7 @@ export class AppController {
         { name: 'core_tenant_cat_map', maxCount: 1 },
     ]))
     async coreTenantCatMapping(@Body() body:{tenant_id:string, org_id:string}, @UploadedFiles() files: { 'core_tenant_cat_map': Express.Multer.File[]}){
-        console.log(files);
+        // console.log(files);
         
         await this.excelToJson.excelToJson(files['core_tenant_cat_map'])
         await this.categoryMappingService.coreTenantCatMapping(body.tenant_id, body.org_id)
@@ -144,5 +147,32 @@ export class AppController {
         await this.excelToJson.excelToJson(files['core_tenant_lov_mapping'])
         await this.lovMappingService.coreTenantLovMapping(body.tenant_id, body.org_id)    
     }
-    
+
+    @Post('new-mappings')
+    @UseInterceptors(FileFieldsInterceptor([
+        { name: 'files', maxCount: 20 },
+        { name: 'catmap', maxCount: 1 },
+        { name: 'lovmap', maxCount:1}
+    ]))
+    async newMappings(@Body() body, @UploadedFiles() files: { 'files': Express.Multer.File[]}, @UploadedFiles() catmap: { 'catmap': Express.Multer.File[]}
+        ,@UploadedFiles() lovmap: { 'lovmap': Express.Multer.File[]}
+    ){
+        await this.newMappingService.generateMappings(files.files, body.tenant_id, body.org_id, body.marketplace, catmap.catmap, lovmap.lovmap)
+    } 
+
+    @Post('ai-lov')
+    async aiLOV(@Body() body){
+        // await this.newMappingService.fillAbsoluteCommonLovMappings()
+        await this.newMappingService.transferAiLovMappingsToMainLovMappings()
+    } 
+       
+
+    @Post('lov-extract')
+    @UseInterceptors(FileFieldsInterceptor([
+        { name: 'files', maxCount: 20 }
+    ]))
+    async extractLOV(@Body() body, @UploadedFiles() files: { 'files': Express.Multer.File[]}
+    ){
+        await this.lovExtractor.extractLOV(files.files, body.marketplace)
+    }  
 }

@@ -466,6 +466,15 @@ export class CoreTenantCategoryMapping {
     @PrimaryColumn()
     org_id: string;    
 }
+// ALTER TABLE core_tenant_category_mappings
+// ADD CONSTRAINT fk_tenant_categories
+// FOREIGN KEY (tenant_category_id, tenant_id, org_id)
+// REFERENCES tenant_category_paths (id, tenant_id, org_id)
+
+// ALTER TABLE core_tenant_category_mappings
+// ADD CONSTRAINT fk_core_categories
+// FOREIGN KEY (core_category_id)
+// REFERENCES core_categories (id)
 
 @Entity('core_channel_category_mappings')
 export class CoreChannelCategoryMapping {
@@ -478,6 +487,15 @@ export class CoreChannelCategoryMapping {
     @PrimaryColumn()
     core_category_id: number
 } 
+// ALTER TABLE core_channel_category_mappings
+// ADD CONSTRAINT fk_core_categories
+// FOREIGN KEY (core_category_id)
+// REFERENCES core_categories (id)
+
+// ALTER TABLE core_channel_category_mappings
+// ADD CONSTRAINT fk_channel_categories
+// FOREIGN KEY (channel_category_id, channel_id)
+// REFERENCES channel_categories (id, channel_id)
 
 @Entity('core_channel_attribute_mappings')
 export class CoreChannelAttributeMappings {

@@ -1,0 +1,499 @@
+[
+  {
+    "Tenant Category Path": "APPAREL/CPS/PADEL TENNIS/BOTTOM/SHORT/MEN",
+    "Core Category Path": "Apparel/Men/Shorts",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 2
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/PADEL TENNIS/BOTTOM/SHORT/WOMEN",
+    "Core Category Path": "Apparel/Women/Shorts",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 3
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/PADEL TENNIS/TOP/SHORT SLEEVE TOP/MEN",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 4
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/TENNIS/BOTTOM/PANT/WOMEN",
+    "Core Category Path": "Apparel/Women/Pants",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 5
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/TENNIS/BOTTOM/SHORT/WOMEN",
+    "Core Category Path": "Apparel/Women/Shorts",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 6
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/TENNIS/BOTTOM/SHORT/MEN",
+    "Core Category Path": "Apparel/Men/Shorts",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 7
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/TENNIS/BOTTOM/SKORT/WOMEN",
+    "Core Category Path": "Apparel/Women/Skirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 8
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/TENNIS/BOTTOM/TIGHT/WOMEN",
+    "Core Category Path": "Apparel/Women/Pants",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 9
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/TENNIS/OUTERWEAR/JACKET/MEN",
+    "Core Category Path": "Apparel/Men/Jackets and Coats",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 10
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/TENNIS/OUTERWEAR/JACKET/WOMEN",
+    "Core Category Path": "Apparel/Women/Jackets and Coats",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 11
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/TENNIS/TOP/BRA TOP/WOMEN",
+    "Core Category Path": "Apparel/Women/Bra",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 12
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/TENNIS/TOP/SHORT SLEEVE TOP/MEN",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 13
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/TENNIS/TOP/SHORT SLEEVE TOP/WOMEN",
+    "Core Category Path": "Apparel/Women/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 14
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/TRACK&FIELD/TOP/SLEEVELESS TOP/WOMEN",
+    "Core Category Path": "Apparel/Women/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 15
+  },
+  {
+    "Tenant Category Path": "APPAREL/CPS/TRACK&FIELD/TOP/SLEEVELESS TOP/MEN",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 16
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/BOTTOM/PANT/MEN",
+    "Core Category Path": "Apparel/Men/Pants",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 17
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/BOTTOM/SHORT/WOMEN",
+    "Core Category Path": "Apparel/Women/Shorts",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 18
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/BOTTOM/SHORT/MEN",
+    "Core Category Path": "Apparel/Men/Shorts",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 19
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/BOTTOM/SHORTS/MEN",
+    "Core Category Path": "Apparel/Men/Shorts",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 20
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/BOTTOM/SHORTS/WOMEN",
+    "Core Category Path": "Apparel/Women/Shorts",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 21
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/BOTTOM/TIGHT/MEN",
+    "Core Category Path": "Apparel/Men/Pants",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 22
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/BOTTOM/TIGHT/WOMEN",
+    "Core Category Path": "Apparel/Women/Pants",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 23
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/BOTTOM/TIGHTS/WOMEN",
+    "Core Category Path": "Apparel/Women/Pants",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 24
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/OUTERWEAR/HOODIE/MEN",
+    "Core Category Path": "Apparel/Men/Sweatshirts and Hoodies",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 25
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/OUTERWEAR/HOODIE/WOMEN",
+    "Core Category Path": "Apparel/Women/Sweatshirts and Hoodies",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 26
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/OUTERWEAR/JACKET/MEN",
+    "Core Category Path": "Apparel/Men/Jackets and Coats",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 27
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/OUTERWEAR/JACKET/WOMEN",
+    "Core Category Path": "Apparel/Women/Jackets and Coats",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 28
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/OUTERWEAR/VEST/MEN",
+    "Core Category Path": "Apparel/Men/Jackets and Coats",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 29
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/OUTERWEAR/VEST/WOMEN",
+    "Core Category Path": "Apparel/Women/Jackets and Coats",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 30
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/OUTERWEAR/LONG SLEEVE TOP/MEN",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 31
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/TOP/BRA TOP/WOMEN",
+    "Core Category Path": "Apparel/Women/Bra",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 32
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/TOP/LONG SLEEVE TOP/MEN",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 33
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/TOP/LONG SLEEVE TOP/WOMEN",
+    "Core Category Path": "Apparel/Women/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 34
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/TOP/SHORT SLEEVE TOP/WOMEN",
+    "Core Category Path": "Apparel/Women/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 35
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/TOP/SHORT SLEEVE TOP/MEN",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 36
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/TOP/SLEEVELESS TOP/MEN",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 37
+  },
+  {
+    "Tenant Category Path": "APPAREL/RUNNING/PERFORMANCE RUNNING/TOP/SLEEVELESS TOP/WOMEN",
+    "Core Category Path": "Apparel/Women/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 38
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/BOTTOM/PANT/MEN",
+    "Core Category Path": "Apparel/Men/Pants",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 39
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/BOTTOM/PANT/WOMEN",
+    "Core Category Path": "Apparel/Women/Pants",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 40
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/BOTTOM/SHORT/MEN",
+    "Core Category Path": "Apparel/Men/Shorts",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 41
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/BOTTOM/SHORT/WOMEN",
+    "Core Category Path": "Apparel/Women/Shorts",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 42
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/BOTTOM/SHORTS/MEN",
+    "Core Category Path": "Apparel/Men/Shorts",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 43
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/BOTTOM/TIGHT/WOMEN",
+    "Core Category Path": "Apparel/Women/Pants",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 44
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/BOTTOM/TIGHTS/WOMEN",
+    "Core Category Path": "Apparel/Women/Pants",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 45
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/OUTERWEAR/DOWN JACKET/WOMEN",
+    "Core Category Path": "Apparel/Women/Jackets and Coats",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 46
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/OUTERWEAR/DOWN JACKET/MEN",
+    "Core Category Path": "Apparel/Men/Jackets and Coats",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 47
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/OUTERWEAR/DOWN VEST/WOMEN",
+    "Core Category Path": "Apparel/Women/Jackets and Coats",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 48
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/OUTERWEAR/DOWN VEST/MEN",
+    "Core Category Path": "Apparel/Men/Jackets and Coats",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 49
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/OUTERWEAR/HOODIE/WOMEN",
+    "Core Category Path": "Apparel/Women/Sweatshirts and Hoodies",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 50
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/OUTERWEAR/HOODIE/MEN",
+    "Core Category Path": "Apparel/Men/Sweatshirts and Hoodies",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 51
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/OUTERWEAR/JACKET/MEN",
+    "Core Category Path": "Apparel/Men/Jackets and Coats",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 52
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/OUTERWEAR/JACKET/WOMEN",
+    "Core Category Path": "Apparel/Women/Jackets and Coats",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 53
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/SET/TRACKSUIT/MEN",
+    "Core Category Path": "Apparel/Men/Tracksuit",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 54
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/TOP/BRA TOP/WOMEN",
+    "Core Category Path": "Apparel/Women/Bra",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 55
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/TOP/LONG SLEEVE TOP/MEN",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 56
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/TOP/POLO TOP/MEN",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 57
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/TOP/SHORT SLEEVE TOP/WOMEN",
+    "Core Category Path": "Apparel/Women/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 58
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/TOP/SHORT SLEEVE TOP/MEN",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 59
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/TOP/SLEEVELESS TOP/WOMEN",
+    "Core Category Path": "Apparel/Women/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 60
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/TOP/SLEEVELESS TOP/MEN",
+    "Core Category Path": "Apparel/Men/Shirt",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 61
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/TOP/SWEATSHIRT/MEN",
+    "Core Category Path": "Apparel/Men/Sweatshirts and Hoodies",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 62
+  },
+  {
+    "Tenant Category Path": "APPAREL/TRAINING/TRAINING/TOP/SWEATSHIRT/WOMEN",
+    "Core Category Path": "Apparel/Women/Sweatshirts and Hoodies",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 63
+  },
+  {
+    "Tenant Category Path": "ACCESSORIES/TRAINING/TRAINING/BAG/BACKPACK/UNISEX",
+    "Core Category Path": "Fashion Accessories/Unisex/Backpack",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 64
+  },
+  {
+    "Tenant Category Path": "ACCESSORIES/TRAINING/TRAINING/BAG/DUFFEL BAG/UNISEX",
+    "Core Category Path": "Fashion Accessories/Unisex/Duffel Bag",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 65
+  },
+  {
+    "Tenant Category Path": "ACCESSORIES/TRAINING/TRAINING/SOCKS/SOCKS/UNISEX",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 66
+  },
+  {
+    "Tenant Category Path": "ACCESSORIES/CPS/TENNIS/ARM & LEG WEAR/WRIST BAND/UNISEX",
+    "Core Category Path": "Fashion Accessories/Unisex/Wrist Band",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 67
+  },
+  {
+    "Tenant Category Path": "ACCESSORIES/CPS/TENNIS/HEADWEAR/CAP/UNISEX",
+    "Core Category Path": "Fashion Accessories/Unisex/Hat",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 68
+  },
+  {
+    "Tenant Category Path": "ACCESSORIES/CPS/TENNIS/SOCKS/SOCKS/UNISEX",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 69
+  },
+  {
+    "Tenant Category Path": "ACCESSORIES/RUNNING/PERFORMANCE RUNNING/HEADWEAR/CAP/UNISEX",
+    "Core Category Path": "Fashion Accessories/Unisex/Hat",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 70
+  },
+  {
+    "Tenant Category Path": "ACCESSORIES/RUNNING/PERFORMANCE RUNNING/HEADWEAR/HEAD BAND/UNISEX",
+    "Core Category Path": "Fashion Accessories/Unisex/Headband",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 71
+  },
+  {
+    "Tenant Category Path": "ACCESSORIES/RUNNING/PERFORMANCE RUNNING/SOCKS/SOCKS/UNISEX",
+    "Core Category Path": "Fashion Accessories/Unisex/Socks",
+    "Tenant ID": "IND0038",
+    "Org ID": "OR0001",
+    "RowNo": 72
+  }
+]
