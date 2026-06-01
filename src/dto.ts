@@ -32,6 +32,7 @@ export class BulkUploadAttributeMappingJSONData{
 
 export class BulkUploadAttributeJSONData{
     'attribute_name':string
+    'display_name':string
     'attribute_type':string
     'attribute_data_type':string
     'short_name':string

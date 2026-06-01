@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UploadedFiles, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, Get, Post, UploadedFiles, UseInterceptors, Res } from '@nestjs/common';
 import { CategoryCreation } from './category.creation.service';
 import { ExcelToJson } from './exceltojson.service';
 import { FileFieldsInterceptor } from '@nestjs/platform-express';
@@ -7,7 +7,8 @@ import { AttributeCreation } from './attribute.creation.service';
 import { AttributeMappingService } from './attribute.mapping.service';
 import { LovCreation } from './lov.creation.service';
 import { LovMappingService } from './lov.mapping.service';
-import { channel } from 'diagnostics_channel';
+import { Response } from 'express';
+// import { channel } from 'diagnostics_channel';
 
 
 @Controller()
@@ -20,129 +21,164 @@ export class AppController {
         private readonly attributeMappingService: AttributeMappingService,
         private readonly lovCreation: LovCreation,
         private readonly lovMappingService: LovMappingService,
-    ) {}
+    ) { }
 
     @Post('core-creation')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'core', maxCount: 1 },
+        { name: 'file', maxCount: 1 },
     ]))
-    async coreCreation(@UploadedFiles() files: { core: Express.Multer.File[]}){
-        // console.log(files)
-        await this.excelToJson.excelToJson(files.core)
+    async coreCreation(@UploadedFiles() files: { 'file': Express.Multer.File[] }) {
+        await this.excelToJson.validateExcelHeaders(files['file'], 'core-creation')
+        await this.excelToJson.excelToJson(files['file'])
         await this.categoryCreation.bulkUploadCategory('core')
     }
 
     @Post('channel-creation')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'channel', maxCount: 1 },
+        { name: 'file', maxCount: 1 },
     ]))
-    async channelCreation(@Body() body:{channel_id:number}, @UploadedFiles() files: { channel: Express.Multer.File[]}){
-        // console.log(files)
-        await this.excelToJson.excelToJson(files.channel)
-        console.log(body.channel_id);
-        
+    async channelCreation(@Body() body: { channel_id: number }, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
+        await this.excelToJson.validateExcelHeaders(files['file'], 'channel-creation')
+        await this.excelToJson.excelToJson(files['file'])
         await this.categoryCreation.bulkUploadCategory('channel', body.channel_id)
     }
 
     @Post('core-channel-cat-mapping')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'core_channel_cat_map', maxCount: 1 },
+        { name: 'file', maxCount: 1 },
     ]))
-    async coreChannelCatMapping(@Body() body:{channel_id:number}, @UploadedFiles() files: { 'core_channel_cat_map': Express.Multer.File[]}){
-        console.log(files);
-        
-        await this.excelToJson.excelToJson(files['core_channel_cat_map'])
-        console.log(body.channel_id);
-        
+    async coreChannelCatMapping(@Body() body: { channel_id: number }, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
+
+        await this.excelToJson.validateExcelHeaders(files['file'], 'core-channel-cat-mapping')
+        await this.excelToJson.excelToJson(files['file'])
         await this.categoryMappingService.coreChannelCatMapping(body.channel_id)
     }
 
     @Post('core-tenant-cat-mapping')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'core_tenant_cat_map', maxCount: 1 },
+        { name: 'file', maxCount: 1 },
     ]))
-    async coreTenantCatMapping(@Body() body:{tenant_id:string, org_id:string}, @UploadedFiles() files: { 'core_tenant_cat_map': Express.Multer.File[]}){
+    async coreTenantCatMapping(@Body() body: { tenant_id: string, org_id: string }, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
         console.log(files);
-        
-        await this.excelToJson.excelToJson(files['core_tenant_cat_map'])
+
+        await this.excelToJson.validateExcelHeaders(files['file'], 'core-tenant-cat-mapping')
+        await this.excelToJson.excelToJson(files['file'])
         await this.categoryMappingService.coreTenantCatMapping(body.tenant_id, body.org_id)
     }
 
     @Post('core-attribute-creation')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'core_attributes', maxCount: 1 },
+        { name: 'file', maxCount: 1 },
     ]))
-    async bulkAttributeCreation(@UploadedFiles() files: { 'core_attributes': Express.Multer.File[]}){
-        await this.excelToJson.excelToJson(files['core_attributes'])
+    async bulkAttributeCreation(@UploadedFiles() files: { 'file': Express.Multer.File[] }) {
+        await this.excelToJson.validateExcelHeaders(files['file'], 'core-attribute-creation')
+        await this.excelToJson.excelToJson(files['file'])
         await this.attributeCreation.bulkUploadAttribute('Core')
     }
 
     @Post('channel-attribute-creation')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'channel_attributes', maxCount: 1 },
+        { name: 'file', maxCount: 1 },
     ]))
-    async bulkChannelAttributeCreation(@Body() body:{channel_id:number}, @UploadedFiles() files: { 'channel_attributes': Express.Multer.File[]}){
+    async bulkChannelAttributeCreation(@Body() body: { channel_id: number }, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
         console.log(`here`)
-        try{
-            await this.excelToJson.excelToJson(files['channel_attributes'])
-            await this.attributeCreation.bulkUploadAttribute('Channel', body.channel_id)    
-        }catch(e){
+        try {
+            await this.excelToJson.validateExcelHeaders(files['file'], 'channel-attribute-creation')
+            await this.excelToJson.excelToJson(files['file'])
+            await this.attributeCreation.bulkUploadAttribute('Channel', body.channel_id)
+        } catch (e) {
             console.log(e)
         }
-    }  
+    }
 
     @Post('core-channel-attribute-mapping')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'core_channel_attribute_mapping', maxCount: 1 },
+        { name: 'file', maxCount: 1 },
     ]))
-    async bulkCoreChannelAttributeMapping(@Body() body:{channel_id:number}, @UploadedFiles() files: { 'core_channel_attribute_mapping': Express.Multer.File[]}){
-        await this.excelToJson.excelToJson(files['core_channel_attribute_mapping'])
-        await this.attributeMappingService.coreChannleAttributeMapping(body.channel_id)    
-    }  
+    async bulkCoreChannelAttributeMapping(@Body() body: { channel_id: number }, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
+        await this.excelToJson.validateExcelHeaders(files['file'], 'core-channel-attribute-mapping')
+        await this.excelToJson.excelToJson(files['file'])
+        await this.attributeMappingService.coreChannleAttributeMapping(body.channel_id)
+    }
 
     @Post('core-tenant-attribute-mapping')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'core_tenant_attribute_mapping', maxCount: 1 },
+        { name: 'file', maxCount: 1 },
     ]))
-    async coreTenantAttributeMapping(@Body() body:{tenant_id:string, org_id: string}, @UploadedFiles() files: { 'core_tenant_attribute_mapping': Express.Multer.File[]}){
-        await this.excelToJson.excelToJson(files['core_tenant_attribute_mapping'])
-        await this.attributeMappingService.coreTenantAttributeMapping(body.tenant_id, body.org_id)    
-    }  
+    async coreTenantAttributeMapping(@Body() body: { tenant_id: string, org_id: string }, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
+        await this.excelToJson.validateExcelHeaders(files['file'], 'core-tenant-attribute-mapping')
+        await this.excelToJson.excelToJson(files['file'])
+        await this.attributeMappingService.coreTenantAttributeMapping(body.tenant_id, body.org_id)
+    }
 
     @Post('core-reference-data-creation')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'core_reference_data_creation', maxCount: 1 },
+        { name: 'file', maxCount: 1 },
     ]))
-    async coreReferenceDataCreation(@Body() body:{}, @UploadedFiles() files: { 'core_reference_data_creation': Express.Multer.File[]}){
-        await this.excelToJson.excelToJson(files['core_reference_data_creation'])
-        await this.lovCreation.createCoreReferenceMaster()    
-    } 
+    async coreReferenceDataCreation(@Body() body: {}, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
+        await this.excelToJson.validateExcelHeaders(files['file'], 'core-reference-data-creation')
+        await this.excelToJson.excelToJson(files['file'])
+        await this.lovCreation.createCoreReferenceMaster()
+    }
 
     @Post('channel-reference-data-creation')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'channel_reference_data_creation', maxCount: 1 },
+        { name: 'file', maxCount: 1 },
     ]))
-    async channelReferenceDataCreation(@Body() body:{channel_id: number}, @UploadedFiles() files: { 'channel_reference_data_creation': Express.Multer.File[]}){
-        await this.excelToJson.excelToJson(files['channel_reference_data_creation'])
-        await this.lovCreation.createChannelReferenceMaster(body.channel_id)    
-    } 
+    async channelReferenceDataCreation(@Body() body: { channel_id: number }, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
+        await this.excelToJson.validateExcelHeaders(files['file'], 'channel-reference-data-creation')
+        await this.excelToJson.excelToJson(files['file'])
+        await this.lovCreation.createChannelReferenceMaster(body.channel_id)
+    }
 
     @Post('core-channel-lov-mapping')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'core_channel_lov_mapping', maxCount: 1 },
+        { name: 'file', maxCount: 1 },
     ]))
-    async coreChannelLovMapping(@Body() body:{channel_id:number}, @UploadedFiles() files: { 'core_channel_lov_mapping': Express.Multer.File[]}){
-        await this.excelToJson.excelToJson(files['core_channel_lov_mapping'])
-        await this.lovMappingService.coreChnanelLovMapping(body.channel_id)    
-    }  
+    async coreChannelLovMapping(@Body() body: { channel_id: number }, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
+        await this.excelToJson.validateExcelHeaders(files['file'], 'core-channel-lov-mapping')
+        await this.excelToJson.excelToJson(files['file'])
+        await this.lovMappingService.coreChnanelLovMapping(body.channel_id)
+    }
 
     @Post('core-tenant-lov-mapping')
     @UseInterceptors(FileFieldsInterceptor([
-        { name: 'core_tenant_lov_mapping', maxCount: 1 },
+        { name: 'file', maxCount: 1 },
     ]))
-    async coreTenantLovMapping(@Body() body:{tenant_id:string, org_id:string}, @UploadedFiles() files: { 'core_tenant_lov_mapping': Express.Multer.File[]}){
-        await this.excelToJson.excelToJson(files['core_tenant_lov_mapping'])
-        await this.lovMappingService.coreTenantLovMapping(body.tenant_id, body.org_id)    
+    async coreTenantLovMapping(@Body() body: { tenant_id: string, org_id: string }, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
+        await this.excelToJson.validateExcelHeaders(files['file'], 'core-tenant-lov-mapping')
+        await this.excelToJson.excelToJson(files['file'])
+        await this.lovMappingService.coreTenantLovMapping(body.tenant_id, body.org_id)
     }
+
+    @Get('get-channels')
+    async getchannel(@Body() body: {}) {
+        return await this.categoryCreation.getChannels()
+    }
+
+    @Get('get-tenant')
+    async gettenant(@Body() body: {}) {
+        return await this.categoryCreation.getTenants()
+    }
+
+    @Get('temp')
+    async temp(@Body() body: {}) {
+        for(let i=0; i<10; i++){
+            console.log(i,'-----------------------------------');
+            //write into text file
+            //wait for 1 sec
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+        return {}
+    }   
     
+    @Get('temp1')
+    async temp1(@Body() body: {}) {
+        for(let i=0; i<10; i++){
+            console.log(i,'-----');
+            //wait for 
+        }
+
+        return {}
+    }  
 }

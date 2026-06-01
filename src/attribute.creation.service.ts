@@ -100,7 +100,7 @@ export class AttributeCreation {
                     attribute_db_name: row.attribute_name,
                     attribute_name: row.attribute_name,
                     short_name: row.attribute_name,
-                    display_name: row.attribute_name,
+                    display_name: row.display_name?row.display_name:row.attribute_name,
                     label_description: row.label_description ?? null,
                     attribute_type: row.attribute_type,
                     attribute_data_type: row.attribute_data_type,

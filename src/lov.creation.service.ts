@@ -124,6 +124,9 @@ export class LovCreation {
           .orIgnore()
           .execute();
       }
+      //will it ignore duplicate if table has incremental 
+      //
+      //
       fs.writeFileSync('channel_lov_creation_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
       console.log("JSON file created successfully!");
     } catch (err) {

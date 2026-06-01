@@ -51,10 +51,15 @@ export class LovMappingService {
         let entityManager = this.dataSource.createEntityManager()
 
         for(let row of data){
+            let errors = []
+            if(row['Tenant Category Path']==undefined || row['Core Attribute Name']==undefined || row['Tenant Attribute Name']==undefined || row['Core Reference Data']==undefined || row['Tenant Reference Data']==undefined){
+                errors.push({ ...row, error: `One or more mandatory fields are missing` })
+                // failedRows.push(...errors)
+                // continue
+            }
             const tenantCategory = tenantCategories.find(x=>x.path===row['Tenant Category Path'])
             const coreAttribute = coreAttributes.find(x=>x.attribute_name===row['Core Attribute Name'])
             const tenantAttribute = TenantAttributes.find(x=>x.attribute_name===row['Tenant Attribute Name'])//row['Channel Attribute Name']
-            let errors = []
             if(tenantCategory===undefined)
                 errors.push({ ...row, error: `Tenant Category ${row['Tenant Category Path']} does not exist` })
             if(coreAttribute===undefined)
@@ -154,11 +159,17 @@ export class LovMappingService {
         for(let row of data){
             i++;
             console.log(i);
+
+            let errors = []
+            if(row['Channel Category Path']==undefined || row['Core Attribute Name']==undefined || row['Channel Attribute Name']==undefined || row['Core Reference Data']==undefined || row['Channel Reference Data']==undefined){
+                errors.push({ ...row, error: `One or more mandatory fields are missing` })
+                // failedRows.push(...errors)
+                // continue
+            }
             const channelCategory = channelCategories.find(x=>x.category_path===row['Channel Category Path'])
             const coreAttribute = coreAttributes.find(x=>x.attribute_name===row['Core Attribute Name'])
             const channelAttribute = channelAttributes.find(x=>x.attribute_name===row['Channel Attribute Name'])//row['Channel Attribute Name']
 
-            let errors = []
             if(channelCategory===undefined)
                 errors.push({ ...row, error: `Channel Category ${row['Channel Category Path']} does not exist` })
             if(coreAttribute===undefined)

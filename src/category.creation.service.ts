@@ -231,4 +231,14 @@ export class CategoryCreation {
 		}
 
 	}
+
+	async getChannels(){
+		const channels = await this.dataSource.manager.query(`select marketplace_id as channel_id, marketplace_name as channel_name from channels`)
+		return channels
+	}
+
+	async getTenants(){
+		const tenants = await this.dataSource.manager.query(`select tenant_id, org_id from tenant`)
+		return tenants
+	}
 }
