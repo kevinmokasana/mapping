@@ -26,7 +26,7 @@ dotenv.config();
 export class LovCreation {
   constructor(
     @InjectDataSource(WRITE_DB_NAME) private dataSource: DataSource,
-  ) {}
+  ) { }
 
   async createChannelReferenceMaster(channel_id: number) {
     try {
@@ -59,74 +59,76 @@ export class LovCreation {
           },
           select: ['category_path', 'id'],
         });
-      let i=0
+      let i = 0
       for (let row of data) {
         i++
         console.log(i);
-        
-        const channelAttribute = channelAttributes.find(
-          (x) => x.attribute_name === row['Channel Attribute Name'],
-        );
-        const channelCategory = channelCategories.find(
-          (x) => x.category_path === row['Channel Category Path'],
-        );
-        let errors = [];
-        if (channelAttribute === undefined)
-          errors.push({
-            ...row,
-            error: `Channel Attribute ${row['Channel Attribute Name']} does not exist`,
+        try {
+          let errors = [];
+          if(row['Channel Attribute Name'] == null || row['Channel Category Path'] == null || row['Channel Reference Data'] == null){
+            errors.push(`Channel Attribute Name or Channel Category Path or Channel Reference Data is empty`);
+          }
+          const channelAttribute = channelAttributes.find(
+            (x) => x.attribute_name === row['Channel Attribute Name'],
+          );
+          const channelCategory = channelCategories.find(
+            (x) => x.category_path === row['Channel Category Path'],
+          );
+          if (channelAttribute === undefined)
+            errors.push(`Channel Attribute ${row['Channel Attribute Name']} does not exist`);
+
+          if (channelCategory === undefined)
+            errors.push(`Channel Category ${row['Channel Category Path']} does not exist`);
+
+          if (errors.length > 0) {
+            failedRows.push({
+              ...row,
+              error: errors.join(',')
+            });
+            continue;
+          }
+
+          const channel_rmdm_id = await entityManager.getRepository(ChannelRefereneData).findOne({
+            where: {
+              attribute_id: channelAttribute.id,
+              value: row['Channel Reference Data'],
+              category_id: channelCategory.id,
+              channel_id: channel_id,
+            },
+            select: ['rmdm_id'],
           });
 
-        if (channelCategory === undefined)
-          errors.push({
-            ...row,
-            error: `Channel Category ${row['Channel Category Path']} does not exist`,
-          });
+          if (channel_rmdm_id !== null && channel_rmdm_id !== undefined) {
+            continue
+          }
 
-        if (errors.length > 0) {
-          failedRows.push(...errors);
-          continue;
+          // if (errors.length > 0) {
+          //   failedRows.push(...errors);
+          //   continue;
+          // }
+          const time = Date.now();
+          await entityManager
+            .createQueryBuilder()
+            .insert()
+            .into(ChannelRefereneData)
+            .values({
+              attribute_id: channelAttribute.id,
+              category_id: channelCategory.id,
+              value: row['Channel Reference Data'],
+              channel_id: channel_id,
+            })
+            .orIgnore()
+            .execute();
+        }
+        catch (error) {
+          failedRows.push({
+            ...row,
+            error: error.message
+          });  
         }
 
-        const channel_rmdm_id = await entityManager.getRepository(ChannelRefereneData).findOne({
-          where: {
-            attribute_id: channelAttribute.id,  
-            value: row['Value'],
-            category_id: channelCategory.id,
-            channel_id: channel_id,
-          },
-          select: ['rmdm_id'],
-        });
-
-        if (channel_rmdm_id !== null && channel_rmdm_id !== undefined){
-          errors.push({
-            ...row,
-            error: `Channel Reference Data ${row['Channel Reference Data']} already exist for Channel Attribute ${row['Channel Attribute Name']} and Channel Category ${row['Channel Category Name']}`,
-          });
-          continue
-        }
-
-        // if (errors.length > 0) {
-        //   failedRows.push(...errors);
-        //   continue;
-        // }
-        const time = Date.now();
-        await entityManager
-          .createQueryBuilder()
-          .insert()
-          .into(ChannelRefereneData)
-          .values({
-            attribute_id: channelAttribute.id,
-            category_id: channelCategory.id,
-            value: row['Value'],
-            channel_id: channel_id,
-          })
-          .orIgnore()
-          .execute();
       }
-      //will it ignore duplicate if table has incremental 
-      //
-      //
+
       fs.writeFileSync('channel_lov_creation_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
       console.log("JSON file created successfully!");
     } catch (err) {
@@ -155,64 +157,78 @@ export class LovCreation {
           },
           select: ['attribute_name', 'id'],
         });
-      let i=0;
+      let i = 0;
       for (let row of data) {
         i++;
         console.log(i);
-        
-        const coreAttribute = coreAttributes.find(
-          (x) => x.attribute_name === row['Core Attribute Name'],
-        );
-        let errors = [];
-        if (coreAttribute === undefined)
-          errors.push({
-            ...row,
-            error: `Core Attribute ${row['Core Attribute Name']} does not exist`,
+        try {
+          let errors = []
+          if (row['Core Attribute Name'] == null || row['Core Attribute Name'] == null || row['Core Reference Data'] == null || row['Core Reference Data'] == null ) {
+            errors.push(`Core Attribute Name or Core Reference Data is empty`)
+          }
+          const coreAttribute = coreAttributes.find(
+            (x) => x.attribute_name === row['Core Attribute Name'],
+          );
+          if (coreAttribute === undefined)
+            errors.push(
+              `Core Attribute ${row['Core Attribute Name']} does not exist`
+            );
+
+          if (errors.length > 0) {
+            failedRows.push({
+              ...row,
+              error: errors.join(',')
+            });
+            continue;
+          }
+
+          const core_rmdm_id = await entityManager.getRepository(CoreRefereneData).findOne({
+            where: {
+              attribute_id: coreAttribute.id,
+              value: row['Core Reference Data'],
+            },
+            select: ['rmdm_id'],
           });
+          // console.log(core_rmdm_id);
+          // break
 
-        if (errors.length > 0) {
-          failedRows.push(...errors);
-          continue;
+          if (core_rmdm_id !== null && core_rmdm_id !== undefined) {
+            // errors.push({
+            //   ...row,
+            //   error: `Core Reference Data ${row['Core Reference Data']} already exist for Core Attribute ${row['Core Attribute Name']}`,
+            // });
+            continue
+          }
+
+          // if (errors.length > 0) {
+          //   failedRows.push(...errors);
+          //   continue;
+          // }
+          const time = Date.now();
+          await entityManager
+            .createQueryBuilder()
+            .insert()
+            .into(CoreRefereneData)
+            .values({
+              attribute_id: coreAttribute.id,
+              value: row['Core Reference Data'],
+              status: true,
+              created_by: 'Admin',
+              // created_at: time,
+              updated_by: 'Admin',
+              // updated_at: time,
+            })
+            .orIgnore()
+            .execute();
+        }
+        catch (err) {
+          failedRows.push({
+            ...row,
+            error: err.message,
+          });
+          // continue;
         }
 
-        const core_rmdm_id = await entityManager.getRepository(CoreRefereneData).findOne({
-          where: {
-            attribute_id: coreAttribute.id,
-            value: row['Core Reference Data'],
-          },
-          select: ['rmdm_id'],
-        });
-        console.log(core_rmdm_id);
-        // break
-        
-        if (core_rmdm_id !== null && core_rmdm_id !== undefined){
-          // errors.push({
-          //   ...row,
-          //   error: `Core Reference Data ${row['Core Reference Data']} already exist for Core Attribute ${row['Core Attribute Name']}`,
-          // });
-          continue
-        }
-        
-        // if (errors.length > 0) {
-        //   failedRows.push(...errors);
-        //   continue;
-        // }
-        const time = Date.now();
-        await entityManager
-          .createQueryBuilder()
-          .insert()
-          .into(CoreRefereneData)
-          .values({
-            attribute_id: coreAttribute.id,
-            value: row['Core Reference Data'],
-            status: true,
-            created_by: 'Admin',
-            // created_at: time,
-            updated_by: 'Admin',
-            // updated_at: time,
-          })
-          .orIgnore()
-          .execute();
       }
       fs.writeFileSync('core_lov_creation_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
       console.log("JSON file created successfully!");

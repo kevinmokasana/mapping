@@ -77,7 +77,7 @@ export class AppController {
     ]))
     async bulkAttributeCreation(@UploadedFiles() files: { 'file': Express.Multer.File[] }) {
         await this.excelToJson.validateExcelHeaders(files['file'], 'core-attribute-creation')
-        await this.excelToJson.excelToJson(files['file'])
+        await this.excelToJson.excelToJson(files['file'], true)
         await this.attributeCreation.bulkUploadAttribute('Core')
     }
 
@@ -89,7 +89,8 @@ export class AppController {
         console.log(`here`)
         try {
             await this.excelToJson.validateExcelHeaders(files['file'], 'channel-attribute-creation')
-            await this.excelToJson.excelToJson(files['file'])
+            await this.excelToJson.excelToJson(files['file'], true)
+            // return ""
             await this.attributeCreation.bulkUploadAttribute('Channel', body.channel_id)
         } catch (e) {
             console.log(e)
@@ -143,6 +144,7 @@ export class AppController {
     async coreChannelLovMapping(@Body() body: { channel_id: number }, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
         await this.excelToJson.validateExcelHeaders(files['file'], 'core-channel-lov-mapping')
         await this.excelToJson.excelToJson(files['file'])
+        return
         await this.lovMappingService.coreChnanelLovMapping(body.channel_id)
     }
 
