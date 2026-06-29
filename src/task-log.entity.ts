@@ -20,6 +20,9 @@ export class TaskLog {
     @Column({ length: 500 })
     input_s3_key: string;
 
+    @Column({ length: 255, nullable: true })
+    file_name: string; // original name of the uploaded file
+
     @Column({ length: 500, nullable: true })
     result_s3_key: string;
 

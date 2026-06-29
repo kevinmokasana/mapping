@@ -239,11 +239,11 @@ export class AppController {
     async submitTask(@Body() body: {
         task_type: string;
         input_s3_key: string;
+        file_name?: string;
         channel_id?: number;
         tenant_id?: string;
         org_id?: string;
     }) {
-        console.log('in task');
         
         // Validate that task_type is a known task
         if (!TASK_REQUIRED_HEADERS[body.task_type]) {
@@ -265,6 +265,7 @@ export class AppController {
         const task = await this.taskService.createTask({
             task_type: body.task_type,
             input_s3_key: body.input_s3_key,
+            file_name: body.file_name,
             channel_id: body.channel_id,
             tenant_id: body.tenant_id,
             org_id: body.org_id,
@@ -274,6 +275,9 @@ export class AppController {
         await this.taskQueue.add('process-task', {
             taskId: task.id
         }, {
+            attempts: 2, // 2 total tries; a thrown error triggers one retry
+            backoff: { type: 'fixed', delay: 0 }, // retry immediately so the re-prioritised job runs before any waiting task
+            priority: 10, // normal priority; failed/stalled retries are bumped to 1 (front)
             removeOnComplete: true, // Automatically remove from queue when done
             removeOnFail: false // Keep in queue if failed for debugging/retry
         });

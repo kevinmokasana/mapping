@@ -1,5 +1,5 @@
-import { Processor, WorkerHost } from '@nestjs/bullmq';
-import { Job } from 'bullmq';
+import { Processor, WorkerHost, OnWorkerEvent, InjectQueue } from '@nestjs/bullmq';
+import { Job, Queue } from 'bullmq';
 import { TaskService } from './task.service';
 import { CategoryCreation } from './category.creation.service';
 import { CategoryMappingService } from './category.mapping.service';
@@ -12,9 +12,15 @@ import { S3Service } from './s3.service';
 import * as fs from 'fs';
 import * as path from 'path';
 
-@Processor('task-queue')
+// concurrency: 1  -> tasks share on-disk json files in process.cwd(), so only
+//                    one task may run at a time (and it lets a re-prioritised
+//                    retry reliably run before any other queued task).
+// maxStalledCount: 1 -> a task whose worker died mid-run (stalled) is recovered
+//                    and reprocessed once before being marked failed.
+@Processor('task-queue', { concurrency: 1, maxStalledCount: 1 })
 export class TaskProcessor extends WorkerHost {
     constructor(
+        @InjectQueue('task-queue') private readonly taskQueue: Queue,
         private readonly taskService: TaskService,
         private readonly categoryCreation: CategoryCreation,
         private readonly categoryMappingService: CategoryMappingService,
@@ -145,6 +151,48 @@ export class TaskProcessor extends WorkerHost {
             } catch (cleanupError) {
                 console.error(`Failed to cleanup json file for task ${taskId}:`, cleanupError);
             }
+        }
+    }
+
+    /**
+     * Fires when a job throws. If it still has retry attempts left, BullMQ will
+     * re-queue it; we bump its priority to the top (1) so the retry is picked up
+     * before any normally-queued task instead of going to the back of the queue.
+     */
+    @OnWorkerEvent('failed')
+    async onFailed(job: Job): Promise<void> {
+        if (!job) return;
+        const maxAttempts = job.opts.attempts ?? 1;
+        const willRetry = job.attemptsMade < maxAttempts;
+        if (!willRetry) return;
+
+        try {
+            await job.changePriority({ priority: 1 });
+            console.log(
+                `Task ${job.data?.taskId} failed — retry re-prioritised to front of queue ` +
+                `(attempt ${job.attemptsMade + 1}/${maxAttempts})`,
+            );
+        } catch (err) {
+            console.error(`Failed to re-prioritise retry for task ${job.data?.taskId}:`, err);
+        }
+    }
+
+    /**
+     * Fires when a job stalls — e.g. the service died mid-processing so the job
+     * lock expired. BullMQ moves it back to the queue; we bump it to the top (1)
+     * so the recovered task is reprocessed before any normally-queued task.
+     */
+    @OnWorkerEvent('stalled')
+    async onStalled(jobId: string): Promise<void> {
+        try {
+            const job = await this.taskQueue.getJob(jobId);
+            if (!job) return;
+            await job.changePriority({ priority: 1 });
+            console.log(
+                `Task ${job.data?.taskId ?? jobId} stalled — re-prioritised to front of queue`,
+            );
+        } catch (err) {
+            console.error(`Failed to re-prioritise stalled job ${jobId}:`, err);
         }
     }
 

@@ -1,6 +1,7 @@
 import { HttpException, Injectable } from '@nestjs/common';
 import { InjectDataSource } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
+import { randomUUID } from 'crypto';
 import { TaskLog } from './task-log.entity';
 import { WRITE_DB_NAME } from './app.constants';
 
@@ -9,6 +10,7 @@ export type TaskStatus = 'PENDING' | 'PROCESSING' | 'COMPLETED' | 'COMPLETED_WIT
 export interface CreateTaskDto {
     task_type: string;
     input_s3_key: string;
+    file_name?: string;
     channel_id?: number;
     tenant_id?: string;
     org_id?: string;
@@ -22,21 +24,38 @@ export class TaskService {
 
     /**
      * Creates a new task_logs entry with status PENDING.
+     * The row's id is reused from the UUID embedded in the uploaded file's
+     * S3 key (keys look like "mapping_uploads/<uuid>-<filename>") so the task
+     * and its input file share the same UUID. Falls back to a fresh UUID if
+     * the key has no recognisable id.
      * Returns the created task with its UUID.
      */
     async createTask(dto: CreateTaskDto): Promise<TaskLog> {
         const repo = this.dataSource.getRepository(TaskLog);
 
         const task = repo.create({
+            id: this.extractFileId(dto.input_s3_key),
             task_type: dto.task_type,
             status: 'PENDING' as TaskStatus,
             input_s3_key: dto.input_s3_key,
+            file_name: dto.file_name || null,
             channel_id: dto.channel_id || null,
             tenant_id: dto.tenant_id || null,
             org_id: dto.org_id || null,
         });
 
         return await repo.save(task);
+    }
+
+    /**
+     * Pulls the leading UUID out of an S3 upload key so the task_logs row can
+     * share its id. Returns a fresh UUID when the key has no UUID prefix.
+     */
+    private extractFileId(inputS3Key: string): string {
+        const match = inputS3Key?.match(
+            /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i,
+        );
+        return match ? match[0] : randomUUID();
     }
 
     /**
