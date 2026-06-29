@@ -126,7 +126,7 @@ export class AttributeMappingService {
         // console.log(failedRows);
         fs.writeFileSync('core_channe_attribute_mapping_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
         console.log("JSON file created successfully!");
-
+        return {}
     }
 
     async coreTenantAttributeMapping(tenant_id: string, org_id: string) {
@@ -269,7 +269,7 @@ export class AttributeMappingService {
 
         fs.writeFileSync('core_tenant_attribute_mapping_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
         console.log("JSON file created successfully!");
-
+        return {}
 
     }
 

@@ -131,6 +131,7 @@ export class LovCreation {
 
       fs.writeFileSync('channel_lov_creation_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
       console.log("JSON file created successfully!");
+      return {}
     } catch (err) {
       throw new HttpException(err.message, 500);
     }
@@ -232,6 +233,7 @@ export class LovCreation {
       }
       fs.writeFileSync('core_lov_creation_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
       console.log("JSON file created successfully!");
+      return {}
 
     } catch (err) {
       throw new HttpException(err.message, 500);

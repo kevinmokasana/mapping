@@ -118,11 +118,9 @@ export class AppController {
         { name: 'file', maxCount: 1 },
     ]))
     async bulkChannelAttributeCreation(@Body() body: { channel_id: number }, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
-        console.log(`here`)
         try {
             await this.excelToJson.validateExcelHeaders(files['file'], 'channel-attribute-creation')
             await this.excelToJson.excelToJson(files['file'], true)
-            // return ""
             await this.attributeCreation.bulkUploadAttribute('Channel', body.channel_id)
         } catch (e) {
             console.log(e)

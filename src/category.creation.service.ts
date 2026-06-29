@@ -62,6 +62,7 @@ export class CategoryCreation {
 
     async bulkUploadCategory(type:`core` | `channel`, channelId?:number) {
         let fileName = type===`core` ? `CoreCategory.json` : `ChannelCategory.json`
+		let errorFileName = type===`core` ? `core_category_creation_failed.json` : `channel_category_creation_failed.json`
 		let jsonData:BulkUploadCategoryJsonData[] = JSON.parse(fs.readFileSync(fileName).toString())
 		let category2DArray = {}
 		let data = jsonData

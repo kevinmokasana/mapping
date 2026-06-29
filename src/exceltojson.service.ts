@@ -45,6 +45,8 @@ export const TASK_REQUIRED_HEADERS: Record<string, { sheetName: string; headers:
  * uploaded to S3 so the user can see exactly which rows failed and why.
  */
 export const TASK_ERROR_FILES: Record<string, string> = {
+    'core-creation': 'core_category_creation_failed.json',
+    'channel-creation': 'channel_category_creation_failed.json',
     'core-channel-cat-mapping': 'coreChannelCatMappingFailedRows.json',
     'core-tenant-cat-mapping': 'coreTenantCatMappingFailedRows.json',
     'core-attribute-creation': 'attribute_failed.json',

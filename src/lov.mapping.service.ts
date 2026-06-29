@@ -144,6 +144,7 @@ export class LovMappingService {
 
         fs.writeFileSync('core_tenant_lov_mapping_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
         console.log("JSON file created successfully!");
+        return {}
 
     }
     async coreChnanelLovMapping(channelId: number) {
@@ -262,7 +263,7 @@ export class LovMappingService {
 
         fs.writeFileSync('core_channel_lov_mapping_failed.json', JSON.stringify(failedRows, null, 2), 'utf-8');
         console.log("JSON file created successfully!");
-
+        return {}
     }
 
 }
