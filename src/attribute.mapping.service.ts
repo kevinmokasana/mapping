@@ -53,8 +53,9 @@ export class AttributeMappingService {
         let entityManager = this.dataSource.createEntityManager()
         let i = 0
         for (let row of data) {
+            
             console.log(i);
-            i++;
+            i++; 
             try {
                 //check for empty fields
                 let errors = []

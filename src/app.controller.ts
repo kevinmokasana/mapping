@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UploadedFiles, UseInterceptors, Res } from '@nestjs/common';
+import { Body, Controller, Get, Post, Param, Query, UploadedFiles, UseInterceptors, Res } from '@nestjs/common';
 import { CategoryCreation } from './category.creation.service';
 import { ExcelToJson } from './exceltojson.service';
 import { FileFieldsInterceptor } from '@nestjs/platform-express';
@@ -13,6 +13,11 @@ import { Response } from 'express';
 import { channel } from 'diagnostics_channel';
 import { NewMappingService } from './new.mapping.service'
 import { LOVExtractor } from './lov.extractor';
+import { TaskService } from './task.service';
+import { TASK_REQUIRED_HEADERS } from './exceltojson.service';
+import { InjectQueue } from '@nestjs/bullmq';
+import { Queue } from 'bullmq';
+import { S3Service } from './s3.service';
 
 @Controller()
 export class AppController {
@@ -25,8 +30,35 @@ export class AppController {
         private readonly lovCreation: LovCreation,
         private readonly lovMappingService: LovMappingService,
         private readonly newMappingService:NewMappingService,
-        private readonly lovExtractor:LOVExtractor
+        private readonly lovExtractor:LOVExtractor,
+        private readonly taskService: TaskService,
+        private readonly s3Service: S3Service,
+        @InjectQueue('task-queue') private readonly taskQueue: Queue,
     ) {}
+
+    /**
+     * GET /upload-url
+     * Returns a presigned S3 PUT URL plus the reserved object key so the
+     * browser can upload an Excel file directly to S3, then submit a task
+     * against the returned key.
+     */
+    @Get('upload-url')
+    async getUploadUrl(
+        @Query('filename') filename: string,
+        @Query('content_type') contentType?: string,
+    ) {
+        return await this.s3Service.getUploadUrl(filename, contentType);
+    }
+
+    /**
+     * GET /download-url
+     * Returns a presigned S3 GET URL so the browser can download a stored
+     * object (e.g. a task's generated error report) by its key.
+     */
+    @Get('download-url')
+    async getDownloadUrl(@Query('key') key: string) {
+        return await this.s3Service.getDownloadUrl(key);
+    }
 
     @Post('core-creation')
     @UseInterceptors(FileFieldsInterceptor([
@@ -144,7 +176,6 @@ export class AppController {
     async coreChannelLovMapping(@Body() body: { channel_id: number }, @UploadedFiles() files: { 'file': Express.Multer.File[] }) {
         await this.excelToJson.validateExcelHeaders(files['file'], 'core-channel-lov-mapping')
         await this.excelToJson.excelToJson(files['file'])
-        return
         await this.lovMappingService.coreChnanelLovMapping(body.channel_id)
     }
 
@@ -195,5 +226,82 @@ export class AppController {
     ){
         await this.lovExtractor.extractLOV(files.files, body.marketplace)
     }  
+
+    // ─── Task History Endpoints ──────────────────────────────────────────
+
+    /**
+     * POST /task
+     * Accepts a task_type + input_s3_key, creates a task_logs entry,
+     * and returns immediately with { task_id, status: 'PENDING' }.
+     * Background processing will be triggered separately (Phase 3).
+     */
+    @Post('task')
+    async submitTask(@Body() body: {
+        task_type: string;
+        input_s3_key: string;
+        channel_id?: number;
+        tenant_id?: string;
+        org_id?: string;
+    }) {
+        console.log('in task');
+        
+        // Validate that task_type is a known task
+        if (!TASK_REQUIRED_HEADERS[body.task_type]) {
+            return {
+                statusCode: 400,
+                message: `Unknown task_type "${body.task_type}". Valid types: ${Object.keys(TASK_REQUIRED_HEADERS).join(', ')}`,
+            };
+        }
+
+        // Validate input_s3_key is provided
+        if (!body.input_s3_key) {
+            return {
+                statusCode: 400,
+                message: 'input_s3_key is required',
+            };
+        }
+
+        // Create the task_logs entry with status PENDING
+        const task = await this.taskService.createTask({
+            task_type: body.task_type,
+            input_s3_key: body.input_s3_key,
+            channel_id: body.channel_id,
+            tenant_id: body.tenant_id,
+            org_id: body.org_id,
+        });
+
+        // Add to BullMQ queue
+        await this.taskQueue.add('process-task', {
+            taskId: task.id
+        }, {
+            removeOnComplete: true, // Automatically remove from queue when done
+            removeOnFail: false // Keep in queue if failed for debugging/retry
+        });
+
+        return {
+            task_id: task.id,
+            status: task.status,
+            message: 'Task submitted successfully. Track it in Task History.',
+        };
+    }
+
+    /**
+     * GET /tasks
+     * Returns all tasks ordered by created_at DESC for the Task History page.
+     */
+    @Get('tasks')
+    async getAllTasks() {
+        console.log('in tasks');
+        return await this.taskService.findAll();
+    }
+
+    /**
+     * GET /task/:id
+     * Returns a single task's details and current status.
+     */
+    @Get('task/:id')
+    async getTaskById(@Param('id') id: string) {
+        return await this.taskService.findById(id);
+    }
 }
 

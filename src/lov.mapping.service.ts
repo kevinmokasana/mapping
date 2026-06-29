@@ -180,7 +180,7 @@ export class LovMappingService {
         for (let row of data) {
             i++;
             console.log(i);
-
+            
             try {
                 let errors = []
                 if (row['Channel Category Path'] == null || row['Core Attribute Name'] == null || row['Channel Attribute Name'] == null || row['Core Reference Data'] == null || row['Channel Reference Data'] == null) {

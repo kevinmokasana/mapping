@@ -433,7 +433,7 @@ export class ChannelCategory {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({ nullable: true })
     category_name: string;
 
     @Column({ nullable: true })
