@@ -16,6 +16,21 @@ export interface CreateTaskDto {
     org_id?: string;
 }
 
+/**
+ * Optional filters for the Task History listing. Any field left undefined is
+ * ignored, so an empty object returns every task. All provided filters are
+ * combined with AND.
+ */
+export interface TaskFilters {
+    task_type?: string;
+    file_name?: string;
+    status?: string;
+    channel_id?: number;
+    tenant_id?: string;
+    submitted_from?: string; // inclusive lower bound, 'YYYY-MM-DD'
+    submitted_to?: string;   // inclusive upper bound, 'YYYY-MM-DD'
+}
+
 @Injectable()
 export class TaskService {
     constructor(
@@ -73,13 +88,47 @@ export class TaskService {
     }
 
     /**
-     * Returns all tasks ordered by created_at descending (newest first).
+     * Returns tasks ordered by created_at descending (newest first), optionally
+     * narrowed by the supplied filters. Each filter is applied only when present,
+     * so calling findAll() with no arguments returns every task. Filters combine
+     * with AND.
      */
-    async findAll(): Promise<TaskLog[]> {
+    async findAll(filters: TaskFilters = {}): Promise<TaskLog[]> {
         const repo = this.dataSource.getRepository(TaskLog);
-        return await repo.find({
-            order: { created_at: 'DESC' },
-        });
+        const qb = repo.createQueryBuilder('task');
+
+        if (filters.task_type) {
+            qb.andWhere('task.task_type = :task_type', { task_type: filters.task_type });
+        }
+
+        if (filters.status) {
+            qb.andWhere('task.status = :status', { status: filters.status });
+        }
+
+        if (filters.channel_id !== undefined && filters.channel_id !== null) {
+            qb.andWhere('task.channel_id = :channel_id', { channel_id: filters.channel_id });
+        }
+
+        if (filters.tenant_id) {
+            qb.andWhere('task.tenant_id = :tenant_id', { tenant_id: filters.tenant_id });
+        }
+
+        // Case-insensitive "contains" match on the original file name.
+        if (filters.file_name) {
+            qb.andWhere('task.file_name ILIKE :file_name', { file_name: `%${filters.file_name}%` });
+        }
+
+        // Date-range filter on created_at. Casting to ::date makes both bounds
+        // inclusive at day granularity, so from=to matches that whole day.
+        if (filters.submitted_from) {
+            qb.andWhere('task.created_at::date >= :submitted_from', { submitted_from: filters.submitted_from });
+        }
+
+        if (filters.submitted_to) {
+            qb.andWhere('task.created_at::date <= :submitted_to', { submitted_to: filters.submitted_to });
+        }
+
+        return await qb.orderBy('task.created_at', 'DESC').getMany();
     }
 
     /**

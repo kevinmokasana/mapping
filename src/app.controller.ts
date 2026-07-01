@@ -289,12 +289,32 @@ export class AppController {
 
     /**
      * GET /tasks
-     * Returns all tasks ordered by created_at DESC for the Task History page.
+     * Returns tasks ordered by created_at DESC for the Task History page.
+     * All query params are optional filters combined with AND; omitting them
+     * returns every task.
      */
     @Get('tasks')
-    async getAllTasks() {
-        console.log('in tasks');
-        return await this.taskService.findAll();
+    async getAllTasks(
+        @Query('task_type') taskType?: string,
+        @Query('file_name') fileName?: string,
+        @Query('status') status?: string,
+        @Query('channel_id') channelId?: string,
+        @Query('tenant_id') tenantId?: string,
+        @Query('submitted_from') submittedFrom?: string,
+        @Query('submitted_to') submittedTo?: string,
+    ) {
+        return await this.taskService.findAll({
+            task_type: taskType,
+            file_name: fileName,
+            status,
+            channel_id:
+                channelId !== undefined && channelId !== ''
+                    ? Number(channelId)
+                    : undefined,
+            tenant_id: tenantId,
+            submitted_from: submittedFrom,
+            submitted_to: submittedTo,
+        });
     }
 
     /**
