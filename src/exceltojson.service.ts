@@ -289,7 +289,9 @@ export class ExcelToJson {
 
         let headers = {};
         headerRow.forEach((row) => {
-            headers[row.column] = row.value;
+            const headerValue =
+                typeof row.value === 'string' ? row.value.trim() : row.value;
+            headers[row.column] = headerValue;
         });
 
         const headerColumns = headerRow.map((h) => h.column);
@@ -324,6 +326,11 @@ export class ExcelToJson {
                 // rich text / hyperlink fallback
                 if (value !== null && typeof value === 'object' && 'text' in value) {
                     value = value.text;
+                }
+
+                // trim leading/trailing whitespace off any string value
+                if (typeof value === 'string') {
+                    value = value.trim();
                 }
 
                 if (value !== null && keepAsBoolean) {

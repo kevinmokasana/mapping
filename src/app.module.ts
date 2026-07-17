@@ -17,6 +17,7 @@ import { TaskService } from './task.service';
 import { S3Service } from './s3.service';
 import { BullModule } from '@nestjs/bullmq';
 import { TaskProcessor } from './task.processor';
+import { REDIS_CONNECTION } from './app.constants';
 dotenv.config()
 @Module({
   imports: [
@@ -24,7 +25,7 @@ dotenv.config()
     TypeOrmModule.forRoot({ ...ReadDatabaseConfig, name: process.env.READ_DB_NAME }),
     BullModule.forRoot({
       connection: {
-        host: 'uat-1-ap-south-1-vin-redis.qo0ltf.0001.aps1.cache.amazonaws.com', // Or from env
+        host: String(REDIS_CONNECTION),
         port: 6379,
       },
     }), 

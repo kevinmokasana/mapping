@@ -110,9 +110,11 @@ export class TaskProcessor extends WorkerHost {
             if (failedRows.length > 0) {
                 const sheetName = TASK_REQUIRED_HEADERS[task.task_type]?.sheetName || 'Errors';
                 const errorBuffer = await this.excelToJson.jsonToExcelBuffer(failedRows, sheetName);
-                const errorKey = `mapping_errors/${taskId}-${sheetName}-errors.xlsx`;
+                const ext = path.extname(task.file_name || '.xlsx') || '.xlsx';
+                const base = path.basename(task.file_name || 'error_report', ext);
+                const errorKey = `mapping_errors/${base}_error_${taskId}${ext}`;
                 await this.s3Service.uploadBuffer(errorKey, errorBuffer);
-
+ 
                 await this.taskService.updateStatus(
                     taskId,
                     'COMPLETED_WITH_ERRORS',
