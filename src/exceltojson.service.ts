@@ -170,7 +170,11 @@ export class ExcelToJson {
         if (missingHeaders.length > 0) {
             throw new HttpException(
                 {
-                    message: `Sheet "${targetSheetName}" is missing required columns for task "${task}".`,
+                    // Missing column names are folded into the message itself (not just
+                    // the missingColumns field) because downstream consumers — e.g.
+                    // TaskProcessor, which persists only `error.message` to task_logs —
+                    // only see this string, not the rest of the response object.
+                    message: `Sheet "${targetSheetName}" is missing required column(s) for task "${task}": ${missingHeaders.join(', ')}.`,
                     sheet: targetSheetName,
                     missingColumns: missingHeaders,
                     expectedColumns: requiredHeaders,
